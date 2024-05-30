@@ -1,6 +1,6 @@
 {
   "name": "nuxt-echarts",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Nuxt Module for Apache ECharts™",
   "author": "Yue JIN <yuejin13@fudan.edu.cn>",
   "repository": "kingyue737/nuxt-echarts",

@@ -1,0 +1,62 @@
+{
+  "name": "nuxt-echarts",
+  "version": "0.0.0",
+  "description": "Nuxt Module for Apache ECharts™",
+  "author": "Yue JIN <yuejin13@fudan.edu.cn>",
+  "repository": "kingyue737/nuxt-echarts",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@9.1.3",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "release": "pnpm run lint && pnpm run test && pnpm run prepack && changelogen --release && npm publish --registry=\"https://registry.npmjs.org/\" && git push --follow-tags",
+    "lint": "eslint . --fix",
+    "format": "prettier . --write",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.11.2"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^1.3.2",
+    "@nuxt/eslint-config": "^0.3.13",
+    "@nuxt/module-builder": "^0.6.0",
+    "@nuxt/schema": "^3.11.2",
+    "@nuxt/test-utils": "^3.13.1",
+    "@types/node": "^20.12.13",
+    "changelogen": "^0.5.5",
+    "eslint": "^9.3.0",
+    "nuxt": "^3.11.2",
+    "prettier": "^3.2.5",
+    "typescript": "latest",
+    "vitest": "^1.6.0",
+    "vue-tsc": "^2.0.19"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "@typescript-eslint/eslint-plugin>eslint": "^9.0.0",
+        "@typescript-eslint/parser>eslint": "^9.0.0",
+        "@typescript-eslint/type-utils>eslint": "^9.0.0",
+        "@typescript-eslint/utils>eslint": "^9.0.0"
+      }
+    }
+  }
+}

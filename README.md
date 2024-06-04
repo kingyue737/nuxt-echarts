@@ -40,29 +40,40 @@ That's it! You can now use Nuxt ECharts in your Nuxt app ✨
   
   ```bash
   # Install dependencies
-  npm install
+  pnpm install
   
   # Generate type stubs
-  npm run dev:prepare
+  pnpm run dev:prepare
   
   # Develop with the playground
-  npm run dev
+  pnpm run dev
   
   # Build the playground
-  npm run dev:build
+  pnpm run dev:build
   
   # Run ESLint
-  npm run lint
+  pnpm run lint
+  
+  # Format with Prettier
+  pnpm run format
   
   # Run Vitest
-  npm run test
-  npm run test:watch
+  pnpm run test
+  pnpm run test:watch
   
   # Release new version
-  npm run release
+  pnpm run release
   ```
 
 </details>
+
+## Acknowledgements
+
+Most of the credit goes to [@Justineo](https://github.com/Justineo) who made [vue-echarts](https://github.com/ecomfe/vue-echarts).
+
+## Notice
+
+The Apache Software Foundation [Apache ECharts, ECharts](https://echarts.apache.org/), Apache, the Apache feather, and the Apache ECharts project logo are either registered trademarks or trademarks of the [Apache Software Foundation](https://www.apache.org/).
 
 <!-- Badges -->
 

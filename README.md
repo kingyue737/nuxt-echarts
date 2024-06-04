@@ -1,3 +1,5 @@
+![nuxt-echarts](./.github/assets/social-card.png)
+
 # Nuxt ECharts
 
 [![npm version][npm-version-src]][npm-version-href]
@@ -15,13 +17,13 @@ Nuxt Module for Apache ECharts™
   <!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-echarts?file=playground%2Fapp.vue) -->
   <!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
-## Features
+## Features (WIP)
 
 <!-- Highlight some of the features your module provide here -->
 
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
+- ⛰ **SSR**: experimental server-only component, lightweight client runtime
+- 🛠️ **Configurable**: import only necessary components and charts for smaller bundle size
+- 🦾 **Type Strong**: generate ECharts option type based on your config
 
 ## Quick Setup
 
@@ -67,9 +69,15 @@ That's it! You can now use Nuxt ECharts in your Nuxt app ✨
 
 </details>
 
-## Acknowledgements
+## Credits
 
-Most of the credit goes to [@Justineo](https://github.com/Justineo) who made [vue-echarts](https://github.com/ecomfe/vue-echarts).
+The Nuxt ECharts module is heavily inspired by [vue-echarts](https://github.com/ecomfe/vue-echarts), created by[@Justineo](https://github.com/Justineo).
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+This project also partially contains code derived or copied from [vue-echarts(MIT)](https://github.com/ecomfe/vue-echarts/blob/main/LICENSE).
 
 ## Notice
 

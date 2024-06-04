@@ -3,6 +3,7 @@ import {
   addPlugin,
   createResolver,
   addComponent,
+  addImports,
 } from '@nuxt/kit'
 
 // Module options TypeScript interface definition
@@ -24,9 +25,18 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolver.resolve('./runtime/plugin'))
+    const entry = resolver.resolve('./runtime/VChart.ts')
     addComponent({
       name: 'VChart',
-      filePath: resolver.resolve('./runtime/VChart.ts'),
+      filePath: entry,
     })
+
+    const injectionKeys = [
+      'THEME_KEY',
+      'INIT_OPTIONS_KEY',
+      'UPDATE_OPTIONS_KEY',
+      'LOADING_OPTIONS_KEY',
+    ]
+    injectionKeys.forEach((name) => addImports({ name, from: entry }))
   },
 })

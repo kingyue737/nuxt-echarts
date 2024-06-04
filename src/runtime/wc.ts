@@ -2,6 +2,10 @@ let registered: boolean | null = null
 
 export const TAG_NAME = 'x-vue-echarts'
 
+if (import.meta.server) {
+  // @ts-expect-error HTMLElement is undefined on server side
+  global.HTMLElement = Object
+}
 export class EChartsElement extends HTMLElement {
   __dispose: (() => void) | null = null
 

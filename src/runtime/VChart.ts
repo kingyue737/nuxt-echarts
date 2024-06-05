@@ -37,6 +37,7 @@ import {
 import { isOn, omitOn } from './utils'
 import { register, TAG_NAME, type EChartsElement } from './wc'
 import './style.css'
+import '#build/echarts.mjs'
 
 const wcRegistered = register()
 
@@ -90,9 +91,8 @@ export default defineComponent({
     const nativeListeners: Record<string, unknown> = {}
     const realListeners: Record<string, any> = {}
 
-    // We are converting all `on<Event>` props to event listeners compatible with Vue 2
-    // and collect them into `realListeners` so that we can bind them to the chart instance
-    // later in the same way.
+    // We are converting all `on<Event>` props to event listeners and collect them  into
+    // `realListeners` so that we can bind them to the chart instance later in the same way.
     // For `onNative:<event>` props, we just strip the `Native:` part and collect them into
     // `nativeListeners` so that we can bind them to the root element directly.
     Object.keys(attrs)
@@ -303,8 +303,6 @@ export default defineComponent({
     }
   },
   render() {
-    // Vue 3 and Vue 2 have different vnode props format:
-    // See https://v3-migration.vuejs.org/breaking-changes/render-function-api.html#vnode-props-format
     const attrs = { ...this.nonEventAttrs, ...this.nativeListeners } as any
     attrs.ref = 'root'
     attrs.class = attrs.class ? ['echarts'].concat(attrs.class) : 'echarts'

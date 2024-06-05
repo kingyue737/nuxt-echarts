@@ -1,5 +1,8 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
-  echarts: {},
+  echarts: {
+    charts: ['BarChart'],
+    components: ['DatasetComponent', 'GridComponent'],
+  },
   devtools: { enabled: true },
 })

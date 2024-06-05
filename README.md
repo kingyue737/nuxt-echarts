@@ -21,9 +21,10 @@ Nuxt Module for Apache ECharts™
 
 <!-- Highlight some of the features your module provide here -->
 
-- ⛰ **SSR**: experimental server-only component, lightweight client runtime
-- 🛠️ **Configurable**: import only necessary components and charts for smaller bundle size
-- 🦾 **Type Strong**: generate ECharts option type based on your config
+- ⛰&nbsp;**SSR**: experimental server-only component, lightweight client runtime
+
+- 🛠️&nbsp;**Configurable**: import only necessary components and charts for smaller bundle size
+- 🦾&nbsp;**Type Strong**: generate ECharts option type based on your config
 
 ## Quick Setup
 
@@ -71,7 +72,7 @@ That's it! You can now use Nuxt ECharts in your Nuxt app ✨
 
 ## Credits
 
-The Nuxt ECharts module is heavily inspired by [vue-echarts](https://github.com/ecomfe/vue-echarts), created by[@Justineo](https://github.com/Justineo).
+The Nuxt ECharts module is heavily inspired by [vue-echarts](https://github.com/ecomfe/vue-echarts), created by [@Justineo](https://github.com/Justineo).
 
 ## License
 

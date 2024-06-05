@@ -1,18 +1,14 @@
 <script setup lang="ts">
-import { use, registerTheme } from 'echarts/core'
-import { BarChart } from 'echarts/charts'
-import { SVGRenderer } from 'echarts/renderers'
-import { GridComponent, DatasetComponent } from 'echarts/components'
+import { registerTheme } from 'echarts/core'
 import theme from './theme.json'
 
-use([BarChart, DatasetComponent, GridComponent, SVGRenderer])
 registerTheme('ovilia-green', theme)
 
 function random() {
   return Math.round(300 + Math.random() * 700) / 10
 }
 
-function getData() {
+function getData(): ECOption {
   return {
     textStyle: {
       // fontFamily: 'Inter, "Helvetica Neue", Arial, sans-serif',

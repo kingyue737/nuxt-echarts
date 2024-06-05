@@ -2,6 +2,13 @@
   "name": "nuxt-echarts",
   "version": "0.0.3",
   "description": "Nuxt Module for Apache ECharts™",
+  "keywords": [
+    "vue",
+    "nuxt",
+    "echarts",
+    "data-visualization",
+    "charts"
+  ],
   "author": "Yue JIN <yuejin13@fudan.edu.cn>",
   "repository": "kingyue737/nuxt-echarts",
   "license": "MIT",

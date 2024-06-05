@@ -10,10 +10,6 @@ function random() {
 
 function getData(): ECOption {
   return {
-    textStyle: {
-      // fontFamily: 'Inter, "Helvetica Neue", Arial, sans-serif',
-      fontWeight: 300,
-    },
     dataset: {
       dimensions: ['Product', '2015', '2016', '2017'],
       source: [
@@ -58,6 +54,9 @@ const loadingOptions = {
   maskColor: 'rgba(255, 255, 255, 0.4)',
 }
 const option = shallowRef(getData())
+function refreshData() {
+  option.value = getData()
+}
 </script>
 
 <template>
@@ -70,4 +69,8 @@ const option = shallowRef(getData())
       :loading-options="loadingOptions"
     />
   </div>
+  <div style="width: 800px; height: 400px">
+    <VChartServer :option="option" />
+  </div>
+  <button @click="refreshData">Refresh</button>
 </template>

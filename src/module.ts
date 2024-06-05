@@ -23,16 +23,13 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {
     renderer: 'canvas',
   },
-  setup(options, _nuxt) {
+  setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolver.resolve('./runtime/plugin'))
-    const entry = resolver.resolve('./runtime/VChart')
-    addComponent({
-      name: 'VChart',
-      filePath: entry,
-    })
+    const entry = resolver.resolve('./runtime/components/VChart')
+    addComponent({ name: 'VChart', filePath: entry })
 
     const rendererName =
       options.renderer === 'canvas' ? 'CanvasRenderer' : 'SVGRenderer'
@@ -99,5 +96,18 @@ export default defineNuxtModule<ModuleOptions>({
       'LOADING_OPTIONS_KEY',
     ]
     injectionKeys.forEach((name) => addImports({ name, from: entry }))
+
+    if (options.ssr) {
+      //@ts-expect-error We create the `experimental` object if it doesn't exist yet
+      nuxt.options.experimental ||= {}
+      nuxt.options.experimental.componentIslands = true
+
+      addComponent({
+        name: 'VChartServer',
+        filePath: resolver.resolve(
+          'runtime/components/VChartServer.server.vue',
+        ),
+      })
+    }
   },
 })

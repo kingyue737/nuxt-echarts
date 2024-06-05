@@ -36,7 +36,7 @@ import {
 } from '../composables'
 import { isOn, omitOn } from '../utils/on'
 import { register, TAG_NAME, type EChartsElement } from '../utils/wc'
-import './style.css'
+import '../style.css'
 import '#build/echarts.mjs'
 
 const wcRegistered = register()

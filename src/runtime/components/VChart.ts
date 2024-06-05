@@ -26,16 +26,16 @@ import type {
   UpdateOptions,
   UpdateOptionsInjection,
   Emits,
-} from './types'
+} from '../types'
 import {
   usePublicAPI,
   useAutoresize,
   autoresizeProps,
   useLoading,
   loadingProps,
-} from './composables'
-import { isOn, omitOn } from './utils'
-import { register, TAG_NAME, type EChartsElement } from './wc'
+} from '../composables'
+import { isOn, omitOn } from '../utils/on'
+import { register, TAG_NAME, type EChartsElement } from '../utils/wc'
 import './style.css'
 import '#build/echarts.mjs'
 
@@ -46,7 +46,7 @@ export const INIT_OPTIONS_KEY =
   'ecInitOptions' as unknown as InjectionKey<InitOptionsInjection>
 export const UPDATE_OPTIONS_KEY =
   'ecUpdateOptions' as unknown as InjectionKey<UpdateOptionsInjection>
-export { LOADING_OPTIONS_KEY } from './composables'
+export { LOADING_OPTIONS_KEY } from '../composables'
 
 export default defineComponent({
   name: 'echarts',

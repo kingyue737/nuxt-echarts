@@ -9,22 +9,24 @@
 
 Nuxt Module for Apache ECharts™
 
-> 🚧 **Work in Progress**
+> [!IMPORTANT]
 >
-> Nuxt ECharts is currently in active development and not usable for production yet.
+> Nuxt ECharts is currently in active development and based on [experimental `<NuxtIsland>`](https://nuxt.com/docs/api/components/nuxt-island). If you found any issue, design flaw, or have ideas to improve it, please open an [issue](https://github.com/kingyue737/nuxt-echarts/issues) or a [Discussion](https://github.com/kingyue737/nuxt-echarts/discussions).
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-  <!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-echarts?file=playground%2Fapp.vue) -->
+- 🏀 &nbsp;Online playground (WIP)
+- 📖 &nbsp;Documentation (WIP)
+  <!-- - [🏀 Online playground](https://stackblitz.com/github/kingyue737/nuxt-echarts?file=playground%2Fapp.vue) -->
   <!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
-## Features (WIP)
+## Features
 
-<!-- Highlight some of the features your module provide here -->
+- ⛰&nbsp;**SSR**: Server-side SVG Rendering with [Nuxt server components](https://nuxt.com/docs/guide/directory-structure/components#server-components)
 
-- ⛰&nbsp;**SSR**: experimental server-only component, lightweight client runtime
-
-- 🛠️&nbsp;**Configurable**: import only necessary components and charts for smaller bundle size
-- 🦾&nbsp;**Type Strong**: generate ECharts option type based on your config
+- ♾️&nbsp;**Client Hydration**: lazy-loading Full ECharts or [lightweight client runtime](https://echarts.apache.org/handbook/en/how-to/cross-platform/server#using-lightweight-runtime)
+- 🛠️&nbsp;**Configurable**: import only [necessary functionality](https://echarts.apache.org/handbook/en/basics/import#shrinking-bundle-size) for shrinking bundle size
+- 🦾&nbsp;**Type Strong**: auto-import [ECharts option type](https://echarts.apache.org/handbook/en/basics/import#creating-an-option-type-in-typescript) based on your config
+- 🌲&nbsp;**Tree-shaking**: Components and ECharts are only included if you use them
 
 ## Quick Setup
 

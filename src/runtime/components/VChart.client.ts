@@ -12,7 +12,6 @@ import {
   nextTick,
   watchEffect,
   type PropType,
-  type InjectionKey,
 } from 'vue'
 import { init as initChart } from 'echarts/core'
 import type {
@@ -20,11 +19,8 @@ import type {
   EventTarget,
   Option,
   Theme,
-  ThemeInjection,
   InitOptions,
-  InitOptionsInjection,
   UpdateOptions,
-  UpdateOptionsInjection,
   Emits,
 } from '../types'
 import {
@@ -36,20 +32,18 @@ import {
 } from '../composables'
 import { isOn, omitOn } from '../utils/on'
 import { register, TAG_NAME, type EChartsElement } from '../utils/wc'
-import '../style.css'
 import '#build/echarts.mjs'
+
+import {
+  THEME_KEY,
+  INIT_OPTIONS_KEY,
+  UPDATE_OPTIONS_KEY,
+} from '../utils/injection'
 
 const wcRegistered = register()
 
-export const THEME_KEY = 'ecTheme' as unknown as InjectionKey<ThemeInjection>
-export const INIT_OPTIONS_KEY =
-  'ecInitOptions' as unknown as InjectionKey<InitOptionsInjection>
-export const UPDATE_OPTIONS_KEY =
-  'ecUpdateOptions' as unknown as InjectionKey<UpdateOptionsInjection>
-export { LOADING_OPTIONS_KEY } from '../composables'
-
 export default defineComponent({
-  name: 'echarts',
+  name: 'VChart',
   props: {
     option: Object as PropType<Option>,
     theme: {
@@ -276,7 +270,9 @@ export default defineComponent({
 
     useAutoresize(chart, autoresize, inner)
 
-    onMounted(() => {
+    onMounted(async () => {
+      // `.client` components are rendered only after being mounted
+      await nextTick()
       init()
     })
 

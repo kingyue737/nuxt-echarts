@@ -3,6 +3,7 @@ import { registerTheme } from 'echarts/core'
 import theme from './theme.json'
 
 registerTheme('ovilia-green', theme)
+// provide(THEME_KEY, 'dark')
 
 function random() {
   return Math.round(300 + Math.random() * 700) / 10
@@ -10,6 +11,7 @@ function random() {
 
 function getData(): ECOption {
   return {
+    animation: false,
     dataset: {
       dimensions: ['Product', '2015', '2016', '2017'],
       source: [
@@ -57,6 +59,11 @@ const option = shallowRef(getData())
 function refreshData() {
   option.value = getData()
 }
+const initOptions = { height: 400, width: 800 }
+
+function test() {
+  console.log('jin')
+}
 </script>
 
 <template>
@@ -64,13 +71,17 @@ function refreshData() {
     <VChart
       :option="option"
       theme="ovilia-green"
+      :init-options="initOptions"
       autoresize
       :loading="loading"
       :loading-options="loadingOptions"
     />
   </div>
-  <div style="width: 800px; height: 400px">
-    <VChartServer :option="option" />
+  <div style="width: 800px">
+    <VChartServer :option="option" :init-options="initOptions" />
+  </div>
+  <div style="width: 800px">
+    <VChartLight :option="option" :init-options="initOptions" @click="test" />
   </div>
   <button @click="refreshData">Refresh</button>
 </template>

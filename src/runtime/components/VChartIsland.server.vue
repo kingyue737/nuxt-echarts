@@ -2,23 +2,23 @@
 import * as echarts from 'echarts'
 import { ref } from 'vue'
 import { defu } from 'defu'
-import type { Option, InitOptions } from '../types'
+import type { Option, InitOptions, Theme } from '../types'
 
-const props = defineProps<{ option: Option; initOption?: InitOptions }>()
+const props = defineProps<{
+  option?: Option
+  initOptions?: InitOptions
+  theme?: Theme
+}>()
 
 const svgStr = ref('')
 
-const initOption: InitOptions = defu(
+// echarts.util.merge()
+const initOptions: InitOptions = defu(
   { renderer: 'svg', ssr: true },
-  props.initOption,
-  {
-    width: 400,
-    height: 300,
-  },
+  props.initOptions,
 )
-let chart = echarts.init(null, null, initOption)
-
-chart.setOption(props.option)
+let chart = echarts.init(null, props.theme, initOptions)
+chart.setOption(props.option || {})
 svgStr.value = chart.renderToSVGString()
 
 chart.dispose()

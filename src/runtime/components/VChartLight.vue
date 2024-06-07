@@ -19,12 +19,9 @@ const props = defineProps<{
   option?: Option
   theme?: Theme
   initOptions?: InitOptions
+  innerHTML?: string
 }>()
 defineOptions({ inheritAttrs: false })
-
-// defineEmits<{
-//   (e: ECSSREvent, params: ECSSRClientEventParams): string | undefined
-// }>()
 
 type ECSSRHandler = (params: ECSSRClientEventParams) => string | undefined
 type ECSSREventOn = `on${Capitalize<ECSSREvent>}`
@@ -32,64 +29,57 @@ type ECSSREventOn = `on${Capitalize<ECSSREvent>}`
 const root = ref<HTMLElement | null>(null)
 const attrs = useAttrs() as Partial<Record<ECSSREventOn, ECSSRHandler>>
 let container: HTMLElement
-function updateChart(svgStr?: string) {
+function hydrateChart() {
+  container = root.value?.querySelector?.('.vue-echarts-inner') as HTMLElement
   if (container) {
-    if (svgStr != null) container.innerHTML = svgStr
     // Use the lightweight runtime to give the chart interactive capabilities
     hydrate(container, {
       on: {
         click: attrs.onClick
           ? (params) => {
-              console.log('11')
               const svg = attrs.onClick!(params)
-              svg && updateChart(svg)
+              svg && setInnerHTML(svg)
             }
           : undefined,
         mouseout: attrs.onMouseout
           ? (params) => {
               const svg = attrs.onMouseout!(params)
-              svg && updateChart(svg)
+              svg && setInnerHTML(svg)
             }
           : undefined,
         mouseover: attrs.onMouseover
           ? (params) => {
               const svg = attrs.onMouseover!(params)
-              svg && updateChart(svg)
+              svg && setInnerHTML(svg)
             }
           : undefined,
       },
     })
-  } else {
-    console.warn('chart-container not found')
   }
 }
 
-watch(
-  [() => props.option, () => props.initOptions, () => props.theme],
-  async () => {
-    await nextTick()
-    updateChart()
-  },
-)
+function setInnerHTML(svgStr?: string) {
+  if (container && svgStr) container.innerHTML = svgStr
+}
+
+watch(() => props.innerHTML, setInnerHTML)
+
+let observer: MutationObserver
 onMounted(async () => {
   await nextTick()
-  container = root.value?.querySelector?.('.vue-echarts-inner') as HTMLElement
-  updateChart()
-  const observer = new MutationObserver(() => {
-    console.log('jin')
-    updateChart()
+  hydrateChart()
+  observer = new MutationObserver(async () => {
+    hydrateChart()
   })
 
   // call 'observe' on that MutationObserver instance,
   // passing it the element to observe, and the options object
-  observer.observe(container, {
+  observer.observe(root.value!, {
     characterData: false,
     childList: true,
     attributes: false,
   })
 })
-
-defineExpose({ updateChart })
 </script>
 
 <template>

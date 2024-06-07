@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, unref, inject } from 'vue'
+import { computed, unref, inject, ref } from 'vue'
 import type { InitOptions, Option, Theme } from '../types'
 import { THEME_KEY, INIT_OPTIONS_KEY } from '../utils/injection'
 
@@ -17,12 +17,20 @@ const realInitOptions = computed(
   // @ts-expect-error unknown computed type error
   () => props.initOptions || unref(defaultInitOptions) || {},
 )
+function onError(_e: unknown) {
+  ;(root.value as any).refresh()
+}
+const root = ref(null)
 </script>
 
 <template>
   <VChartIsland
+    ref="root"
     :theme="realTheme"
     :option="option"
     :init-options="realInitOptions"
-  />
+    @error="onError"
+  >
+    <template #fallback>jin</template>
+  </VChartIsland>
 </template>

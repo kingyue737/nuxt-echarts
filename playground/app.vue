@@ -1,9 +1,17 @@
 <script setup lang="ts">
 import { registerTheme } from 'echarts/core'
-import theme from './theme.json'
+import greenTheme from './theme.json'
 
-registerTheme('ovilia-green', theme)
-// provide(THEME_KEY, 'dark')
+registerTheme('ovilia-green', greenTheme)
+const isDark = ref(false)
+const theme = computed(() => (isDark.value ? 'dark' : 'ovilia-green'))
+provide(THEME_KEY, theme)
+
+// watch(isDark, (val) => {
+//   val
+//     ? document.documentElement.classList.add('dark')
+//     : document.documentElement.classList.remove('dark')
+// })
 
 function random() {
   return Math.round(300 + Math.random() * 700) / 10
@@ -59,29 +67,36 @@ const option = shallowRef(getData())
 function refreshData() {
   option.value = getData()
 }
-const initOptions = { height: 400, width: 800 }
+
+const initOptions = { height: 310, width: 650 }
 
 function test() {
-  console.log('jin')
+  console.log('clicked')
 }
 </script>
 
 <template>
-  <div style="width: 800px; height: 400px">
+  <input v-model="isDark" type="checkbox" n="indigo" />
+  <div class="card">
     <VChart
       :option="option"
-      theme="ovilia-green"
       :init-options="initOptions"
-      autoresize
       :loading="loading"
       :loading-options="loadingOptions"
     />
   </div>
-  <div style="width: 800px">
+  <div class="card">
     <VChartServer :option="option" :init-options="initOptions" />
   </div>
-  <div style="width: 800px">
+  <div class="card">
     <VChartLight :option="option" :init-options="initOptions" @click="test" />
   </div>
   <button @click="refreshData">Refresh</button>
 </template>
+
+<style scoped>
+.card {
+  width: 650px;
+  height: 310px;
+}
+</style>

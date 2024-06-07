@@ -13,5 +13,6 @@ export default createConfigForNuxt({
 }).append({
   rules: {
     '@typescript-eslint/no-explicit-any': 'off',
+    'vue/html-self-closing': ['error', { html: { void: 'any' } }], // not conflict with prettier
   },
 })

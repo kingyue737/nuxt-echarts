@@ -25,6 +25,8 @@ chart.dispose()
 
 // @ts-expect-error release memory
 chart = null
+
+defineSlots<{ fallback: any }>()
 </script>
 
 <template>

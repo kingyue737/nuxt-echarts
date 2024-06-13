@@ -11,14 +11,22 @@ const props = defineProps<{
   theme?: Theme
   initOptions?: InitOptions
 }>()
+const emits = defineEmits<{ (event: 'error', error: unknown): void }>()
 
 const realTheme = computed(() => props.theme || unref(defaultTheme) || {})
 const realInitOptions = computed(
   // @ts-expect-error unknown computed type error
   () => props.initOptions || unref(defaultInitOptions) || {},
 )
-function onError(_e: unknown) {
-  ;(root.value as any).refresh()
+function onError(e: unknown) {
+  // https://github.com/nuxt/nuxt/issues/27491
+  if (
+    e instanceof TypeError &&
+    e.message === "Cannot read properties of undefined (reading 'link')"
+  ) {
+    ;(root.value as any).refresh()
+  }
+  emits('error', e)
 }
 const root = ref(null)
 </script>
@@ -31,6 +39,8 @@ const root = ref(null)
     :init-options="realInitOptions"
     @error="onError"
   >
-    <template #fallback>jin</template>
+    <template #fallback>
+      <slot name="fallback" />
+    </template>
   </VChartIsland>
 </template>

@@ -1,10 +1,14 @@
 export default defineNuxtConfig({
-  modules: ['../src/module'],
+  modules: ['../src/module', '@unocss/nuxt'],
+  css: ['~/assets/style.css'],
+  unocss: {
+    preflight: true,
+  },
   echarts: {
     ssr: true,
-    renderer: 'svg',
+    renderer: ['canvas', 'svg'],
     charts: ['BarChart'],
-    components: ['DatasetComponent', 'GridComponent'],
+    components: ['DatasetComponent', 'GridComponent', 'TooltipComponent'],
   },
   devtools: { enabled: true },
 })

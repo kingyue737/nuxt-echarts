@@ -1,102 +1,86 @@
 <script setup lang="ts">
 import { registerTheme } from 'echarts/core'
 import greenTheme from './theme.json'
+import type { InitOptions } from '../src/runtime/types'
 
 registerTheme('ovilia-green', greenTheme)
-const isDark = ref(false)
-const theme = computed(() => (isDark.value ? 'dark' : 'ovilia-green'))
+const theme = ref('dark')
+const isDark = computed(() => theme.value === 'dark')
+useHead({ htmlAttrs: { class: { dark: isDark } } })
 provide(THEME_KEY, theme)
+const initOptions = computed<InitOptions>(() => ({
+  height: 310,
+  width: 650,
+  renderer: renderer.value,
+}))
+provide(INIT_OPTIONS_KEY, initOptions)
 
-// watch(isDark, (val) => {
-//   val
-//     ? document.documentElement.classList.add('dark')
-//     : document.documentElement.classList.remove('dark')
-// })
+const rendererOptions = [
+  { value: 'canvas', label: 'Canvas' },
+  { value: 'svg', label: 'SVG' },
+]
+const renderer = ref<'canvas' | 'svg'>('canvas')
 
-function random() {
-  return Math.round(300 + Math.random() * 700) / 10
-}
-
-function getData(): ECOption {
-  return {
-    animation: false,
-    dataset: {
-      dimensions: ['Product', '2015', '2016', '2017'],
-      source: [
-        {
-          Product: 'Matcha Latte',
-          2015: random(),
-          2016: random(),
-          2017: random(),
-        },
-        {
-          Product: 'Milk Tea',
-          2015: random(),
-          2016: random(),
-          2017: random(),
-        },
-        {
-          Product: 'Cheese Cocoa',
-          2015: random(),
-          2016: random(),
-          2017: random(),
-        },
-        {
-          Product: 'Walnut Brownie',
-          2015: random(),
-          2016: random(),
-          2017: random(),
-        },
-      ],
-    },
-    xAxis: { type: 'category' },
-    yAxis: {},
-    // Declare several bar series, each will be mapped
-    // to a column of dataset.source by default.
-    series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }],
-  }
-}
-
-const loading = shallowRef(false)
-const loadingOptions = {
-  text: 'Loading…',
-  color: '#4ea397',
-  maskColor: 'rgba(255, 255, 255, 0.4)',
-}
-const option = shallowRef(getData())
-function refreshData() {
-  option.value = getData()
-}
-
-const initOptions = { height: 310, width: 650 }
-
-function test() {
-  console.log('clicked')
-}
+const themeOptions = [
+  {
+    value: 'default',
+    label: 'Default',
+  },
+  {
+    value: 'ovilia-green',
+    label: 'Ovilia Green',
+  },
+  {
+    value: 'dark',
+    label: 'Dark',
+  },
+]
 </script>
 
 <template>
-  <input v-model="isDark" type="checkbox" n="indigo" />
-  <div class="card">
-    <VChart
-      :option="option"
-      :init-options="initOptions"
-      :loading="loading"
-      :loading-options="loadingOptions"
-    />
-  </div>
-  <div class="card">
-    <VChartServer :option="option" :init-options="initOptions" />
-  </div>
-  <div class="card">
-    <VChartLight :option="option" :init-options="initOptions" @click="test" />
-  </div>
-  <button @click="refreshData">Refresh</button>
-</template>
+  <aside class="fixed p-3">
+    <!-- <span>Theme</span> -->
+    <NSelectTabs v-model="theme" :options="themeOptions" class="mr-2" />
+    <!-- <span>Renderer</span> -->
+    <NSelectTabs v-model="renderer" :options="rendererOptions" />
+  </aside>
 
-<style scoped>
-.card {
-  width: 650px;
-  height: 310px;
-}
-</style>
+  <div class="grid gap-y-4 justify-center py-15 text-align-center">
+    <header>
+      <EChartsLogo class="mx-auto fill-green-5 dark:fill-brand" />
+      <h1>
+        <NuxtLink to="https://github.com/kingyue737/nuxt-echarts"
+          >Nuxt ECharts</NuxtLink
+        >
+      </h1>
+      <p>Nuxt Module for Apache ECharts™. (<NLink to="/">docs</NLink>)</p>
+
+      <h2>Examples</h2>
+      <p>
+        <small
+          >See
+          <NLink to="https://echarts.apache.org/examples/en/index.html"
+            >echarts.apache.org/examples</NLink
+          >
+          for all examples.</small
+        >
+      </p>
+    </header>
+    <ChartBar />
+    <ChartPolar />
+    <ChartPie />
+    <ChartScatter />
+  </div>
+
+  <footer class="flex gap-2 justify-center items-center py-5" n="dark:brand">
+    <NLink to="https://github.com/kingyue737"> @kingyue737 </NLink>
+    <span class="text-xs op-50">|</span>
+    <NLink to="https://github.com/kingyue737/nuxt-echarts/blob/main/LICENSE">
+      MIT License
+    </NLink>
+    <span class="text-xs op-50">|</span>
+    <NLink to="https://github.com/kingyue737/nuxt-echarts">
+      View on GitHub
+    </NLink>
+  </footer>
+</template>

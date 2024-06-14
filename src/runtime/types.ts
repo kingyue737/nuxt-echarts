@@ -1,5 +1,9 @@
-import type { init } from 'echarts/core'
-import type { SetOptionOpts, ECElementEvent, ElementEvent } from 'echarts'
+import type {
+  init,
+  SetOptionOpts,
+  ECElementEvent,
+  ElementEvent,
+} from 'echarts/core'
 import type { Ref } from 'vue'
 
 export type Injection<T> = T | null | Ref<T | null> | { value: T | null }

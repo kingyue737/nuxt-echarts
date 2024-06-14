@@ -1,0 +1,24 @@
+:root {
+  --nui-c-context: 125, 125, 125;
+}
+
+html {
+  background-color: white;
+}
+
+html.dark {
+  color-scheme: dark;
+  background-color: #151515;
+  color: white;
+  .echarts-tooltip {
+    background-color: #353535 !important;
+    span,
+    div {
+      color: white !important;
+    }
+  }
+}
+
+::selection {
+  background: #8884;
+}

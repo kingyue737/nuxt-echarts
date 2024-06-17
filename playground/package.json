@@ -8,6 +8,7 @@
     "generate": "nuxi generate"
   },
   "dependencies": {
+    "echarts-liquidfill": "^3.1.0",
     "nuxt": "^3.11.2"
   },
   "devDependencies": {

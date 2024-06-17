@@ -47,7 +47,9 @@ const themeOptions = [
 
   <div class="grid gap-y-4 justify-center py-15 text-align-center">
     <header>
-      <EChartsLogo class="mx-auto fill-green-5 dark:fill-brand" />
+      <!-- <EChartsLogo class="mx-auto fill-green-5 dark:fill-brand" /> -->
+      <ChartLogo class="!inline-flex !w-fit !h-fit" />
+
       <h1>
         <NuxtLink to="https://github.com/kingyue737/nuxt-echarts"
           >Nuxt ECharts</NuxtLink

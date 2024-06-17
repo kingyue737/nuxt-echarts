@@ -16,7 +16,7 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'echarts',
     compatibility: {
       // Semver version of supported nuxt versions
-      nuxt: '^3.0.0',
+      nuxt: '>=3.2.0',
     },
   },
   // Default configuration options of the Nuxt module

@@ -2,6 +2,7 @@
 import { computed, unref, inject, ref } from 'vue'
 import type { InitOptions, Option, Theme } from '../types'
 import { THEME_KEY, INIT_OPTIONS_KEY } from '../utils/injection'
+import type { VChartIsland } from '#components'
 
 const defaultTheme = inject(THEME_KEY, null)
 const defaultInitOptions = inject(INIT_OPTIONS_KEY, null)
@@ -24,11 +25,12 @@ function onError(e: unknown) {
     e instanceof TypeError &&
     e.message === "Cannot read properties of undefined (reading 'link')"
   ) {
-    ;(root.value as any).refresh()
+    // @ts-expect-error NuxtIsland.refresh in not defined
+    root.value.refresh()
   }
   emits('error', e)
 }
-const root = ref(null)
+const root = ref<InstanceType<typeof VChartIsland> | null>(null)
 </script>
 
 <template>

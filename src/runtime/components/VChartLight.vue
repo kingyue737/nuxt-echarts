@@ -19,7 +19,6 @@ const props = defineProps<{
   option?: Option
   theme?: Theme
   initOptions?: InitOptions
-  innerHTML?: string
 }>()
 defineOptions({ inheritAttrs: false })
 
@@ -61,8 +60,6 @@ function hydrateChart() {
 function setInnerHTML(svgStr?: string) {
   if (container && svgStr) container.innerHTML = svgStr
 }
-
-watch(() => props.innerHTML, setInnerHTML)
 
 let observer: MutationObserver
 onMounted(async () => {

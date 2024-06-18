@@ -6,7 +6,10 @@ import type { InitOptions } from '../src/runtime/types'
 registerTheme('ovilia-green', greenTheme)
 const theme = ref('dark')
 const isDark = computed(() => theme.value === 'dark')
-useHead({ htmlAttrs: { class: { dark: isDark } } })
+useHead({
+  htmlAttrs: { class: { dark: isDark } },
+  title: 'Nuxt ECharts: Nuxt Module for Apache ECharts™',
+})
 provide(THEME_KEY, theme)
 const initOptions = computed<InitOptions>(() => ({
   height: 310,

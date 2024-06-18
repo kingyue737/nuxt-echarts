@@ -11,8 +11,7 @@ const props = defineProps<{
 }>()
 
 const svgStr = ref('')
-
-// echarts.util.merge()
+// Or echarts.util.merge()
 const initOptions: InitOptions = defu(
   { renderer: 'svg', ssr: true },
   props.initOptions,

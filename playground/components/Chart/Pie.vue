@@ -1,13 +1,20 @@
 <script setup lang="ts">
 import type { ECSSRClientEventParams } from 'echarts/ssr/client/index'
 
-const option = shallowRef({
+const option = ref({
   tooltip: {
     trigger: 'item',
   },
   legend: {
     top: '5%',
     left: 'center',
+    selected: {
+      'Search Engine': true,
+      Direct: true,
+      Email: true,
+      'Union Ads': true,
+      'Video Ads': true,
+    },
   },
   series: [
     {
@@ -35,7 +42,12 @@ const option = shallowRef({
 })
 
 function onClick(params: ECSSRClientEventParams) {
-  console.log(params)
+  if (params.ssrType === 'legend') {
+    const key = Object.keys(option.value.legend.selected)[
+      params.dataIndex!
+    ] as keyof typeof option.value.legend.selected
+    option.value.legend.selected[key] = !option.value.legend.selected[key]
+  }
 }
 </script>
 

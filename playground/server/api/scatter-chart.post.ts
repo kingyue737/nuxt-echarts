@@ -63,10 +63,6 @@ export default defineEventHandler(async (event) => {
 
   const defaultOption: ECBasicOption = {
     animation: false,
-    textStyle: {
-      fontFamily: 'Inter, "Helvetica Neue", Arial, sans-serif',
-      fontWeight: 300,
-    },
     title: {
       text: 'Life Expectancy vs. GDP by country',
     },

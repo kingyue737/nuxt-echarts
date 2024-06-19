@@ -47,12 +47,6 @@ function getData(): ECOption {
   }
 }
 
-const loading = shallowRef(false)
-const loadingOptions = {
-  text: 'Loading…',
-  color: '#4ea397',
-  maskColor: 'rgba(255, 255, 255, 0.4)',
-}
 const option = shallowRef(getData())
 function refreshData() {
   option.value = getData()
@@ -60,16 +54,8 @@ function refreshData() {
 </script>
 
 <template>
-  <NExample
-    id="bar"
-    title="Bar Chart"
-    desc="Server Rendering + ECharts Client Lazy Load"
-  >
-    <VChart
-      :option="option"
-      :loading="loading"
-      :loading-options="loadingOptions"
-    />
+  <NExample id="bar" title="Bar Chart" desc="SSR + client-side lazy loading">
+    <VChart :option="option" />
     <template #extra>
       <NButton @click="refreshData">Refresh</NButton>
     </template>

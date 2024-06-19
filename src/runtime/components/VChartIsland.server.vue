@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import * as echarts from 'echarts'
 import { ref } from 'vue'
-import { defu } from 'defu'
 import type { Option, InitOptions, Theme } from '../types'
 
 const props = defineProps<{
@@ -11,10 +10,9 @@ const props = defineProps<{
 }>()
 
 const svgStr = ref('')
-// Or echarts.util.merge()
-const initOptions: InitOptions = defu(
-  { renderer: 'svg', ssr: true },
-  props.initOptions,
+const initOptions: InitOptions = echarts.util.merge(
+  { renderer: 'svg', ssr: true } satisfies InitOptions,
+  props.initOptions || {},
 )
 let chart = echarts.init(null, props.theme, initOptions)
 chart.setOption(props.option || {})

@@ -40,7 +40,11 @@ const option = {
 </script>
 
 <template>
-  <NExample id="polar" title="Polar Chart" desc="Server Only Rendering">
+  <NExample
+    id="polar"
+    title="Polar Chart"
+    desc="one-time server-side SVG rendering"
+  >
     <VChartServer :option="option" />
   </NExample>
 </template>

@@ -52,7 +52,12 @@ function onClick(params: ECSSRClientEventParams) {
 </script>
 
 <template>
-  <NExample id="pie" title="Pie Chart" desc="">
+  <NExample
+    id="pie"
+    title="Pie Chart"
+    desc="SSR + client-side lightweight runtime"
+  >
     <VChartLight :option="option" @click="onClick" />
+    <template #extra>Click on a legend to toggle series display</template>
   </NExample>
 </template>

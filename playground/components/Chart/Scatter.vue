@@ -53,8 +53,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <NExample id="scatter" title="Scatter Chart" desc="">
+  <NExample
+    id="scatter"
+    title="Scatter Chart"
+    desc="SSR via Nitro server route"
+  >
     <div ref="container" v-html="data"></div>
-    <template #extra> 1 </template>
+    <template #extra>
+      Click on a legend to toggle series display.<br />
+      This example shows how to implement a Server-rendered ECharts with
+      lightweight client runtime via server route without the components
+      provided by this module.
+    </template>
   </NExample>
 </template>

@@ -4,7 +4,7 @@ defineProps<{ id: string; title: string; desc: string }>()
 
 <template>
   <section>
-    <h3 class="text-xl" :id="id">
+    <h3 :id="id" class="text-xl">
       <a :href="`#${id}`">
         {{ title }}
         <small class="op-70">({{ desc }})</small>

@@ -1,5 +1,5 @@
 import * as echarts from 'echarts'
-import type { ECBasicOption, EChartsType } from 'echarts/types/dist/shared.js'
+import type { ECBasicOption } from 'echarts/types/dist/shared.js'
 import type { InitOptions } from '../../../src/runtime/types'
 import greenTheme from '../../theme.json'
 
@@ -13,8 +13,6 @@ export default defineEventHandler(async (event) => {
     initOptions,
   )
   type MyData = [number, number, number, string, number]
-
-  let chart: EChartsType
 
   const data: MyData[][] = [
     [
@@ -106,7 +104,7 @@ export default defineEventHandler(async (event) => {
   }
   const realOption = echarts.util.merge(option, defaultOption)
 
-  chart = echarts.init(null, theme, realInitOptions) as unknown as EChartsType
+  const chart = echarts.init(null, theme, realInitOptions)
   chart.setOption(realOption)
   const svgStr = chart.renderToSVGString()
   chart.dispose()

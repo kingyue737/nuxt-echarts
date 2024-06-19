@@ -5,7 +5,7 @@ import {
   type ECSSREvent,
 } from 'echarts/ssr/client/index'
 import type { InitOptions, Option, Theme } from '../types'
-import { useAttrs, watch, nextTick, ref, onMounted, defineComponent } from 'vue'
+import { useAttrs, nextTick, ref, onMounted, defineComponent } from 'vue'
 import type VChartServer from './VChartServer.vue'
 
 export default defineComponent({
@@ -15,7 +15,7 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   option?: Option
   theme?: Theme
   initOptions?: InitOptions

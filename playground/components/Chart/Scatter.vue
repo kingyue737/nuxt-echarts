@@ -58,7 +58,8 @@ onMounted(() => {
     title="Scatter Chart"
     desc="SSR via Nitro server route"
   >
-    <div ref="container" v-html="data"></div>
+    <!--eslint-disable-next-line vue/no-v-html-->
+    <div ref="container" v-html="data" />
     <template #extra>
       Click on a legend to toggle series display.<br />
       This example shows how to implement a Server-rendered ECharts with

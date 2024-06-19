@@ -12,7 +12,3 @@ x-vue-echarts,
   width: auto !important;
   height: auto !important;
 }
-.vue-echarts-container .vue-echarts-inner > svg {
-  width: 100%;
-  height: 100%;
-}

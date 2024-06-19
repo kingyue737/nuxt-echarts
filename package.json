@@ -70,5 +70,8 @@
         "webpack"
       ]
     }
+  },
+  "stackblitz": {
+    "startCommand": "pnpm run dev:prepare && pnpm run dev"
   }
 }

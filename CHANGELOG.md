@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.4...v0.0.5)
+
+### 🩹 Fixes
+
+- Hydration mismatch due to no root element ([8641f4e](https://github.com/kingyue737/nuxt-echarts/commit/8641f4e))
+
+### 📖 Documentation
+
+- Add playground and demo link ([6d98fbd](https://github.com/kingyue737/nuxt-echarts/commit/6d98fbd))
+- Init documentation site ([abd275a](https://github.com/kingyue737/nuxt-echarts/commit/abd275a))
+
+### 🏡 Chore
+
+- Playground startCommand ([cb28519](https://github.com/kingyue737/nuxt-echarts/commit/cb28519))
+
+### ❤️ Contributors
+
+- Yue JIN <yjin@nustarnuclear.com>
+
 ## v0.0.4
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.3...v0.0.4)

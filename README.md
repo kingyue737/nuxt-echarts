@@ -1,4 +1,4 @@
-![nuxt-echarts](./.github/assets/social-card.png)
+![nuxt-echarts](./docs/public/social-card.png)
 
 # Nuxt ECharts
 
@@ -13,17 +13,17 @@ Nuxt Module for Apache ECharts™
 >
 > Nuxt ECharts is currently in active development and based on [experimental `<NuxtIsland>`](https://nuxt.com/docs/api/components/nuxt-island). If you found any issue, design flaw, or have ideas to improve it, please open an [issue](https://github.com/kingyue737/nuxt-echarts/issues) or a [Discussion](https://github.com/kingyue737/nuxt-echarts/discussions).
 
+- [📖 &nbsp;Documentation (WIP)](https://echarts.nuxt.dev)
+
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 - [🎞️ &nbsp;Online Demo](https://nuxt-echarts.nuxt.dev/)
-- [🏀 &nbsp;Online playground](https://stackblitz.com/github/kingyue737/nuxt-echarts?file=playground%2Fapp.vue)
-- 📖 &nbsp;Documentation (WIP)
-  <!-- - [📖 &nbsp;Documentation](https://example.com) -->
+- [🏀 &nbsp;Online Playground](https://stackblitz.com/github/kingyue737/nuxt-echarts?file=playground%2Fapp.vue)
 
 ## Features
 
 - ⛰&nbsp;**SSR**: Server-side SVG Rendering with [Nuxt server components](https://nuxt.com/docs/guide/directory-structure/components#server-components)
 
-- ♾️&nbsp;**Client Hydration**: lazy-loading Full ECharts or [lightweight client runtime](https://echarts.apache.org/handbook/en/how-to/cross-platform/server#using-lightweight-runtime)
+- ♾️&nbsp;**Client Hydration**: lazy-loading full ECharts or [lightweight client runtime](https://echarts.apache.org/handbook/en/how-to/cross-platform/server#using-lightweight-runtime)
 - 🛠️&nbsp;**Configurable**: import only [necessary functionality](https://echarts.apache.org/handbook/en/basics/import#shrinking-bundle-size) for shrinking bundle size
 - 🦾&nbsp;**Type Strong**: auto-import [ECharts option type](https://echarts.apache.org/handbook/en/basics/import#creating-an-option-type-in-typescript) based on your config
 - 🌲&nbsp;**Tree-shaking**: Components and ECharts are only included if you use them

@@ -1,0 +1,42 @@
+title: 'Nuxt ECharts - Nuxt Module for Apache ECharts™'
+description: Integrate Apache ECharts™ in your Nuxt application with both client-side and server-side Rendering.
+navigation: false
+hero:
+  title: 'Client / Server Side Rendering <span class="text-primary-400">ECharts in Nuxt</span>'
+  description: 'Nuxt Echarts cannot only integrate Apache ECharts™ in the browser but also render on server side via Nuxt Server Component.'
+  orientation: horizontal
+  headline:
+    label: Online Demo
+    to: https://nuxt-echarts.nuxt.dev
+    icon: i-heroicons-arrow-top-right-on-square-20-solid
+  links:
+    - label: Get started
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
+      to: '/getting-started'
+      size: lg
+    - label: Open in GitHub
+      icon: i-simple-icons-github
+      size: lg
+      color: gray
+      to: https://github.com/kingyue737/nuxt-echarts
+      target: _blank
+  code: |
+    ```bash [Terminal]
+    npx nuxi module add nuxt-echarts
+    ```
+features:
+  title: 'Features'
+  items:
+    - title: 'SSR'
+      description: 'Server-side SVG Rendering with Nuxt server components.'
+      icon: 'i-simple-icons-nuxtdotjs'
+      to: '/getting-started'
+    - title: 'Client Hydration'
+      description: 'Lazy-loading full ECharts or lightweight client runtime.'
+      icon: 'i-heroicons-sparkles-20-solid'
+      to: '/getting-started'
+    - title: 'TypeScript'
+      description: 'Auto-import ECharts option type based on your config.'
+      icon: 'i-simple-icons-typescript'
+      to: '/getting-started'

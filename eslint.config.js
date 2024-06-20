@@ -8,12 +8,20 @@ export default createConfigForNuxt({
     tooling: true,
   },
   dirs: {
-    src: ['./playground'],
+    src: ['./playground', './docs'],
   },
-}).append({
-  rules: {
-    '@typescript-eslint/no-explicit-any': 'off',
-    'vue/require-default-prop': 'off',
-    'vue/html-self-closing': ['error', { html: { void: 'any' } }], // not conflict with prettier
+}).append(
+  {
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+      'vue/require-default-prop': 'off',
+      'vue/html-self-closing': ['error', { html: { void: 'any' } }], // not conflict with prettier
+    },
   },
-})
+  {
+    files: ['docs/app/**'],
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+  },
+)

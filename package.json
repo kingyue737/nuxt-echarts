@@ -32,11 +32,13 @@
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "release": "pnpm run lint && pnpm run test && pnpm run prepack && changelogen --release && npm publish --registry=\"https://registry.npmjs.org/\" && git push --follow-tags",
+    "docs:dev": "nuxi dev docs",
+    "docs:build": "nuxi generate docs",
     "lint": "eslint . --fix",
     "format": "prettier . --write",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+    "test:types": "vue-tsc --noEmit && nuxi typecheck docs && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
     "@nuxt/kit": "^3.12.2",

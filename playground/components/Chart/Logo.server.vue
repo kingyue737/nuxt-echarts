@@ -30,5 +30,10 @@ const option = {
 </script>
 
 <template>
-  <VChartIsland :option="option" :init-options="{ height: 100, width: 100 }" />
+  <div>
+    <VChartIsland
+      :option="option"
+      :init-options="{ height: 100, width: 100 }"
+    />
+  </div>
 </template>

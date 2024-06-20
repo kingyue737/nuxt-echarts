@@ -25,7 +25,7 @@ function onError(e: unknown) {
     e instanceof TypeError &&
     e.message === "Cannot read properties of undefined (reading 'link')"
   ) {
-    // @ts-expect-error NuxtIsland.refresh in not defined
+    // @ts-expect-error https://github.com/nuxt/nuxt/issues/27730
     root.value.refresh()
   }
   emits('error', e)
@@ -34,15 +34,17 @@ const root = ref<InstanceType<typeof VChartIsland> | null>(null)
 </script>
 
 <template>
-  <VChartIsland
-    ref="root"
-    :theme="realTheme"
-    :option="option"
-    :init-options="realInitOptions"
-    @error="onError"
-  >
-    <template #fallback>
-      <slot name="fallback" />
-    </template>
-  </VChartIsland>
+  <div class="vue-echarts-server">
+    <VChartIsland
+      ref="root"
+      :theme="realTheme"
+      :option="option"
+      :init-options="realInitOptions"
+      @error="onError"
+    >
+      <template #fallback>
+        <slot name="fallback" />
+      </template>
+    </VChartIsland>
+  </div>
 </template>

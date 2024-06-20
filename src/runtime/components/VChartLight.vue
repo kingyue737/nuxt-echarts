@@ -34,31 +34,12 @@ function hydrateChart() {
     // Use the lightweight runtime to give the chart interactive capabilities
     hydrate(container, {
       on: {
-        click: attrs.onClick
-          ? (params) => {
-              const svg = attrs.onClick!(params)
-              svg && setInnerHTML(svg)
-            }
-          : undefined,
-        mouseout: attrs.onMouseout
-          ? (params) => {
-              const svg = attrs.onMouseout!(params)
-              svg && setInnerHTML(svg)
-            }
-          : undefined,
-        mouseover: attrs.onMouseover
-          ? (params) => {
-              const svg = attrs.onMouseover!(params)
-              svg && setInnerHTML(svg)
-            }
-          : undefined,
+        click: attrs.onClick,
+        mouseout: attrs.onMouseout,
+        mouseover: attrs.onMouseover,
       },
     })
   }
-}
-
-function setInnerHTML(svgStr?: string) {
-  if (container && svgStr) container.innerHTML = svgStr
 }
 
 let observer: MutationObserver
@@ -71,7 +52,7 @@ onMounted(async () => {
 
   // call 'observe' on that MutationObserver instance,
   // passing it the element to observe, and the options object
-  observer.observe(root.value!, {
+  observer.observe(root.value!.querySelector('.vue-echarts-server')!, {
     characterData: false,
     childList: true,
     attributes: false,

@@ -2,7 +2,7 @@
 import { computed, unref, inject, ref } from 'vue'
 import type { InitOptions, Option, Theme } from '../types'
 import { THEME_KEY, INIT_OPTIONS_KEY } from '../utils/injection'
-import type { VChartIsland } from '#components'
+import type VChartIsland from './VChartLight.vue'
 
 const defaultTheme = inject(THEME_KEY, null)
 const defaultInitOptions = inject(INIT_OPTIONS_KEY, null)

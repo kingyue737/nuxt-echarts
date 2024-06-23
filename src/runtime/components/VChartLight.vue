@@ -20,7 +20,6 @@ defineProps<{
   theme?: Theme
   initOptions?: InitOptions
 }>()
-defineOptions({ inheritAttrs: false })
 
 type ECSSRHandler = (params: ECSSRClientEventParams) => string | undefined
 type ECSSREventOn = `on${Capitalize<ECSSREvent>}`

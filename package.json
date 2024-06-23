@@ -34,11 +34,12 @@
     "release": "pnpm run lint && pnpm run test && pnpm run prepack && changelogen --release && npm publish --registry=\"https://registry.npmjs.org/\" && git push --follow-tags",
     "docs:dev": "nuxi dev docs",
     "docs:build": "nuxi generate docs",
+    "docs:types": "nuxi typecheck docs",
     "lint": "eslint . --fix",
     "format": "prettier . --write",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:types": "vue-tsc --noEmit && nuxi typecheck docs && cd playground && vue-tsc --noEmit"
+    "test:types": "nuxi typecheck && nuxi typecheck playground"
   },
   "dependencies": {
     "@nuxt/kit": "^3.12.2",

@@ -1,6 +1,33 @@
 # Changelog
 
 
+## v0.0.6
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.5...v0.0.6)
+
+### 🚀 Enhancements
+
+- Remove extra wrapper in VChartLight ([f408cfc](https://github.com/kingyue737/nuxt-echarts/commit/f408cfc))
+- Add ssr switch for VChart ([1fec45a](https://github.com/kingyue737/nuxt-echarts/commit/1fec45a))
+
+### 🩹 Fixes
+
+- Resize VChart with auto size explicitly ([f7f23a0](https://github.com/kingyue737/nuxt-echarts/commit/f7f23a0))
+
+### 🏡 Chore
+
+- **release:** V0.0.5 ([a06809a](https://github.com/kingyue737/nuxt-echarts/commit/a06809a))
+- Up deps ([22fe384](https://github.com/kingyue737/nuxt-echarts/commit/22fe384))
+- Pin @nuxt/content which introduces breaking change ([0ed22af](https://github.com/kingyue737/nuxt-echarts/commit/0ed22af))
+- Exclude docs from typecheck ([b247d30](https://github.com/kingyue737/nuxt-echarts/commit/b247d30))
+- Add source button on playground ([35f1707](https://github.com/kingyue737/nuxt-echarts/commit/35f1707))
+- Add docs link on playground ([3f974d2](https://github.com/kingyue737/nuxt-echarts/commit/3f974d2))
+- Pin typescript before supported by nuxt-module-builder ([abfba58](https://github.com/kingyue737/nuxt-echarts/commit/abfba58))
+
+### ❤️ Contributors
+
+- Yue JIN <yuejin13@qq.com>
+
 ## v0.0.5
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.4...v0.0.5)

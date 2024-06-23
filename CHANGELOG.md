@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.7
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.6...v0.0.7)
+
+### 🩹 Fixes
+
+- VChart ssr now works ([ec5f963](https://github.com/kingyue737/nuxt-echarts/commit/ec5f963))
+
+### 🏡 Chore
+
+- Remove icon on playground ([a26a963](https://github.com/kingyue737/nuxt-echarts/commit/a26a963))
+
+### ❤️ Contributors
+
+- Yue JIN <yuejin13@qq.com>
+
 ## v0.0.6
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.5...v0.0.6)

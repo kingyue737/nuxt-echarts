@@ -9,6 +9,12 @@ defineProps<{ id: string; title: string; desc: string }>()
         {{ title }}
         <small class="op-70">({{ desc }})</small>
       </a>
+      <NButton
+        class="text-xs ml-2 px-2"
+        :to="`https://github.com/kingyue737/nuxt-echarts/tree/main/playground/components/Chart/${id[0].toUpperCase()}${id.slice(1)}.vue`"
+        target="_blank"
+        >Source</NButton
+      >
     </h3>
     <NCard class="dark:bg-[#100c2a] my-5">
       <slot />

@@ -46,7 +46,7 @@ const themeOptions = [
     <NSelectTabs v-model="renderer" :options="rendererOptions" />
   </aside>
 
-  <div class="grid gap-y-12 justify-center py-15 text-align-center">
+  <div class="grid gap-y-16 justify-center py-15 text-align-center">
     <header>
       <!-- <EChartsLogo class="mx-auto fill-green-5 dark:fill-brand" /> -->
       <div class="inline-block w-fit h-fit mb-10">

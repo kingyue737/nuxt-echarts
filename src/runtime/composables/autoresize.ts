@@ -22,7 +22,7 @@ export function useAutoresize(
       const { throttle: wait = 100, onResize } = autoresizeOptions
 
       const callback = () => {
-        chart.resize()
+        chart.resize({width:'auto',height:'auto'})
         onResize?.()
       }
 

@@ -25,11 +25,11 @@ defineOptions({ inheritAttrs: false })
 type ECSSRHandler = (params: ECSSRClientEventParams) => string | undefined
 type ECSSREventOn = `on${Capitalize<ECSSREvent>}`
 
-const root = ref<HTMLElement | null>(null)
+const root = ref<InstanceType<typeof VChartServer> | null>(null)
 const attrs = useAttrs() as Partial<Record<ECSSREventOn, ECSSRHandler>>
 let container: HTMLElement
 function hydrateChart() {
-  container = root.value?.querySelector?.('.vue-echarts-inner') as HTMLElement
+  container = root.value?.$el
   if (container) {
     // Use the lightweight runtime to give the chart interactive capabilities
     hydrate(container, {
@@ -52,7 +52,7 @@ onMounted(async () => {
 
   // call 'observe' on that MutationObserver instance,
   // passing it the element to observe, and the options object
-  observer.observe(root.value!.querySelector('.vue-echarts-server')!, {
+  observer.observe(root.value!.$el, {
     characterData: false,
     childList: true,
     attributes: false,
@@ -61,7 +61,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div ref="root">
-    <VChartServer :option="option" :init-options="initOptions" :theme="theme" />
-  </div>
+  <VChartServer
+    ref="root"
+    :option="option"
+    :init-options="initOptions"
+    :theme="theme"
+  />
 </template>

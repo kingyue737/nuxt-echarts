@@ -6,7 +6,6 @@ import {
   addImports,
   addTemplate,
   addTypeTemplate,
-  addComponent,
 } from '@nuxt/kit'
 
 import type { ModuleOptions } from './types'
@@ -32,12 +31,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     addComponentsDir({
       path: resolve('runtime/components'),
-      ignore: ['VChart.server.vue', 'VChart.client.ts'],
-    })
-    addComponent({
-      filePath: resolve('./runtime/components/VChart.client.ts'),
-      name: 'VChart',
-      mode: options.ssr ? 'all' : 'client',
+      ignore: options.ssr ? undefined : ['VChart.server.vue'],
     })
 
     nuxt.options.css.unshift(resolve('./runtime/style.css'))

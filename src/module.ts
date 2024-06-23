@@ -6,6 +6,7 @@ import {
   addImports,
   addTemplate,
   addTypeTemplate,
+  addComponent,
 } from '@nuxt/kit'
 
 import type { ModuleOptions } from './types'
@@ -28,7 +29,17 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolve('./runtime/plugin'))
-    addComponentsDir({ path: resolve('runtime/components') })
+
+    addComponentsDir({
+      path: resolve('runtime/components'),
+      ignore: ['VChart.server.vue', 'VChart.client.ts'],
+    })
+    addComponent({
+      filePath: resolve('./runtime/components/VChart.client.ts'),
+      name: 'VChart',
+      mode: options.ssr ? 'all' : 'client',
+    })
+
     nuxt.options.css.unshift(resolve('./runtime/style.css'))
 
     function join(arr?: string[]) {
@@ -124,11 +135,5 @@ export default defineNuxtModule<ModuleOptions>({
     ].forEach((name) =>
       addImports({ name, from: resolve('./runtime/utils/injection') }),
     )
-
-    if (options.ssr) {
-      //@ts-expect-error We create the `experimental` object if it doesn't exist yet
-      nuxt.options.experimental ||= {}
-      nuxt.options.experimental.componentIslands = true
-    }
   },
 })

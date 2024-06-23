@@ -14,22 +14,26 @@ export interface ModuleOptions {
   renderer?: RendererName | RendererName[]
 
   /**
-   * Register the required charts globally
+   * Register the required charts on client side
+   * (imported only if `VChart` is used)
    */
   charts?: ChartName[]
 
   /**
-   * Register the required components globally
+   * Register the required components on client side
+   * (imported only if `VChart` is used)
    */
   components?: ComponentName[]
 
   /**
-   * Register the required components globally
+   * Register the required components on client side
+   * (imported only if `VChart` is used)
    */
   features?: FeaturesName[]
 
   /**
-   * WIP
+   * This options indicates if `VChart` should also render on server.
+   * By default, it only render on client.
    *
    * @default false
    */

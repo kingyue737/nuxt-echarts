@@ -62,9 +62,10 @@ const themeOptions = [
         </NuxtLink>
       </h1>
       <p class="text-gray mt-4 mb-12">
-        Nuxt Module for Apache ECharts™. (<NLink n="dark:brand" to="/"
-          >docs</NLink
-        >)
+        Nuxt Module for Apache ECharts™.
+        <NLink n="dark:brand" to="https://echarts.nuxt.dev" target="_blank"
+          >(docs)</NLink
+        >
       </p>
 
       <h2 class="text-xl flex gap-3 justify-center items-center text-gray mb-4">

@@ -25,12 +25,5 @@ const link = computed(() => props.href || props.to)
     }"
   >
     <slot />
-    <div
-      v-if="link && target === '_blank'"
-      i-carbon:arrow-up-right
-      translate-y--1
-      text-xs
-      op50
-    />
   </NuxtLink>
 </template>

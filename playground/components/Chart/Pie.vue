@@ -2,9 +2,6 @@
 import type { ECSSRClientEventParams } from 'echarts/ssr/client/index'
 
 const option = ref({
-  tooltip: {
-    trigger: 'item',
-  },
   legend: {
     top: '5%',
     left: 'center',
@@ -24,8 +21,6 @@ const option = ref({
       roseType: 'angle',
       itemStyle: {
         borderRadius: [20, 5, 5, 10],
-        // borderColor: 'transparent',
-        // borderWidth: 2,
       },
       label: {
         show: false,

@@ -9,30 +9,31 @@ type RendererName = 'canvas' | 'svg'
 
 export interface ModuleOptions {
   /**
+   * Register the renderer used by `<VChart>`
    * @default 'canvas'
    */
   renderer?: RendererName | RendererName[]
 
   /**
-   * Register the required charts on client side
-   * (imported only if `VChart` is used)
+   * Register the charts used by `<VChart>`
+   * (imported only if `<VChart>` is used)
    */
   charts?: ChartName[]
 
   /**
-   * Register the required components on client side
-   * (imported only if `VChart` is used)
+   * Register the components used by `<VChart>`
+   * (imported only if `<VChart>` is used)
    */
   components?: ComponentName[]
 
   /**
-   * Register the required components on client side
-   * (imported only if `VChart` is used)
+   * Register the features used by `<VChart>`
+   * (imported only if `<VChart>` is used)
    */
   features?: FeaturesName[]
 
   /**
-   * This options indicates if `VChart` should also render on server.
+   * This option indicates if `<VChart>` should also render on server.
    * By default, it only render on client.
    *
    * @default false

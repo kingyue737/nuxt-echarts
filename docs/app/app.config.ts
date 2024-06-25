@@ -41,7 +41,7 @@ export default defineAppConfig({
       },
       {
         icon: 'i-simple-icons-apacheecharts',
-        to: 'https://echarts.apache.org/',
+        to: 'https://echarts.apache.org/en/index.html',
         target: '_blank',
         'aria-label': 'Apache ECharts™ Website',
       },
@@ -57,7 +57,7 @@ export default defineAppConfig({
     title: 'Table of Contents',
     bottom: {
       title: 'Community',
-      edit: 'https://github.com/nuxt-ui-pro/docs/edit/main/content',
+      edit: 'https://github.com/kingyue737/nuxt-echarts/docs/edit/main/content',
       links: [
         {
           icon: 'i-heroicons-star',

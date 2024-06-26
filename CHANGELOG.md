@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.0.8
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.7...v0.0.8)
+
+### 📖 Documentation
+
+- Add components ([030384d](https://github.com/kingyue737/nuxt-echarts/commit/030384d))
+- Move content folder to match nuxt 4 ([37797fb](https://github.com/kingyue737/nuxt-echarts/commit/37797fb))
+- Add usage and ssr ([6c8631b](https://github.com/kingyue737/nuxt-echarts/commit/6c8631b))
+- Fix broken link ([5ca0f14](https://github.com/kingyue737/nuxt-echarts/commit/5ca0f14))
+
+### 🏡 Chore
+
+- **release:** V0.0.7 ([7c248b0](https://github.com/kingyue737/nuxt-echarts/commit/7c248b0))
+- Format ([55b8cf7](https://github.com/kingyue737/nuxt-echarts/commit/55b8cf7))
+- Up deps ([322cf44](https://github.com/kingyue737/nuxt-echarts/commit/322cf44))
+
+### ❤️ Contributors
+
+- Yue JIN <yjin@nustarnuclear.com>
+
 ## v0.0.7
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.6...v0.0.7)

@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.0.9
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.8...v0.0.9)
+
+### 🩹 Fixes
+
+- VChartLight type not correctly emited ([91982e8](https://github.com/kingyue737/nuxt-echarts/commit/91982e8))
+
+### 📖 Documentation
+
+- Add usage and ssr ([6c8631b](https://github.com/kingyue737/nuxt-echarts/commit/6c8631b))
+- Fix broken link ([5ca0f14](https://github.com/kingyue737/nuxt-echarts/commit/5ca0f14))
+
+### 🏡 Chore
+
+- **release:** V0.0.8 ([ff5cf52](https://github.com/kingyue737/nuxt-echarts/commit/ff5cf52))
+
+### ❤️ Contributors
+
+- Yue JIN <yuejin13@qq.com>
+
 ## v0.0.8
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.7...v0.0.8)

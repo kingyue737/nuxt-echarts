@@ -7,7 +7,8 @@
     "nuxt",
     "echarts",
     "data-visualization",
-    "charts"
+    "charts",
+    "ssr"
   ],
   "author": "Yue JIN <yuejin13@fudan.edu.cn>",
   "repository": "kingyue737/nuxt-echarts",

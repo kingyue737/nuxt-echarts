@@ -46,10 +46,9 @@ const themeOptions = [
     <NSelectTabs v-model="renderer" :options="rendererOptions" />
   </aside>
 
-  <div class="grid gap-y-16 justify-center py-15 text-align-center">
+  <div class="py-15 text-align-center grid justify-center gap-y-16">
     <header>
-      <!-- <EChartsLogo class="mx-auto fill-green-5 dark:fill-brand" /> -->
-      <div class="inline-block w-fit h-fit mb-10">
+      <div class="mb-10 inline-block h-fit w-fit">
         <ChartLogo />
       </div>
 
@@ -61,14 +60,14 @@ const themeOptions = [
           Nuxt ECharts
         </NuxtLink>
       </h1>
-      <p class="text-gray mt-4 mb-12">
+      <p class="text-gray mb-12 mt-4">
         Nuxt Module for Apache ECharts™.
         <NLink n="dark:brand" to="https://echarts.nuxt.dev" target="_blank"
           >(docs)</NLink
         >
       </p>
 
-      <h2 class="text-xl flex gap-3 justify-center items-center text-gray mb-4">
+      <h2 class="text-gray mb-4 flex items-center justify-center gap-3 text-xl">
         <div class="border-b-dotted border-b-1 w-12" />
         Examples
         <div class="border-b-dotted border-b-1 w-12" />
@@ -91,13 +90,13 @@ const themeOptions = [
     <ChartScatter />
   </div>
 
-  <footer class="flex gap-2 justify-center items-center py-5" n="dark:brand">
+  <footer class="flex items-center justify-center gap-2 py-5" n="dark:brand">
     <NLink to="https://github.com/kingyue737"> @kingyue737 </NLink>
-    <span class="text-xs op-50">|</span>
+    <span class="op-50 text-xs">|</span>
     <NLink to="https://github.com/kingyue737/nuxt-echarts/blob/main/LICENSE">
       MIT License
     </NLink>
-    <span class="text-xs op-50">|</span>
+    <span class="op-50 text-xs">|</span>
     <NLink to="https://github.com/kingyue737/nuxt-echarts">
       View on GitHub
     </NLink>

@@ -13,15 +13,15 @@ const input = defineModel<any>()
 
 <template>
   <fieldset
-    class="n-select-tabs flex flex-inline flex-wrap items-center border n-border-base rounded n-bg-base"
+    class="n-select-tabs n-border-base n-bg-base flex-inline flex-wrap items-center rounded border"
   >
     <label
       v-for="(i, idx) of options"
       :key="i.label"
       :disabled="disabled"
-      class="relative n-border-base hover:n-bg-active px-0.5em py-0.1em"
+      class="n-border-base hover:n-bg-active px-0.5em py-0.1em relative"
       :class="[
-        idx ? 'border-l n-border-base ml--1px' : '',
+        idx ? 'n-border-base ml--1px border-l' : '',
         i.value === input ? 'n-bg-active' : '',
       ]"
       :title="i.label"
@@ -33,7 +33,7 @@ const input = defineModel<any>()
         :disabled="disabled"
         :value="i.value"
         :title="i.label"
-        class="absolute inset-0 op-0.1"
+        class="op-0.1 absolute inset-0"
       />
     </label>
   </fieldset>

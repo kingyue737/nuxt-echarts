@@ -36,7 +36,7 @@ useSeoMeta({
           <UIcon
             v-if="page.hero.headline.icon"
             :name="page.hero.headline.icon"
-            class="ml-1 w-4 h-4 pointer-events-none"
+            class="pointer-events-none ml-1 h-4 w-4"
           />
         </UBadge>
       </template>
@@ -45,7 +45,7 @@ useSeoMeta({
         <MDC :value="page.hero.title" />
       </template>
 
-      <div class="w-fit mx-auto">
+      <div class="mx-auto w-fit">
         <LogoLiquidFill class="mx-auto mb-12" />
         <MDC
           :value="page.hero.code"

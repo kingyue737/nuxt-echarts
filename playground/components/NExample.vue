@@ -11,7 +11,7 @@ defineProps<{ id: string; title: string; desc: string }>()
       </a>
       <NButton
         class="ml-2 px-2 text-xs"
-        :to="`https://github.com/kingyue737/nuxt-echarts/tree/main/playground/components/Chart/${id[0].toUpperCase()}${id.slice(1)}.vue`"
+        :to="`https://github.com/kingyue737/nuxt-echarts/blob/main/playground/components/Chart/${id[0].toUpperCase()}${id.slice(1)}.vue`"
         target="_blank"
         >Source</NButton
       >

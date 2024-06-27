@@ -7,9 +7,9 @@ describe('ssr', async () => {
     rootDir: fileURLToPath(new URL('./fixtures/basic', import.meta.url)),
   })
 
-  it('renders the index page', async () => {
+  it('renders the SVG', async () => {
     // Get response to a server-rendered page with `$fetch`.
     const html = await $fetch('/')
-    expect(html).toContain('<div>basic</div>')
+    expect(html).toContain('</svg>')
   })
 })

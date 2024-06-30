@@ -33,7 +33,7 @@ Nuxt Module for Apache ECharts™
 Install the module to your Nuxt application with one command:
 
 ```bash
-npx nuxi module add nuxt-echarts
+npx nuxi module add echarts
 ```
 
 That's it! You can now use Nuxt ECharts in your Nuxt app ✨

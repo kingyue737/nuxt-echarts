@@ -23,7 +23,7 @@ hero:
       target: _blank
   code: |
     ```bash [Terminal]
-    npx nuxi module add nuxt-echarts
+    npx nuxi module add echarts
     ```
 features:
   title: 'Features'

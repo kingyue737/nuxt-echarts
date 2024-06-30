@@ -12,6 +12,6 @@
     "nuxt": "^3.12.2"
   },
   "devDependencies": {
-    "@unocss/nuxt": "^0.60.4"
+    "@unocss/nuxt": "^0.61.0"
   }
 }

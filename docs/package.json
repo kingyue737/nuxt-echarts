@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^0.3.13",
-    "@nuxthq/studio": "^2.0.1",
-    "vue-tsc": "^2.0.22"
+    "@nuxthq/studio": "^2.0.3",
+    "vue-tsc": "^2.0.24"
   }
 }

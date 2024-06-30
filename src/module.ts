@@ -24,6 +24,10 @@ export default defineNuxtModule<ModuleOptions>({
     renderer: 'canvas',
   },
   setup(options, nuxt) {
+    if (nuxt.options.ssr === false) {
+      nuxt.options.experimental.componentIslands = true
+    }
+
     const { resolve } = createResolver(import.meta.url)
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`

@@ -14,29 +14,50 @@ export function useAutoresize(
   autoresize: Ref<AutoresizeProp | undefined>,
   root: Ref<HTMLElement | undefined>,
 ): void {
-  let observer: ResizeObserver | undefined
+  watch(
+    [root, chart, autoresize],
+    ([root, chart, autoresize], _, onCleanup) => {
+      let ro: ResizeObserver | null = null
 
-  watch([root, chart, autoresize], ([root, chart, autoresize], _, cleanup) => {
-    if (root && chart && autoresize) {
-      const autoresizeOptions = autoresize === true ? {} : autoresize
-      const { throttle: wait = 100, onResize } = autoresizeOptions
+      if (root && chart && autoresize) {
+        const { offsetWidth, offsetHeight } = root
+        const autoresizeOptions = autoresize === true ? {} : autoresize
+        const { throttle: wait = 100, onResize } = autoresizeOptions
 
-      const callback = () => {
-        chart.resize({ width: 'auto', height: 'auto' })
-        onResize?.()
+        let initialResizeTriggered = false
+
+        const callback = () => {
+          chart.resize({ height: 'auto', width: 'auto' })
+          onResize?.()
+        }
+
+        const resizeCallback = wait ? throttle(callback, wait) : callback
+
+        ro = new ResizeObserver(() => {
+          // We just skip ResizeObserver's initial resize callback if the
+          // size has not changed since the chart is rendered.
+          if (!initialResizeTriggered) {
+            initialResizeTriggered = true
+            if (
+              root.offsetWidth === offsetWidth &&
+              root.offsetHeight === offsetHeight
+            ) {
+              return
+            }
+          }
+          resizeCallback()
+        })
+        ro.observe(root)
       }
 
-      observer = new ResizeObserver(wait ? throttle(callback, wait) : callback)
-      observer.observe(root)
-    }
-
-    cleanup(() => {
-      if (root && observer) {
-        observer.disconnect()
-        observer = undefined
-      }
-    })
-  })
+      onCleanup(() => {
+        if (ro) {
+          ro.disconnect()
+          ro = null
+        }
+      })
+    },
+  )
 }
 
 export const autoresizeProps = {

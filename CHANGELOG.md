@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.0.11
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.10...v0.0.11)
+
+### 🚀 Enhancements
+
+- Resize callback is now a ResizeObserverCallback ([a4a4062](https://github.com/kingyue737/nuxt-echarts/commit/a4a4062))
+
+### 🩹 Fixes
+
+- VChart event not correctly registered ([20aa964](https://github.com/kingyue737/nuxt-echarts/commit/20aa964))
+
+### 📖 Documentation
+
+- Remove redundant changelog ([45b435d](https://github.com/kingyue737/nuxt-echarts/commit/45b435d))
+
+### ❤️ Contributors
+
+- Yue JIN <yjin@nustarnuclear.com>
+
 ## v0.0.10
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.8...v0.0.10)

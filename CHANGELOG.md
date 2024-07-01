@@ -1,6 +1,39 @@
 # Changelog
 
 
+## v0.0.10
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.8...v0.0.10)
+
+### 🩹 Fixes
+
+- VChartLight type not correctly emited ([91982e8](https://github.com/kingyue737/nuxt-echarts/commit/91982e8))
+- Suppress island warning when ssr is turned off ([ce76918](https://github.com/kingyue737/nuxt-echarts/commit/ce76918))
+- Skip ResizeObserver's initial resize ([2b6d3c5](https://github.com/kingyue737/nuxt-echarts/commit/2b6d3c5))
+
+### 📖 Documentation
+
+- Remove wrong generated commits in CHANGELOG.md ([76ab291](https://github.com/kingyue737/nuxt-echarts/commit/76ab291))
+- Simplify module name in installation ([12780dc](https://github.com/kingyue737/nuxt-echarts/commit/12780dc))
+
+### 🏡 Chore
+
+- **release:** V0.0.9 ([d8628c7](https://github.com/kingyue737/nuxt-echarts/commit/d8628c7))
+- Remove unused logo component ([9a9f0c9](https://github.com/kingyue737/nuxt-echarts/commit/9a9f0c9))
+- Format playground and docs with prettier plugin ([5782dce](https://github.com/kingyue737/nuxt-echarts/commit/5782dce))
+- Add echarts 5.5 in peerDependencies ([62b328c](https://github.com/kingyue737/nuxt-echarts/commit/62b328c))
+- Edit souce link to avoid redirect ([4c8b3a2](https://github.com/kingyue737/nuxt-echarts/commit/4c8b3a2))
+- Up echarts ([f8998bd](https://github.com/kingyue737/nuxt-echarts/commit/f8998bd))
+- Up deps ([cc88e66](https://github.com/kingyue737/nuxt-echarts/commit/cc88e66))
+
+### ✅ Tests
+
+- Add basic e2e test ([81ee8e7](https://github.com/kingyue737/nuxt-echarts/commit/81ee8e7))
+
+### ❤️ Contributors
+
+- Yue JIN ([@kingyue737](http://github.com/kingyue737))
+
 ## v0.0.9
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.8...v0.0.9)

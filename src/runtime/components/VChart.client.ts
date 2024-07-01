@@ -2,6 +2,7 @@ import {
   defineComponent,
   shallowRef,
   toRefs,
+  ref,
   unref,
   watch,
   computed,
@@ -81,42 +82,45 @@ export default defineComponent({
       // @ts-expect-error unknown computed type error
       () => props.updateOptions || unref(defaultUpdateOptions) || {},
     )
-    const nonEventAttrs = computed(() => omitOn(attrs))
-    const nativeListeners: Record<string, unknown> = {}
+    const nativeListeners = ref<Record<string, unknown>>({})
+    const realAttrs = computed(() => ({
+      ...omitOn(attrs),
+      ...nativeListeners.value,
+    }))
     const realListeners: Record<string, any> = {}
 
-    // We are converting all `on<Event>` props to event listeners and collect them  into
-    // `realListeners` so that we can bind them to the chart instance later in the same way.
-    // For `onNative:<event>` props, we just strip the `Native:` part and collect them into
-    // `nativeListeners` so that we can bind them to the root element directly.
-    Object.keys(attrs)
-      .filter((key) => isOn(key))
-      .forEach((key) => {
-        // onClick    -> c + lick
-        // onZr:click -> z + r:click
-        let event = key.charAt(2).toLowerCase() + key.slice(3)
-
-        // Collect native DOM events
-        if (event.indexOf('native:') === 0) {
-          // native:click -> onClick
-          const nativeKey = `on${event.charAt(7).toUpperCase()}${event.slice(
-            8,
-          )}`
-
-          nativeListeners[nativeKey] = attrs[key]
-          return
-        }
-
-        // clickOnce    -> ~click
-        // zr:clickOnce -> ~zr:click
-        if (event.substring(event.length - 4) === 'Once') {
-          event = `~${event.substring(0, event.length - 4)}`
-        }
-
-        realListeners[event] = attrs[key]
-      })
-
     function init(option?: Option) {
+      // We are converting all `on<Event>` props to event listeners and collect them  into
+      // `realListeners` so that we can bind them to the chart instance later in the same way.
+      // For `onNative:<event>` props, we just strip the `Native:` part and collect them into
+      // `nativeListeners` so that we can bind them to the root element directly.
+      Object.keys(attrs)
+        .filter((key) => isOn(key))
+        .forEach((key) => {
+          // onClick    -> c + lick
+          // onZr:click -> z + r:click
+          let event = key.charAt(2).toLowerCase() + key.slice(3)
+
+          // Collect native DOM events
+          if (event.indexOf('native:') === 0) {
+            // native:click -> onClick
+            const nativeKey = `on${event.charAt(7).toUpperCase()}${event.slice(
+              8,
+            )}`
+
+            nativeListeners.value[nativeKey] = attrs[key]
+            return
+          }
+
+          // clickOnce    -> ~click
+          // zr:clickOnce -> ~zr:click
+          if (event.substring(event.length - 4) === 'Once') {
+            event = `~${event.substring(0, event.length - 4)}`
+          }
+
+          realListeners[event] = attrs[key]
+        })
+
       if (!inner.value) {
         return
       }
@@ -293,13 +297,13 @@ export default defineComponent({
       root,
       inner,
       setOption,
-      nonEventAttrs,
+      realAttrs,
       nativeListeners,
       ...publicApi,
     }
   },
   render() {
-    const attrs = { ...this.nonEventAttrs, ...this.nativeListeners } as any
+    const attrs = this.realAttrs
     attrs.ref = 'root'
     attrs.class = attrs.class ? ['echarts'].concat(attrs.class) : 'echarts'
     return h(TAG_NAME, attrs, [

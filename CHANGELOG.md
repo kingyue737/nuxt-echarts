@@ -7,7 +7,6 @@
 
 ### 🩹 Fixes
 
-- VChartLight type not correctly emited ([91982e8](https://github.com/kingyue737/nuxt-echarts/commit/91982e8))
 - Suppress island warning when ssr is turned off ([ce76918](https://github.com/kingyue737/nuxt-echarts/commit/ce76918))
 - Skip ResizeObserver's initial resize ([2b6d3c5](https://github.com/kingyue737/nuxt-echarts/commit/2b6d3c5))
 

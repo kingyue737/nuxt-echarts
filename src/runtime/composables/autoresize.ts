@@ -6,7 +6,7 @@ type AutoresizeProp =
   | boolean
   | {
       throttle?: number
-      onResize?: () => void
+      onResize?: ResizeObserverCallback
     }
 
 export function useAutoresize(
@@ -26,14 +26,17 @@ export function useAutoresize(
 
         let initialResizeTriggered = false
 
-        const callback = () => {
+        const callback: ResizeObserverCallback = (entry, ob) => {
           chart.resize({ height: 'auto', width: 'auto' })
-          onResize?.()
+          onResize?.(entry, ob)
         }
 
-        const resizeCallback = wait ? throttle(callback, wait) : callback
+        const resizeCallback = wait
+          ? // @ts-expect-error callback can accept params
+            throttle<ResizeObserverCallback>(callback, wait)
+          : callback
 
-        ro = new ResizeObserver(() => {
+        ro = new ResizeObserver((entry, observer) => {
           // We just skip ResizeObserver's initial resize callback if the
           // size has not changed since the chart is rendered.
           if (!initialResizeTriggered) {
@@ -45,7 +48,7 @@ export function useAutoresize(
               return
             }
           }
-          resizeCallback()
+          resizeCallback(entry, observer)
         })
         ro.observe(root)
       }

@@ -16,4 +16,5 @@ export default defineNuxtConfig({
       alias: { 'echarts/lib/util/number': 'echarts/lib/util/number.js' },
     },
   },
+  compatibilityDate: '2024-07-09',
 })

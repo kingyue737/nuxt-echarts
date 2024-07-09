@@ -44,7 +44,6 @@ import {
 const wcRegistered = register()
 
 export default defineComponent({
-  name: 'VChart',
   props: {
     option: Object as PropType<Option>,
     theme: {
@@ -276,7 +275,7 @@ export default defineComponent({
 
     onMounted(async () => {
       // `.client` components are rendered only after being mounted
-      await nextTick()
+      if (!root.value) await nextTick()
       init()
     })
 

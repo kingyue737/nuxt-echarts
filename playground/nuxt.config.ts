@@ -6,7 +6,12 @@ export default defineNuxtConfig({
     ssr: true,
     renderer: ['canvas', 'svg'],
     charts: ['BarChart'],
-    components: ['DatasetComponent', 'GridComponent', 'TooltipComponent'],
+    components: [
+      'DatasetComponent',
+      'GridComponent',
+      'TooltipComponent',
+      'ToolboxComponent',
+    ],
   },
   devtools: { enabled: false },
   // echarts-liquidfill is not ESM friendly

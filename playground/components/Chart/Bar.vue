@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import type { VChart } from '#components'
+const chart = ref<InstanceType<typeof VChart> | null>(null)
+
 function random() {
   return Math.round(300 + Math.random() * 700) / 10
 }
@@ -8,6 +11,13 @@ function getData(): ECOption {
     animation: false,
     tooltip: {
       className: 'echarts-tooltip',
+    },
+    toolbox: {
+      show: false,
+      feature: {
+        dataZoom: {},
+        saveAsImage: {},
+      },
     },
     dataset: {
       dimensions: ['Product', '2015', '2016', '2017'],
@@ -51,11 +61,23 @@ const option = shallowRef(getData())
 function refreshData() {
   option.value = getData()
 }
+
+function hideToolbox() {
+  chart.value?.setOption({ toolbox: { show: false } })
+}
+function showToolbox() {
+  chart.value?.setOption({ toolbox: { show: true } })
+}
 </script>
 
 <template>
   <NExample id="bar" title="Bar Chart" desc="SSR + client-side lazy loading">
-    <VChart :option="option" />
+    <VChart
+      ref="chart"
+      :option="option"
+      @native:mouseenter="showToolbox()"
+      @globalout="hideToolbox()"
+    />
     <template #extra>
       <NButton @click="refreshData">Refresh</NButton>
     </template>

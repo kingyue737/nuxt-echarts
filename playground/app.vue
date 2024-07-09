@@ -15,6 +15,7 @@ const initOptions = computed<InitOptions>(() => ({
   height: 310,
   width: 650,
   renderer: renderer.value,
+  locale: 'EN',
 }))
 provide(INIT_OPTIONS_KEY, initOptions)
 

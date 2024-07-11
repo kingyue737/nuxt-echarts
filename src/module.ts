@@ -36,11 +36,13 @@ export default defineNuxtModule<ModuleOptions>({
 
     addComponentsDir({
       path: resolve('./runtime/components'),
-      ignore: options.ssr ? undefined : ['VChart.*.ts'],
+      ignore: options.ssr ? undefined : ['VChart.*'],
     })
     if (!options.ssr)
       addComponent({
         name: 'VChart',
+        // ts extension is keeped because of type bug
+        // https://github.com/nuxt/nuxt/issues/28087
         filePath: resolve('./runtime/components/VChart.client.ts'),
         mode: 'all',
       })

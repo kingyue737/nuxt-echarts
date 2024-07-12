@@ -36,16 +36,26 @@ export default defineNuxtModule<ModuleOptions>({
 
     addComponentsDir({
       path: resolve('./runtime/components'),
-      ignore: options.ssr ? undefined : ['VChart.*'],
+      ignore: ['VChart.*'],
     })
-    if (!options.ssr)
+    if (!options.ssr) {
       addComponent({
         name: 'VChart',
-        // ts extension is keeped because of type bug
-        // https://github.com/nuxt/nuxt/issues/28087
-        filePath: resolve('./runtime/components/VChart.client.ts'),
+        filePath: resolve('./runtime/components/VChart'),
         mode: 'all',
       })
+    } else {
+      addComponent({
+        name: 'VChart',
+        filePath: resolve('./runtime/components/VChart'),
+        mode: 'client',
+      })
+      addComponent({
+        name: 'VChart',
+        filePath: resolve('./runtime/components/VChartServer'),
+        mode: 'server',
+      })
+    }
 
     nuxt.options.css.unshift(resolve('./runtime/style.css'))
 

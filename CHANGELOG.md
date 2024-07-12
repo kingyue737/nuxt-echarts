@@ -1,6 +1,39 @@
 # Changelog
 
 
+## v0.1.0
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.11...v0.1.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Use normal component instead of client-only when ssr is turned off ([0b7d7ed](https://github.com/kingyue737/nuxt-echarts/commit/0b7d7ed))
+- Directly resolve VChartServer as server halve of VChart ([7ecb586](https://github.com/kingyue737/nuxt-echarts/commit/7ecb586))
+
+### 🩹 Fixes
+
+- VChartIsland ref template type ([38efe23](https://github.com/kingyue737/nuxt-echarts/commit/38efe23))
+- Remove extension from resolve ([67e1ebc](https://github.com/kingyue737/nuxt-echarts/commit/67e1ebc))
+
+### 📖 Documentation
+
+- Fix og image type ([724a439](https://github.com/kingyue737/nuxt-echarts/commit/724a439))
+
+### 🏡 Chore
+
+- Up deps ([b29ac57](https://github.com/kingyue737/nuxt-echarts/commit/b29ac57))
+- Up deps ([657702d](https://github.com/kingyue737/nuxt-echarts/commit/657702d))
+- Add event example in playground ([211ddc7](https://github.com/kingyue737/nuxt-echarts/commit/211ddc7))
+- Add nightly release script ([dc84ccf](https://github.com/kingyue737/nuxt-echarts/commit/dc84ccf))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Use normal component instead of client-only when ssr is turned off ([0b7d7ed](https://github.com/kingyue737/nuxt-echarts/commit/0b7d7ed))
+
+### ❤️ Contributors
+
+- Yue JIN <yjin@nustarnuclear.com>
+
 ## v0.0.11
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.10...v0.0.11)

@@ -3,8 +3,9 @@ export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
   modules: [
     '@nuxt/content',
-    '@nuxt/ui',
     '@nuxt/fonts',
+    '@nuxt/image',
+    '@nuxt/ui',
     '@nuxthq/studio',
     'nuxt-og-image',
   ],
@@ -36,5 +37,5 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  compatibilityDate: '2024-07-09',
+  compatibilityDate: '2024-07-11',
 })

@@ -11,7 +11,7 @@ Nuxt Module for Apache ECharts™
 
 > [!IMPORTANT]
 >
-> Nuxt ECharts is currently in active development and based on [experimental `<NuxtIsland>`](https://nuxt.com/docs/api/components/nuxt-island). If you found any issue, design flaw, or have ideas to improve it, please open an [issue](https://github.com/kingyue737/nuxt-echarts/issues) or a [Discussion](https://github.com/kingyue737/nuxt-echarts/discussions).
+> Nuxt ECharts SSR is based on [experimental `<NuxtIsland>`](https://nuxt.com/docs/api/components/nuxt-island). If you found any issue, design flaw, or have ideas to improve it, please open an [issue](https://github.com/kingyue737/nuxt-echarts/issues) or a [Discussion](https://github.com/kingyue737/nuxt-echarts/discussions).
 
 - [📖 &nbsp;Documentation](https://echarts.nuxt.dev)
 

@@ -15,7 +15,6 @@ const option = ref({
 
 const body = computed(() => ({
   theme: toValue(defaultTheme),
-  // @ts-expect-error unknown computed type error
   initOptions: toValue(defaultInitOptions),
   option: toValue(option),
 }))

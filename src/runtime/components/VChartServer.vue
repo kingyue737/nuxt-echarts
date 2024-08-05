@@ -16,7 +16,6 @@ const emits = defineEmits<{ (event: 'error', error: unknown): void }>()
 
 const realTheme = computed(() => props.theme || unref(defaultTheme) || {})
 const realInitOptions = computed(
-  // @ts-expect-error unknown computed type error
   () => props.initOptions || unref(defaultInitOptions) || {},
 )
 function onError(e: unknown) {

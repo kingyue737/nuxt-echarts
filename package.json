@@ -41,7 +41,7 @@
     "format": "prettier . --write",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:types": "nuxi typecheck && nuxi typecheck playground"
+    "test:types": "vue-tsc --noEmit && nuxi typecheck playground"
   },
   "dependencies": {
     "@nuxt/kit": "^3.12.4",

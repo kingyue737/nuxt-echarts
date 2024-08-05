@@ -33,7 +33,7 @@ export function register(): boolean {
     if (customElements.get(TAG_NAME) == null) {
       customElements.define(TAG_NAME, EChartsElement)
     }
-  } catch (e) {
+  } catch {
     return (registered = false)
   }
 

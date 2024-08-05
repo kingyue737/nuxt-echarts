@@ -1,6 +1,6 @@
 import { watch, type Ref, type PropType } from 'vue'
 import { throttle } from 'echarts/core'
-import { type EChartsType } from '../types'
+import type { EChartsType } from '../types'
 
 type AutoresizeProp =
   | boolean

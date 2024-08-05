@@ -60,7 +60,6 @@ export default defineComponent({
   inheritAttrs: false,
   setup(props, { attrs }) {
     const root = shallowRef<EChartsElement>()
-    const inner = shallowRef<HTMLElement>()
     const chart = shallowRef<EChartsType>()
     const manualOption = shallowRef<Option>()
     const defaultTheme = inject(THEME_KEY, null)
@@ -118,12 +117,12 @@ export default defineComponent({
           realListeners[event] = attrs[key]
         })
 
-      if (!inner.value) {
+      if (!root.value) {
         return
       }
 
       const instance = (chart.value = initChart(
-        inner.value,
+        root.value,
         realTheme.value,
         realInitOptions.value,
       ))
@@ -269,7 +268,7 @@ export default defineComponent({
 
     useLoading(chart, loading, loadingOptions)
 
-    useAutoresize(chart, autoresize, inner)
+    useAutoresize(chart, autoresize, root)
 
     onMounted(async () => {
       // `.client` components are rendered only after being mounted
@@ -292,7 +291,6 @@ export default defineComponent({
     return {
       chart,
       root,
-      inner,
       setOption,
       realAttrs,
       nativeListeners,
@@ -303,8 +301,6 @@ export default defineComponent({
     const attrs = this.realAttrs
     attrs.ref = 'root'
     attrs.class = attrs.class ? ['echarts'].concat(attrs.class) : 'echarts'
-    return h(TAG_NAME, attrs, [
-      h('div', { ref: 'inner', class: 'vue-echarts-inner' }),
-    ])
+    return h(TAG_NAME, attrs)
   },
 })

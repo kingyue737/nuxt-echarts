@@ -1,6 +1,41 @@
 # Changelog
 
 
+## v0.2.0
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.1.0...v0.2.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Remove extra container on VChart and simplify styles ([b4c9e4d](https://github.com/kingyue737/nuxt-echarts/commit/b4c9e4d))
+
+### 🩹 Fixes
+
+- Event type ([d579d5b](https://github.com/kingyue737/nuxt-echarts/commit/d579d5b))
+- Injection type ([308f837](https://github.com/kingyue737/nuxt-echarts/commit/308f837))
+- Lint ([4a84516](https://github.com/kingyue737/nuxt-echarts/commit/4a84516))
+
+### 📖 Documentation
+
+- Update VChart source link ([41e860c](https://github.com/kingyue737/nuxt-echarts/commit/41e860c))
+- Add search engine verification ([aeb03f1](https://github.com/kingyue737/nuxt-echarts/commit/aeb03f1))
+- Apply crawler workaround ([16b1221](https://github.com/kingyue737/nuxt-echarts/commit/16b1221))
+- Typo ([88fa9ab](https://github.com/kingyue737/nuxt-echarts/commit/88fa9ab))
+- Stable now ([524ddc6](https://github.com/kingyue737/nuxt-echarts/commit/524ddc6))
+
+### 🏡 Chore
+
+- Up deps ([6a04ed2](https://github.com/kingyue737/nuxt-echarts/commit/6a04ed2))
+- Up deps ([18faf8d](https://github.com/kingyue737/nuxt-echarts/commit/18faf8d))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Remove extra container on VChart and simplify styles ([b4c9e4d](https://github.com/kingyue737/nuxt-echarts/commit/b4c9e4d))
+
+### ❤️ Contributors
+
+- Yue JIN ([@kingyue737](http://github.com/kingyue737))
+
 ## v0.1.0
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.0.11...v0.1.0)

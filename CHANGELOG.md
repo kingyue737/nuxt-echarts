@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.1
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.0...v0.2.1)
+
+### 🩹 Fixes
+
+- Remove unnecessay memory release in VChartIsland, fix #3 ([#3](https://github.com/kingyue737/nuxt-echarts/issues/3))
+
+### ❤️ Contributors
+
+- Yue JIN <yuejin13@qq.com>
+
 ## v0.2.0
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.1.0...v0.2.0)

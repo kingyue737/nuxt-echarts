@@ -14,14 +14,11 @@ const initOptions: InitOptions = echarts.util.merge(
   { renderer: 'svg', ssr: true } satisfies InitOptions,
   props.initOptions || {},
 )
-let chart = echarts.init(null, props.theme, initOptions)
+const chart = echarts.init(null, props.theme, initOptions)
 chart.setOption(props.option || {})
 svgStr.value = chart.renderToSVGString()
 
 chart.dispose()
-
-// @ts-expect-error release memory
-chart = null
 
 defineSlots<{ fallback: any }>()
 </script>

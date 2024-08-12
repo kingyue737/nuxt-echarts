@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.2
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.1...v0.2.2)
+
+### 🩹 Fixes
+
+- Use globalThis instead of global for edge function environment compability ([b53dd3a](https://github.com/kingyue737/nuxt-echarts/commit/b53dd3a))
+
+### ❤️ Contributors
+
+- Yue JIN <yjin@nustarnuclear.com>
+
 ## v0.2.1
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.0...v0.2.1)

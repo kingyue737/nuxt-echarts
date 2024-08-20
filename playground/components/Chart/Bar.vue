@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { VChart } from '#components'
+
 const chart = ref<InstanceType<typeof VChart> | null>(null)
 
 function random() {

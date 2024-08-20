@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, unref, inject, ref } from 'vue'
 import type { InitOptions, Option, Theme } from '../types'
-import { THEME_KEY, INIT_OPTIONS_KEY } from '../utils/injection'
+import { THEME_KEY, INIT_OPTIONS_KEY } from 'vue-echarts/csp'
 import type { VChartIsland } from '#components'
 
 const defaultTheme = inject(THEME_KEY, null)
@@ -16,7 +16,7 @@ const emits = defineEmits<{ (event: 'error', error: unknown): void }>()
 
 const realTheme = computed(() => props.theme || unref(defaultTheme) || {})
 const realInitOptions = computed(
-  () => props.initOptions || unref(defaultInitOptions) || {},
+  () => props.initOptions || unref(defaultInitOptions as InitOptions) || {},
 )
 function onError(e: unknown) {
   // https://github.com/nuxt/nuxt/issues/27491

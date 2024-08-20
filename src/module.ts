@@ -150,7 +150,7 @@ export default defineNuxtModule<ModuleOptions>({
       'UPDATE_OPTIONS_KEY',
       'LOADING_OPTIONS_KEY',
     ].forEach((name) =>
-      addImports({ name, from: resolve('./runtime/utils/injection') }),
+      addImports({ name, from: resolve('./runtime/components/VChart') }),
     )
   },
 })

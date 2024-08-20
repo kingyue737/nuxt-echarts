@@ -1,0 +1,81 @@
+diff --git a/dist/csp/index.js b/dist/csp/index.js
+index cb33a6396f4b5fe2e0ac081271d2a87a6edcb25b..302dfedfd043c4b68b1ae75a54ae67c087aa46d1 100644
+--- a/dist/csp/index.js
++++ b/dist/csp/index.js
+@@ -1,4 +1,4 @@
+-import { watch, isRef, unref, inject, computed, watchEffect, Vue2, defineComponent, shallowRef, toRefs, getCurrentInstance, onMounted, onBeforeUnmount, h, nextTick } from 'vue-demi';
++import { watch, isRef, ref, unref, inject, computed, watchEffect, Vue2, defineComponent, shallowRef, toRefs, getCurrentInstance, onMounted, onBeforeUnmount, h, nextTick } from 'vue-demi';
+ import { throttle, init } from 'echarts/core';
+ 
+ const METHOD_NAMES = [
+@@ -165,34 +165,34 @@ var ECharts = defineComponent({
+       () => props.updateOptions || unwrapInjected(defaultUpdateOptions, {})
+     );
+     const nonEventAttrs = computed(() => omitOn(attrs));
+-    const nativeListeners = {};
++    const nativeListeners = ref({});
+     const listeners = getCurrentInstance().proxy.$listeners;
+     const realListeners = {};
+-    if (!listeners) {
+-      Object.keys(attrs).filter((key) => isOn(key)).forEach((key) => {
+-        let event = key.charAt(2).toLowerCase() + key.slice(3);
+-        if (event.indexOf("native:") === 0) {
+-          const nativeKey = `on${event.charAt(7).toUpperCase()}${event.slice(
+-            8
+-          )}`;
+-          nativeListeners[nativeKey] = attrs[key];
+-          return;
+-        }
+-        if (event.substring(event.length - 4) === "Once") {
+-          event = `~${event.substring(0, event.length - 4)}`;
+-        }
+-        realListeners[event] = attrs[key];
+-      });
+-    } else {
+-      Object.keys(listeners).forEach((key) => {
+-        if (NATIVE_EVENT_RE.test(key)) {
+-          nativeListeners[key.replace(NATIVE_EVENT_RE, "$1")] = listeners[key];
+-        } else {
+-          realListeners[key] = listeners[key];
+-        }
+-      });
+-    }
+     function init$1(option) {
++      if (!listeners) {
++        Object.keys(attrs).filter((key) => isOn(key)).forEach((key) => {
++          let event = key.charAt(2).toLowerCase() + key.slice(3);
++          if (event.indexOf("native:") === 0) {
++            const nativeKey = `on${event.charAt(7).toUpperCase()}${event.slice(
++              8
++            )}`;
++            nativeListeners.value[nativeKey] = attrs[key];
++            return;
++          }
++          if (event.substring(event.length - 4) === "Once") {
++            event = `~${event.substring(0, event.length - 4)}`;
++          }
++          realListeners[event] = attrs[key];
++        });
++      } else {
++        Object.keys(listeners).forEach((key) => {
++          if (NATIVE_EVENT_RE.test(key)) {
++            nativeListeners.value[key.replace(NATIVE_EVENT_RE, "$1")] = listeners[key];
++          } else {
++            realListeners[key] = listeners[key];
++          }
++        });
++      }
+       if (!root.value) {
+         return;
+       }
+@@ -317,7 +317,9 @@ var ECharts = defineComponent({
+     const publicApi = usePublicAPI(chart);
+     useLoading(chart, loading, loadingOptions);
+     useAutoresize(chart, autoresize, root);
+-    onMounted(() => {
++    onMounted(async () => {
++      // `.client` components are rendered only after being mounted
++      if (!root.value) await nextTick()
+       init$1();
+     });
+     onBeforeUnmount(() => {

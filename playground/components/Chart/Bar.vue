@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { VChart } from '#components'
-import '#build/echarts.mjs'
 
 const chart = ref<InstanceType<typeof VChart> | null>(null)
 

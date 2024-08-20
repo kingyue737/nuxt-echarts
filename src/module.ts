@@ -41,13 +41,13 @@ export default defineNuxtModule<ModuleOptions>({
     if (!options.ssr) {
       addComponent({
         name: 'VChart',
-        filePath: 'vue-echarts/csp',
+        filePath: resolve('./runtime/components/VChart'),
         mode: 'all',
       })
     } else {
       addComponent({
         name: 'VChart',
-        filePath: 'vue-echarts/csp',
+        filePath: resolve('./runtime/components/VChart'),
         mode: 'client',
       })
       addComponent({
@@ -149,6 +149,8 @@ export default defineNuxtModule<ModuleOptions>({
       'INIT_OPTIONS_KEY',
       'UPDATE_OPTIONS_KEY',
       'LOADING_OPTIONS_KEY',
-    ].forEach((name) => addImports({ name, from: 'vue-echarts/csp' }))
+    ].forEach((name) =>
+      addImports({ name, from: resolve('./runtime/components/VChart') }),
+    )
   },
 })

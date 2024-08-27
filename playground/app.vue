@@ -42,7 +42,7 @@ const themeOptions = [
 </script>
 
 <template>
-  <aside class="fixed p-3">
+  <aside class="z-1 fixed p-3">
     <NSelectTabs v-model="theme" :options="themeOptions" class="mr-2" />
     <NSelectTabs v-model="renderer" :options="rendererOptions" />
   </aside>

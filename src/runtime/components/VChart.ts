@@ -2,7 +2,6 @@ import {
   defineComponent,
   shallowRef,
   toRefs,
-  ref,
   unref,
   watch,
   computed,
@@ -78,7 +77,7 @@ export default defineComponent({
     const realUpdateOptions = computed(
       () => props.updateOptions || unref(defaultUpdateOptions) || {},
     )
-    const nativeListeners = ref<Record<string, unknown>>({})
+    const nativeListeners = shallowRef<Record<string, unknown>>({})
     const realAttrs = computed(() => ({
       ...omitOn(attrs),
       ...nativeListeners.value,
@@ -90,6 +89,7 @@ export default defineComponent({
       // `realListeners` so that we can bind them to the chart instance later in the same way.
       // For `onNative:<event>` props, we just strip the `Native:` part and collect them into
       // `nativeListeners` so that we can bind them to the root element directly.
+      const _nativeListeners: Record<string, unknown> = {}
       Object.keys(attrs)
         .filter((key) => isOn(key))
         .forEach((key) => {
@@ -104,7 +104,7 @@ export default defineComponent({
               8,
             )}`
 
-            nativeListeners.value[nativeKey] = attrs[key]
+            _nativeListeners[nativeKey] = attrs[key]
             return
           }
 
@@ -116,6 +116,7 @@ export default defineComponent({
 
           realListeners[event] = attrs[key]
         })
+      nativeListeners.value = _nativeListeners
 
       if (!root.value) {
         return

@@ -20,7 +20,8 @@
       "types": "./dist/types.d.ts",
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
-    }
+    },
+    "./runtime/types": "./dist/runtime/types.js"
   },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",

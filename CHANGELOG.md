@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v0.2.3
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.2...v0.2.3)
+
+### 🩹 Fixes
+
+- ShallowRef native listeners instead of deep ref ([330236d](https://github.com/kingyue737/nuxt-echarts/commit/330236d))
+- Expose types entry, close #5 ([#5](https://github.com/kingyue737/nuxt-echarts/issues/5))
+
+### 🏡 Chore
+
+- Up deps ([457c17c](https://github.com/kingyue737/nuxt-echarts/commit/457c17c))
+- Up deps ([7ffd941](https://github.com/kingyue737/nuxt-echarts/commit/7ffd941))
+- **playground:** Add aside z-index ([1edac26](https://github.com/kingyue737/nuxt-echarts/commit/1edac26))
+
+### ❤️ Contributors
+
+- Yue JIN <yjin@nustarnuclear.com>
+
 ## v0.2.2
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.1...v0.2.2)

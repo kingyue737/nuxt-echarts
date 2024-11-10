@@ -42,5 +42,5 @@ export default defineNuxtConfig({
       routes: ['/'],
     },
   },
-  compatibilityDate: '2024-07-11',
+  compatibilityDate: '2024-11-10',
 })

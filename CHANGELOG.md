@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v0.2.4
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.3...v0.2.4)
+
+### 🩹 Fixes
+
+- Type of VChartLight  container ([18c285a](https://github.com/kingyue737/nuxt-echarts/commit/18c285a))
+- Also load required echarts functionalities on server side ([5b91e00](https://github.com/kingyue737/nuxt-echarts/commit/5b91e00))
+
+### 🏡 Chore
+
+- Up deps ([6195d04](https://github.com/kingyue737/nuxt-echarts/commit/6195d04))
+- Up deps ([a32ab0c](https://github.com/kingyue737/nuxt-echarts/commit/a32ab0c))
+- Add map chart example ([a47c1f4](https://github.com/kingyue737/nuxt-echarts/commit/a47c1f4))
+
+### ❤️ Contributors
+
+- Yue JIN <yuejin13@qq.com>
+
 ## v0.2.3
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.2...v0.2.3)

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import * as echarts from 'echarts'
+import '#build/echarts.mjs'
 import { ref } from 'vue'
 import type { Option, InitOptions, Theme } from '../types'
 

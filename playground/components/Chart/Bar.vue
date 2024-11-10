@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { VChart } from '#components'
-const chart = ref<InstanceType<typeof VChart> | null>(null)
+const chart = useTemplateRef('chart')
 
 function random() {
   return Math.round(300 + Math.random() * 700) / 10

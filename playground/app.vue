@@ -86,6 +86,7 @@ const themeOptions = [
       </p>
     </header>
     <ChartBar />
+    <ChartMap />
     <ChartPolar />
     <ChartPie />
     <ChartScatter />

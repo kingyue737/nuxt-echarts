@@ -19,7 +19,7 @@ const body = computed(() => ({
   option: toValue(option),
 }))
 
-const container = ref<HTMLElement | null>(null)
+const container = useTemplateRef('container')
 const { data } = await useFetch('/api/scatter-chart', {
   body,
   method: 'POST',

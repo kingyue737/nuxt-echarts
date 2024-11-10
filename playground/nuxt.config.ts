@@ -5,12 +5,14 @@ export default defineNuxtConfig({
   echarts: {
     ssr: true,
     renderer: ['canvas', 'svg'],
-    charts: ['BarChart'],
+    charts: ['BarChart', 'MapChart'],
     components: [
       'DatasetComponent',
       'GridComponent',
       'TooltipComponent',
       'ToolboxComponent',
+      'GeoComponent',
+      'VisualMapComponent',
     ],
   },
   devtools: { enabled: false },

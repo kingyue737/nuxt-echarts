@@ -31,10 +31,10 @@ export default defineComponent({
   setup() {
     const root = ref<InstanceType<typeof VChartServer> | null>(null)
     const attrs = useAttrs() as Partial<Record<ECSSREventOn, ECSSRHandler>>
-    let container: HTMLElement
+    let container: HTMLDivElement
     function hydrateChart() {
-      container = root.value?.$el
-      if (container) {
+      if (root.value?.$el) {
+        container = root.value?.$el
         // Use the lightweight runtime to give the chart interactive capabilities
         hydrate(container, {
           on: {

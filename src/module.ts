@@ -31,6 +31,13 @@ export default defineNuxtModule<ModuleOptions>({
 
     const { resolve } = createResolver(import.meta.url)
 
+    // avoids having multiple copies of echarts
+    nuxt.options.vite.optimizeDeps ??= {}
+    nuxt.options.vite.optimizeDeps.exclude ??= []
+    if (!nuxt.options.vite.optimizeDeps.exclude.includes('echarts')) {
+      nuxt.options.vite.optimizeDeps.exclude.push('echarts')
+    }
+
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolve('./runtime/plugin'))
 

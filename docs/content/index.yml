@@ -8,10 +8,10 @@ hero:
   headline:
     label: Online Demo
     to: https://nuxt-echarts.nuxt.dev
-    icon: i-heroicons-arrow-top-right-on-square-20-solid
+    icon: i-lucide-external-link
   links:
     - label: Get started
-      icon: i-heroicons-arrow-right-20-solid
+      icon: i-lucide-arrow-right
       trailing: true
       to: '/getting-started/installation'
       size: lg
@@ -34,7 +34,7 @@ features:
       to: '/guides/ssr'
     - title: 'Client Hydration'
       description: 'Lazy-loading full ECharts or lightweight client runtime.'
-      icon: 'i-heroicons-sparkles-20-solid'
+      icon: 'i-lucide-sparkles'
       to: '/guides/ssr#client-hydration'
     - title: 'TypeScript'
       description: 'Auto-import ECharts option type based on your config.'

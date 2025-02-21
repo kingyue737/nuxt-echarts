@@ -1,12 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: ['@nuxt/ui-pro'],
   modules: [
-    '@nuxt/content',
-    '@nuxt/fonts',
+    '@nuxt/eslint',
     '@nuxt/image',
-    '@nuxt/ui',
-    '@nuxthq/studio',
+    '@nuxt/ui-pro',
+    '@nuxt/content',
     'nuxt-og-image',
   ],
   hooks: {
@@ -19,9 +17,7 @@ export default defineNuxtConfig({
       globals.forEach((c) => (c.global = true))
     },
   },
-  ui: {
-    icons: ['heroicons', 'simple-icons'],
-  },
+  css: ['~/assets/css/main.css'],
   colorMode: {
     disableTransition: true,
   },
@@ -40,6 +36,12 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: ['/'],
+      crawlLinks: true,
+    },
+  },
+  content: {
+    preview: {
+      api: 'https://api.nuxt.studio',
     },
   },
   compatibilityDate: '2024-11-10',

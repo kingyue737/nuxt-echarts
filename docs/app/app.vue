@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content'
-
 const { seo } = useAppConfig()
 
 const { data: navigation } = await useAsyncData('navigation', () =>
-  fetchContentNavigation(),
+  queryCollectionNavigation('docs'),
 )
-const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
-  default: () => [],
-  server: false,
-})
+const { data: files } = useLazyAsyncData(
+  'search',
+  () => queryCollectionSearchSections('docs'),
+  {
+    server: false,
+  },
+)
 
 useHead({
   meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
@@ -31,7 +32,7 @@ provide('navigation', navigation)
 </script>
 
 <template>
-  <div>
+  <UApp>
     <NuxtLoadingIndicator />
 
     <AppHeader />
@@ -47,7 +48,5 @@ provide('navigation', navigation)
     <ClientOnly>
       <LazyUContentSearch :files="files" :navigation="navigation" />
     </ClientOnly>
-
-    <UNotifications />
-  </div>
+  </UApp>
 </template>

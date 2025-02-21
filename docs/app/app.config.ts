@@ -1,11 +1,15 @@
 export default defineAppConfig({
   ui: {
-    primary: 'green',
-    gray: 'slate',
+    colors: {
+      primary: 'green',
+      neutral: 'slate',
+    },
+  },
+  uiPro: {
     footer: {
-      bottom: {
-        left: 'text-sm text-gray-500 dark:text-gray-400',
-        wrapper: 'border-t border-gray-200 dark:border-gray-800',
+      slots: {
+        root: 'border-t border-(--ui-border)',
+        left: 'text-sm text-(--ui-text-muted)',
       },
     },
   },
@@ -60,13 +64,13 @@ export default defineAppConfig({
       edit: 'https://github.com/kingyue737/nuxt-echarts/docs/edit/main/content',
       links: [
         {
-          icon: 'i-heroicons-star',
+          icon: 'i-lucide-star',
           label: 'Star on GitHub',
           to: 'https://github.com/kingyue737/nuxt-echarts',
           target: '_blank',
         },
         {
-          icon: 'i-heroicons-book-open',
+          icon: 'i-lucide-book-open',
           label: 'ECharts SSR docs',
           to: 'https://echarts.apache.org/handbook/en/how-to/cross-platform/server',
           target: '_blank',

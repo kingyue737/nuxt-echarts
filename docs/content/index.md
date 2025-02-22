@@ -9,7 +9,8 @@ seo:
 orientation: horizontal
 ---
   <div>
-  <img src="/echarts-liquid-fill.svg" class="mb-12 mx-auto " />
+  <img src="/echarts-liquid-fill.svg" class="mx-auto" style="margin-bottom: 60px" />
+  
 
   :::prose-pre{filename="Terminal"}
   ```bash
@@ -46,7 +47,7 @@ orientation: horizontal
   :::
 
 #title
-Client / Server Side Rendering <span class="text-[var(--ui-primary)]">ECharts in Nuxt</span>
+Client / Server Side Rendering <span class="text-(--ui-primary)">ECharts in Nuxt</span>
 
 #description
 Nuxt Echarts cannot only integrate Apache ECharts™ in the browser but also render on server side via Nuxt Server Component.

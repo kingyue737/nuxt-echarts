@@ -53,7 +53,7 @@ const links = computed(() =>
     toc?.bottom?.edit && {
       icon: 'i-lucide-external-link',
       label: 'Edit this page',
-      to: `${toc.bottom.edit}/${page?.value?.path}`,
+      to: `${toc.bottom.edit}/${page?.value?.stem}.${page?.value.extension}`,
       target: '_blank',
     },
     ...(toc?.bottom?.links || []),

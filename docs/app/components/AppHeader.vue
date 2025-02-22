@@ -7,8 +7,20 @@ const { header } = useAppConfig()
 </script>
 
 <template>
-  <UHeader>
-    <UContentSearch v-if="header?.search" class="hidden lg:flex" />
+  <UHeader :ui="{ center: 'flex-1' }">
+    <UContentSearchButton
+      v-if="header?.search"
+      label="Search..."
+      variant="outline"
+      class="w-full"
+    >
+      <template #trailing>
+        <div class="ms-auto flex items-center gap-0.5">
+          <UKbd value="meta" />
+          <UKbd value="k" />
+        </div>
+      </template>
+    </UContentSearchButton>
 
     <template #title>
       <template v-if="header?.logo?.dark || header?.logo?.light">
@@ -17,7 +29,7 @@ const { header } = useAppConfig()
       <template v-else>
         <UIcon
           name="i-simple-icons-apacheecharts"
-          class="text-primary-400 size-7"
+          class="size-7 text-(--ui-primary)"
         />
         Nuxt ECharts
         <UBadge label="Docs" variant="subtle" class="mb-0.5" />
@@ -25,11 +37,7 @@ const { header } = useAppConfig()
     </template>
 
     <template #right>
-      <UContentSearchButton
-        v-if="header?.search"
-        :label="null"
-        class="lg:hidden"
-      />
+      <UContentSearchButton v-if="header?.search" class="lg:hidden" />
 
       <UColorModeButton v-if="header?.colorMode" />
 
@@ -42,6 +50,7 @@ const { header } = useAppConfig()
       </template>
     </template>
 
+    <!--@vue-ignore mobile panel after ui-pro v3.0.0-alpha.13-->
     <template #body>
       <UContentNavigation highlight :navigation="navigation" />
     </template>

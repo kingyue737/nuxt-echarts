@@ -61,7 +61,7 @@ export default defineAppConfig({
     title: 'Table of Contents',
     bottom: {
       title: 'Community',
-      edit: 'https://github.com/kingyue737/nuxt-echarts/docs/edit/main/content',
+      edit: 'https://github.com/kingyue737/nuxt-echarts/edit/main/docs/content',
       links: [
         {
           icon: 'i-lucide-star',

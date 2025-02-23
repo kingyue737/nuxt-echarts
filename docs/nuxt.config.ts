@@ -21,9 +21,6 @@ export default defineNuxtConfig({
   colorMode: {
     disableTransition: true,
   },
-  routeRules: {
-    '/api/search.json': { prerender: true },
-  },
   devtools: {
     enabled: true,
   },

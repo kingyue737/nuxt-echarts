@@ -1,6 +1,31 @@
 # Changelog
 
 
+## v0.2.5
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.4...v0.2.5)
+
+### 🩹 Fixes
+
+- Avoid multiple echarts during dev ([fb998b0](https://github.com/kingyue737/nuxt-echarts/commit/fb998b0))
+
+### 📖 Documentation
+
+- Fix typo ([9a5c823](https://github.com/kingyue737/nuxt-echarts/commit/9a5c823))
+- Migrate to Nuxt Content 3 ([#15](https://github.com/kingyue737/nuxt-echarts/pull/15))
+- Remove search.json ([856cd18](https://github.com/kingyue737/nuxt-echarts/commit/856cd18))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([5c5d5fd](https://github.com/kingyue737/nuxt-echarts/commit/5c5d5fd))
+- Format code ([88d0e5b](https://github.com/kingyue737/nuxt-echarts/commit/88d0e5b))
+- Temporary downgrade ts for build ([4164f39](https://github.com/kingyue737/nuxt-echarts/commit/4164f39))
+
+### ❤️ Contributors
+
+- Yue JIN ([@kingyue737](http://github.com/kingyue737))
+- Waleed Tariq <waleedtariq109@outlook.com>
+
 ## v0.2.4
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.3...v0.2.4)

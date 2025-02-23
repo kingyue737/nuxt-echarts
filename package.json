@@ -1,6 +1,6 @@
 {
   "name": "nuxt-echarts",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Nuxt Module for Apache ECharts™",
   "keywords": [
     "vue",

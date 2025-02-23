@@ -42,12 +42,12 @@ const themeOptions = [
 </script>
 
 <template>
-  <aside class="z-1 fixed p-3">
+  <aside class="fixed z-1 p-3">
     <NSelectTabs v-model="theme" :options="themeOptions" class="mr-2" />
     <NSelectTabs v-model="renderer" :options="rendererOptions" />
   </aside>
 
-  <div class="py-15 text-align-center grid justify-center gap-y-16">
+  <div class="text-align-center grid justify-center gap-y-16 py-15">
     <header>
       <div class="mb-10 inline-block h-fit w-fit">
         <ChartLogo />
@@ -61,7 +61,7 @@ const themeOptions = [
           Nuxt ECharts
         </NuxtLink>
       </h1>
-      <p class="text-gray mb-12 mt-4">
+      <p class="text-gray mt-4 mb-12">
         Nuxt Module for Apache ECharts™.
         <NLink n="dark:brand" to="https://echarts.nuxt.dev" target="_blank"
           >(docs)</NLink
@@ -69,9 +69,9 @@ const themeOptions = [
       </p>
 
       <h2 class="text-gray mb-4 flex items-center justify-center gap-3 text-xl">
-        <div class="border-b-dotted border-b-1 w-12" />
+        <div class="border-b-dotted w-12 border-b-1" />
         Examples
-        <div class="border-b-dotted border-b-1 w-12" />
+        <div class="border-b-dotted w-12 border-b-1" />
       </h2>
       <p class="mb-4">
         <small class="text-gray"

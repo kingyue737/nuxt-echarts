@@ -19,7 +19,7 @@ defineProps<{ id: string; title: string; desc: string }>()
     <NCard class="my-5 dark:bg-[#100c2a]">
       <slot />
     </NCard>
-    <div class="w-xl text-gray mx-auto mb-4 text-sm">
+    <div class="text-gray mx-auto mb-4 w-xl text-sm">
       <slot name="extra" />
     </div>
   </section>

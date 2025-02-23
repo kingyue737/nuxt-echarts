@@ -53,11 +53,11 @@
     "@nuxt/module-builder": "^0.8.4",
     "@nuxt/schema": "^3.15.4",
     "@nuxt/test-utils": "^3.17.0",
-    "@types/node": "^22.13.4",
+    "@types/node": "^22.13.5",
     "changelogen": "^0.5.7",
-    "eslint": "^9.20.1",
+    "eslint": "^9.21.0",
     "nuxt": "^3.15.4",
-    "prettier": "^3.5.1",
+    "prettier": "^3.5.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "typescript": "^5.7.3",
     "vite": "^6.1.1",
@@ -70,7 +70,8 @@
   "pnpm": {
     "overrides": {
       "vite-plugin-checker": "^0.9.0",
-      "@vercel/nft": "^0.29.2"
+      "@vercel/nft": "^0.29.2",
+      "@tailwindcss/vite": "4.0.7"
     }
   },
   "stackblitz": {

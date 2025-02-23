@@ -50,7 +50,6 @@ const { header } = useAppConfig()
       </template>
     </template>
 
-    <!--@vue-ignore mobile panel after ui-pro v3.0.0-alpha.13-->
     <template #body>
       <UContentNavigation highlight :navigation="navigation" />
     </template>

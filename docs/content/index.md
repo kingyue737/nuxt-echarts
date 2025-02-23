@@ -9,7 +9,7 @@ seo:
 orientation: horizontal
 ---
   <div>
-  <img src="/echarts-liquid-fill.svg" class="mx-auto" style="margin-bottom: 60px" />
+  <img src="/echarts-liquid-fill.svg" class="mx-auto mt-12" style="margin-bottom: 60px" />
   
 
   :::prose-pre{filename="Terminal"}
@@ -85,6 +85,7 @@ Nuxt Echarts cannot only integrate Apache ECharts™ in the browser but also ren
     title: SSR
     description: Server-side SVG Rendering with Nuxt server components.
     to: /guides/ssr
+    spotlight: true
     ---
 
     :::
@@ -106,6 +107,7 @@ Nuxt Echarts cannot only integrate Apache ECharts™ in the browser but also ren
     title: TypeScript
     description: Auto-import ECharts option type based on your config.
     to: /guides/usage#typescript
+    spotlight: true
     ---
 
     :::

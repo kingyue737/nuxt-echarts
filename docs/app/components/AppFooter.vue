@@ -43,7 +43,7 @@ const items = [
         <UButton
           v-for="(link, index) of footer?.links"
           :key="index"
-          v-bind="{ color: 'gray', variant: 'ghost', ...link }"
+          v-bind="{ color: 'neutral', variant: 'ghost', ...link }"
         />
       </template>
     </template>

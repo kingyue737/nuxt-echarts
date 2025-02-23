@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { withoutTrailingSlash } from 'ufo'
+import type { ContentNavigationItem } from '@nuxt/content'
+import { findPageHeadline } from '#ui-pro/utils/content'
 
 definePageMeta({
   layout: 'docs',
@@ -7,11 +8,22 @@ definePageMeta({
 
 const route = useRoute()
 const { toc, seo } = useAppConfig()
+const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
-const { data: page } = await useAsyncData(route.path, () =>
-  queryContent(route.path).findOne(),
+const { data } = await useAsyncData(
+  route.path,
+  () =>
+    Promise.all([
+      queryCollection('docs').path(route.path).first(),
+      queryCollectionItemSurroundings('docs', route.path, {
+        fields: ['title', 'description'],
+      }),
+    ]),
+  {
+    transform: ([page, surround]) => ({ page, surround }),
+  },
 )
-if (!page.value) {
+if (!data.value || !data.value.page) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Page not found',
@@ -19,12 +31,8 @@ if (!page.value) {
   })
 }
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
-  queryContent()
-    .where({ _extension: 'md', navigation: { $ne: false } })
-    .only(['title', 'description', '_path'])
-    .findSurround(withoutTrailingSlash(route.path)),
-)
+const page = computed(() => data.value?.page)
+const surround = computed(() => data.value?.surround)
 
 useSeoMeta({
   title: page.value.title,
@@ -38,14 +46,14 @@ defineOgImageComponent('Docs', {
   description: page.value.description,
 })
 
-const headline = computed(() => findPageHeadline(page.value))
+const headline = computed(() => findPageHeadline(navigation.value, page.value))
 
 const links = computed(() =>
   [
     toc?.bottom?.edit && {
-      icon: 'i-heroicons-pencil-square',
+      icon: 'i-lucide-external-link',
       label: 'Edit this page',
-      to: `${toc.bottom.edit}/${page?.value?._file}`,
+      to: `${toc.bottom.edit}/${page?.value?.stem}.${page?.value.extension}`,
       target: '_blank',
     },
     ...(toc?.bottom?.links || []),
@@ -54,7 +62,7 @@ const links = computed(() =>
 </script>
 
 <template>
-  <UPage>
+  <UPage v-if="page">
     <UPageHeader
       :title="page.title"
       :description="page.description"
@@ -62,22 +70,22 @@ const links = computed(() =>
       :headline="headline"
     />
 
-    <UPageBody prose>
-      <ContentRenderer v-if="page.body" :value="page" />
+    <UPageBody>
+      <ContentRenderer v-if="page" :value="page" />
 
-      <hr v-if="surround?.length" />
+      <USeparator v-if="surround?.length" />
 
       <UContentSurround :surround="surround" />
     </UPageBody>
 
-    <template v-if="page.toc !== false" #right>
+    <template v-if="page?.body?.toc?.links?.length" #right>
       <UContentToc :title="toc?.title" :links="page.body?.toc?.links">
         <template v-if="toc?.bottom" #bottom>
           <div
             class="hidden space-y-6 lg:block"
             :class="{ '!mt-6': page.body?.toc?.links?.length }"
           >
-            <UDivider v-if="page.body?.toc?.links?.length" type="dashed" />
+            <USeparator v-if="page.body?.toc?.links?.length" type="dashed" />
 
             <UPageLinks :title="toc.bottom.title" :links="links" />
           </div>

@@ -1,14 +1,22 @@
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content'
-
 const { seo } = useAppConfig()
 
 const { data: navigation } = await useAsyncData('navigation', () =>
-  fetchContentNavigation(),
+  queryCollectionNavigation('docs'),
 )
-const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
-  default: () => [],
-  server: false,
+const { data: files } = useLazyAsyncData(
+  'search',
+  () => queryCollectionSearchSections('docs'),
+  {
+    server: false,
+  },
+)
+
+const navgationWithIcons = computed(() => {
+  return navigation.value.map((group) => {
+    const children = group.children.map((v) => ({ ...v, icon: group.icon }))
+    return { ...group, children }
+  })
 })
 
 useHead({
@@ -31,7 +39,7 @@ provide('navigation', navigation)
 </script>
 
 <template>
-  <div>
+  <UApp>
     <NuxtLoadingIndicator />
 
     <AppHeader />
@@ -45,9 +53,7 @@ provide('navigation', navigation)
     <AppFooter />
 
     <ClientOnly>
-      <LazyUContentSearch :files="files" :navigation="navigation" />
+      <LazyUContentSearch :files="files" :navigation="navgationWithIcons" />
     </ClientOnly>
-
-    <UNotifications />
-  </div>
+  </UApp>
 </template>

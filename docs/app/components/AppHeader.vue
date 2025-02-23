@@ -1,37 +1,43 @@
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content'
+import type { ContentNavigationItem } from '@nuxt/content'
 
-const navigation = inject<NavItem[]>('navigation', [])
+const navigation = inject<ContentNavigationItem[]>('navigation')
 
 const { header } = useAppConfig()
 </script>
 
 <template>
-  <UHeader>
-    <template #logo>
+  <UHeader :ui="{ center: 'flex-1' }">
+    <UContentSearchButton
+      v-if="header?.search"
+      label="Search..."
+      variant="outline"
+      class="w-full"
+    >
+      <template #trailing>
+        <div class="ms-auto flex items-center gap-0.5">
+          <UKbd value="meta" />
+          <UKbd value="k" />
+        </div>
+      </template>
+    </UContentSearchButton>
+
+    <template #title>
       <template v-if="header?.logo?.dark || header?.logo?.light">
         <UColorModeImage v-bind="{ class: 'h-6 w-auto', ...header?.logo }" />
       </template>
       <template v-else>
         <UIcon
           name="i-simple-icons-apacheecharts"
-          class="text-primary-400 size-7"
+          class="size-7 text-(--ui-primary)"
         />
         Nuxt ECharts
         <UBadge label="Docs" variant="subtle" class="mb-0.5" />
       </template>
     </template>
 
-    <template v-if="header?.search" #center>
-      <UContentSearchButton class="hidden lg:flex" />
-    </template>
-
     <template #right>
-      <UContentSearchButton
-        v-if="header?.search"
-        :label="null"
-        class="lg:hidden"
-      />
+      <UContentSearchButton v-if="header?.search" class="lg:hidden" />
 
       <UColorModeButton v-if="header?.colorMode" />
 
@@ -39,13 +45,13 @@ const { header } = useAppConfig()
         <UButton
           v-for="(link, index) of header.links"
           :key="index"
-          v-bind="{ color: 'gray', variant: 'ghost', ...link }"
+          v-bind="{ color: 'neutral', variant: 'ghost', ...link }"
         />
       </template>
     </template>
 
-    <template #panel>
-      <UNavigationTree :links="mapContentNavigation(navigation)" />
+    <template #body>
+      <UContentNavigation highlight :navigation="navigation" />
     </template>
   </UHeader>
 </template>

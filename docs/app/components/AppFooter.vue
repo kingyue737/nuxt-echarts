@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { footer } = useAppConfig()
 
-const links = [
+const items = [
   {
     label: 'Documentation',
     to: '/getting-started',
@@ -20,7 +20,7 @@ const links = [
 </script>
 
 <template>
-  <UFooter :links="links">
+  <UFooter>
     <template #left>
       <span v-if="footer.credits"> {{ footer.credits }} </span>
       <span v-else class="text-sm">
@@ -34,6 +34,8 @@ const links = [
       </span>
     </template>
 
+    <UNavigationMenu :items="items" variant="link" />
+
     <template #right>
       <UColorModeButton v-if="footer?.colorMode" />
 
@@ -41,7 +43,7 @@ const links = [
         <UButton
           v-for="(link, index) of footer?.links"
           :key="index"
-          v-bind="{ color: 'gray', variant: 'ghost', ...link }"
+          v-bind="{ color: 'neutral', variant: 'ghost', ...link }"
         />
       </template>
     </template>

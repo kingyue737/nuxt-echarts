@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.2.6
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.5...v0.2.6)
+
+### 🩹 Fixes
+
+- TransformComponent don't have individual option type ([090346e](https://github.com/kingyue737/nuxt-echarts/commit/090346e))
+
+### 📖 Documentation
+
+- Add og images ([e60635a](https://github.com/kingyue737/nuxt-echarts/commit/e60635a))
+- Move expeimental island info to ssr section ([2a0267d](https://github.com/kingyue737/nuxt-echarts/commit/2a0267d))
+
+### ❤️ Contributors
+
+- Yue JIN <yjin@nustarnuclear.com>
+
 ## v0.2.5
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.4...v0.2.5)

@@ -122,9 +122,10 @@ export default defineNuxtModule<ModuleOptions>({
       const chartOptionNames = options.charts?.map(
         (name) => `${name.slice(0, -5)}SeriesOption`,
       )
-      const componentOptionNames = options.components?.map(
-        (name) => `${name}Option`,
-      )
+      const componentOptionNames = options.components
+        // TransformComponent don't have individual option type.
+        ?.filter((name) => name !== 'TransformComponent')
+        .map((name) => `${name}Option`)
       addTypeTemplate({
         filename: 'types/nuxt-echarts.d.ts',
         getContents: () =>

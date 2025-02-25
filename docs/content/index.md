@@ -12,7 +12,7 @@ orientation: horizontal
   <img src="/echarts-liquid-fill.svg" class="mx-auto mt-12" style="margin-bottom: 60px" />
   
 
-  :::prose-pre{filename="Terminal"}
+  :::prose-pre{filename="Terminal" code="npx nuxi module add echarts"}
   ```bash
   npx nuxi module add echarts
   ```

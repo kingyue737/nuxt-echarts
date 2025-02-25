@@ -4,7 +4,7 @@
 
 [Github →](https://github.com/kingyue737/nuxt-echarts)
 
-[文档 ->](https://echarts.nuxt.dev)
+[文档 →](https://echarts.nuxt.dev)
 
 ## 功能
 
@@ -63,7 +63,7 @@ const option = ref<ECOption>({
 ```
 
 <details>
-  <summary>如何实现的</summary>
+  <summary>缩小包体积和自动生成类型是如何实现的</summary>
   
   nuxt-echarts 会根据你在`nuxt.config.ts`中的配置自动生成下面两个文件，自动引入到项目中:
 
@@ -112,16 +112,25 @@ const option = ref<ECOption>({
 </details>
 
 
-`<VChart>` 其实就是@Justineo大佬写的[Vue-ECharts](https://github.com/ecomfe/vue-echarts)，用法完全一样。本项目为Vue-ECharts提供了Nuxt项目的一键集成，同时还增加了ECharts 服务端渲染功能。
+`<VChart>` 其实就是[Vue-ECharts](https://github.com/ecomfe/vue-echarts)，用法完全一样。本项目为Vue-ECharts提供了Nuxt项目的一键集成，同时还增加了ECharts 服务端渲染功能。
 
 ## 进阶功能：ECharts SSR
 
-通常即使是开启了Nuxt的SSR，我们在使用ECharts时也仅是在客户端才渲染图表，从服务端发送过来的HTML是不含图表的。
+通常即使是开启了Nuxt的SSR，我们在使用ECharts时也仅是在客户端组件挂载后才渲染图表，从服务端发送过来的HTML是不含图表的。
 
-![]()
+![客户端渲染](/csr.png)
 
-ECharts在v5.
+ECharts在v5.3和v5.5中分别引入了[服务端SVG渲染功能和客户端轻量运行时](https://echarts.apache.org/handbook/zh/how-to/cross-platform/server/)（请务必先阅读这个官方文档），让我们能够在前端第一时间显示图表，而且可以在一些无需复杂交互的场景下大幅减少包体积，只在客户端加载一个不到4KB的轻量运行时。
 
-![]()
+`nuxt-echarts`将各种使用场景封装成了组件，除了常用的`<VChart>`，还有基于[服务端组件](https://nuxt.com.cn/docs/guide/directory-structure/components#服务器端组件)的`VChartIsland`、`<VChartServer>`和`<VChartLight>`,分别对应不同的应用场景：
 
-在文档中探索更多细节吧！
+|组件|渲染方案|加载量|功能和交互丧失|推荐场景|
+|---|---|---|---|---|
+|[`VChart`](https://echarts.nuxt.dev/components/v-chart) 同时设置 [`ssr:true`](https://echarts.nuxt.dev/getting-started/configuration#ssr)|服务器端 SVG 渲染加客户端 ECharts 延迟加载|大|延迟加载完成前无法交互|首屏加载时间敏感，对完整功能和交互有较高需求，图表加载后最好不立即需要交互|
+|[`VChartIsland`](https://echarts.nuxt.dev/components/v-chart-island)|只在服务器端 SVG 渲染|小|不支持图例切换系列显示，不支持工具提示等对实时性要求高的交互|首屏加载时间敏感，对完整功能和交互要求较低|
+|[`VChartServer`](https://echarts.nuxt.dev/components/v-chart-server)|只在服务器端 SVG 渲染|小|与上面相同，但可以 [`inject`](https://cn.vuejs.org/guide/components/provide-inject) 由祖先组件`provide`的数据|与上面相同|
+|[`VChartLight`](https://echarts.nuxt.dev/components/v-chart-light)|服务器端 SVG 渲染加客户端轻量级运行时|小|无法实现对实时性要求高的交互|首屏加载时间敏感，对完整功能和交互要求较低，对代码量有严格要求，对交互实时性要求不严格|
+
+[Examples →](https://echarts.nuxt.dev)
+
+在[Nuxt ECharts文档](https://echarts.nuxt.dev)中探索更多细节吧,欢迎在[Issues](https://github.com/kingyue737/nuxt-echarts/issues)和[Discussions](https://github.com/kingyue737/nuxt-echarts/discussions)中提出任何问题与建议！

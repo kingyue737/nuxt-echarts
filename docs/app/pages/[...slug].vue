@@ -10,20 +10,10 @@ const route = useRoute()
 const { toc, seo } = useAppConfig()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
-const { data } = await useAsyncData(
-  route.path,
-  () =>
-    Promise.all([
-      queryCollection('docs').path(route.path).first(),
-      queryCollectionItemSurroundings('docs', route.path, {
-        fields: ['title', 'description'],
-      }),
-    ]),
-  {
-    transform: ([page, surround]) => ({ page, surround }),
-  },
+const { data: page } = await useAsyncData(route.path, () =>
+  queryCollection('docs').path(route.path).first(),
 )
-if (!data.value || !data.value.page) {
+if (!page.value) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Page not found',
@@ -31,8 +21,11 @@ if (!data.value || !data.value.page) {
   })
 }
 
-const page = computed(() => data.value?.page)
-const surround = computed(() => data.value?.surround)
+const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
+  return queryCollectionItemSurroundings('docs', route.path, {
+    fields: ['description'],
+  })
+})
 
 useSeoMeta({
   title: page.value.title,
@@ -46,19 +39,21 @@ defineOgImageComponent('Docs', {
   description: page.value.description,
 })
 
-const headline = computed(() => findPageHeadline(navigation.value, page.value))
+const headline = computed(() => findPageHeadline(navigation!.value, page.value))
 
-const links = computed(() =>
-  [
-    toc?.bottom?.edit && {
+const links = computed(() => {
+  const links = []
+  if (toc?.bottom?.edit) {
+    links.push({
       icon: 'i-lucide-external-link',
       label: 'Edit this page',
-      to: `${toc.bottom.edit}/${page?.value?.stem}.${page?.value.extension}`,
+      to: `${toc.bottom.edit}/${page?.value?.stem}.${page?.value?.extension}`,
       target: '_blank',
-    },
-    ...(toc?.bottom?.links || []),
-  ].filter(Boolean),
-)
+    })
+  }
+
+  return [...links, ...(toc?.bottom?.links || [])].filter(Boolean)
+})
 </script>
 
 <template>

@@ -9,7 +9,7 @@ seo:
 orientation: horizontal
 ---
   <div>
-  <img src="/echarts-liquid-fill.svg" class="mx-auto mt-12" style="margin-bottom: 60px" />
+  <img src="/echarts-liquid-fill.svg" class="mx-auto my-12" />
   
 
   :::prose-pre{filename="Terminal" code="npx nuxi module add echarts"}

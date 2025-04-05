@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@nuxt/ui-pro',
     '@nuxt/content',
     'nuxt-og-image',
+    'nuxt-llms',
   ],
   hooks: {
     // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
@@ -43,6 +44,11 @@ export default defineNuxtConfig({
     // experimental: {
     //   nativeSqlite: true,
     // },
+  },
+  llms: {
+    domain: 'https://echarts.nuxt.dev',
+    title: 'Nuxt ECharts',
+    description: 'Nuxt module for Apache ECharts™',
   },
   compatibilityDate: '2024-11-10',
 })

@@ -40,6 +40,9 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio',
     },
+    // experimental: {
+    //   nativeSqlite: true,
+    // },
   },
   compatibilityDate: '2024-11-10',
 })

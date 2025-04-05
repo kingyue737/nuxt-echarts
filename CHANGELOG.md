@@ -1,6 +1,33 @@
 # Changelog
 
 
+## v0.3.0
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.6...v0.3.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Up to nuxt module builder v1, drop cjs support ([02e3268](https://github.com/kingyue737/nuxt-echarts/commit/02e3268))
+
+### 🩹 Fixes
+
+- Only enable componentIslands when not set by user, fix #16 ([#16](https://github.com/kingyue737/nuxt-echarts/issues/16))
+
+### 📖 Documentation
+
+- Add `code` prop to make copy work ([43f264c](https://github.com/kingyue737/nuxt-echarts/commit/43f264c))
+- Up Nuxt UI ([7a61bdc](https://github.com/kingyue737/nuxt-echarts/commit/7a61bdc))
+- Up to stable nuxt ui pro 3 ([d247df9](https://github.com/kingyue737/nuxt-echarts/commit/d247df9))
+- Add nuxt-llms ([698b21f](https://github.com/kingyue737/nuxt-echarts/commit/698b21f))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Up to nuxt module builder v1, drop cjs support ([02e3268](https://github.com/kingyue737/nuxt-echarts/commit/02e3268))
+
+### ❤️ Contributors
+
+- Yue JIN <yuejin13@qq.com>
+
 ## v0.2.6
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.5...v0.2.6)

@@ -25,7 +25,10 @@ export default defineNuxtModule<ModuleOptions>({
     renderer: 'canvas',
   },
   setup(options, nuxt) {
-    if (nuxt.options.ssr === false) {
+    if (
+      nuxt.options.ssr === false &&
+      nuxt.options.experimental.componentIslands === 'auto'
+    ) {
       nuxt.options.experimental.componentIslands = true
     }
 

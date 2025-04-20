@@ -8,16 +8,15 @@ seo:
 ---
 orientation: horizontal
 ---
-  <div>
-  <img src="/echarts-liquid-fill.svg" class="mx-auto my-12" />
-  
+  ::div
+  ![echarts-liquid](/echarts-liquid-fill.svg){.mx-auto .my-12}
 
-  :::prose-pre{filename="Terminal" code="npx nuxi module add echarts"}
-  ```bash
-  npx nuxi module add echarts
-  ```
-  :::
-  </div>
+    :::prose-pre{filename="Terminal" code="npx nuxi module add echarts"}
+    ```bash
+    npx nuxi module add echarts
+    ```
+    :::
+  ::
 
 #headline
   :::u-badge
@@ -35,8 +34,10 @@ orientation: horizontal
     class: 'focus:outline-none'
     tabindex: -1
     ---
-      <span class="absolute inset-0" aria-hidden="true" />
+    []{.absolute .inset-0 aria-hidden="true"}
+
     :::
+
     :::u-icon
     ---
     name: i-lucide-external-link
@@ -47,7 +48,7 @@ orientation: horizontal
   :::
 
 #title
-Client / Server Side Rendering <span class="text-(--ui-primary)">ECharts in Nuxt</span>
+Client / Server Side Rendering [ECharts in Nuxt]{.text-(--ui-primary)}
 
 #description
 Nuxt Echarts cannot only integrate Apache ECharts™ in the browser but also render on server side via Nuxt Server Component.

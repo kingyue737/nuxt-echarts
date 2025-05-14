@@ -1,7 +1,7 @@
 ---
 seo:
   title: Nuxt ECharts - Nuxt Module for Apache ECharts™
-  description: Integrate Apache ECharts™ in your Nuxt application with both client-side and server-side Rendering.
+description: Integrate Apache ECharts™ in your Nuxt application with both client-side and server-side Rendering.
 ---
 
 ::u-page-hero
@@ -48,7 +48,7 @@ orientation: horizontal
   :::
 
 #title
-Client / Server Side Rendering [ECharts in Nuxt]{.text-(--ui-primary)}
+Client / Server Side Rendering [ECharts in Nuxt]{.text-primary}
 
 #description
 Nuxt Echarts cannot only integrate Apache ECharts™ in the browser but also render on server side via Nuxt Server Component.

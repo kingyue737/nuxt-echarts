@@ -29,7 +29,7 @@ const { header } = useAppConfig()
       <template v-else>
         <UIcon
           name="i-simple-icons-apacheecharts"
-          class="size-7 text-(--ui-primary)"
+          class="text-primary size-7"
         />
         Nuxt ECharts
         <UBadge label="Docs" variant="subtle" class="mb-0.5" />

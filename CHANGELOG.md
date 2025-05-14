@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v0.3.1
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.3.0...v0.3.1)
+
+### 🩹 Fixes
+
+- Guarantee that echarts components are loaded on server side ([a9c28e1](https://github.com/kingyue737/nuxt-echarts/commit/a9c28e1))
+
+### 📖 Documentation
+
+- Apply mdc formatter ([af6da30](https://github.com/kingyue737/nuxt-echarts/commit/af6da30))
+- Use new css utilites ([9e5adaf](https://github.com/kingyue737/nuxt-echarts/commit/9e5adaf))
+- Improve content search button ([ddd1ef0](https://github.com/kingyue737/nuxt-echarts/commit/ddd1ef0))
+
+### 🏡 Chore
+
+- Up deps ([0d7bea2](https://github.com/kingyue737/nuxt-echarts/commit/0d7bea2))
+
+### ❤️ Contributors
+
+- Yue JIN <yjin@nustarnuclear.com>
+
 ## v0.3.0
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.2.6...v0.3.0)

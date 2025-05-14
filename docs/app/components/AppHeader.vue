@@ -10,17 +10,9 @@ const { header } = useAppConfig()
   <UHeader :ui="{ center: 'flex-1' }">
     <UContentSearchButton
       v-if="header?.search"
-      label="Search..."
-      variant="outline"
+      :collapsed="false"
       class="w-full"
-    >
-      <template #trailing>
-        <div class="ms-auto flex items-center gap-0.5">
-          <UKbd value="meta" />
-          <UKbd value="k" />
-        </div>
-      </template>
-    </UContentSearchButton>
+    />
 
     <template #title>
       <template v-if="header?.logo?.dark || header?.logo?.light">

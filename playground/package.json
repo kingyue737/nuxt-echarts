@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "echarts-liquidfill": "^3.1.0",
-    "nuxt": "^3.16.2"
+    "nuxt": "^3.17.3"
   },
   "devDependencies": {
-    "@unocss/nuxt": "^66.0.0"
+    "@unocss/nuxt": "^66.1.1"
   }
 }

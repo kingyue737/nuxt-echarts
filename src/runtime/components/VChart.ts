@@ -16,7 +16,6 @@ import {
 import { init as initChart } from 'echarts/core'
 import type {
   EChartsType,
-  EventTarget,
   Option,
   Theme,
   InitOptions,
@@ -82,42 +81,49 @@ export default defineComponent({
       ...omitOn(attrs),
       ...nativeListeners.value,
     }))
-    const realListeners: Record<string, any> = {}
+    const listeners: Map<{ event: string; once?: boolean; zr?: boolean }, any> =
+      new Map()
 
-    function init(option?: Option) {
-      // We are converting all `on<Event>` props to event listeners and collect them  into
-      // `realListeners` so that we can bind them to the chart instance later in the same way.
+    function collectListeners() {
+      // We are converting all `on<Event>` props and collect them into `listeners` so that
+      // we can bind them to the chart instance later.
       // For `onNative:<event>` props, we just strip the `Native:` part and collect them into
       // `nativeListeners` so that we can bind them to the root element directly.
       const _nativeListeners: Record<string, unknown> = {}
       Object.keys(attrs)
         .filter((key) => isOn(key))
         .forEach((key) => {
-          // onClick    -> c + lick
-          // onZr:click -> z + r:click
-          let event = key.charAt(2).toLowerCase() + key.slice(3)
-
           // Collect native DOM events
-          if (event.indexOf('native:') === 0) {
-            // native:click -> onClick
-            const nativeKey = `on${event.charAt(7).toUpperCase()}${event.slice(
-              8,
-            )}`
+          if (key.indexOf('Native:') === 2) {
+            // onNative:click -> onClick
+            const nativeKey = `on${key.charAt(9).toUpperCase()}${key.slice(10)}`
 
             _nativeListeners[nativeKey] = attrs[key]
             return
           }
 
-          // clickOnce    -> ~click
-          // zr:clickOnce -> ~zr:click
-          if (event.substring(event.length - 4) === 'Once') {
-            event = `~${event.substring(0, event.length - 4)}`
+          // onClick    -> c + lick
+          // onZr:click -> z + r:click
+          let event = key.charAt(2).toLowerCase() + key.slice(3)
+
+          let zr: boolean | undefined
+          if (event.indexOf('zr:') === 0) {
+            zr = true
+            event = event.substring(3)
           }
 
-          realListeners[event] = attrs[key]
+          let once: boolean | undefined
+          if (event.substring(event.length - 4) === 'Once') {
+            once = true
+            event = event.substring(0, event.length - 4)
+          }
+
+          listeners.set({ event, zr, once }, attrs[key])
         })
       nativeListeners.value = _nativeListeners
+    }
 
+    function init(option?: Option) {
       if (!root.value) {
         return
       }
@@ -132,28 +138,14 @@ export default defineComponent({
         instance.group = props.group
       }
 
-      Object.keys(realListeners).forEach((key) => {
-        let handler = realListeners[key]
-
+      listeners.forEach((handler, { zr, once, event }) => {
         if (!handler) {
           return
         }
 
-        let event = key.toLowerCase()
-        if (event.charAt(0) === '~') {
-          event = event.substring(1)
-          handler.__once__ = true
-        }
+        const target = zr ? instance.getZr() : instance
 
-        let target: EventTarget = instance
-        if (event.indexOf('zr:') === 0) {
-          target = instance.getZr()
-          event = event.substring(3)
-        }
-
-        if (handler.__once__) {
-          delete handler.__once__
-
+        if (once) {
           const raw = handler
 
           handler = (...args: any[]) => {
@@ -272,6 +264,7 @@ export default defineComponent({
     useAutoresize(chart, autoresize, root)
 
     onMounted(async () => {
+      collectListeners()
       // `.client` components are rendered only after being mounted
       if (!root.value) await nextTick()
       init()
@@ -299,9 +292,10 @@ export default defineComponent({
     }
   },
   render() {
-    const attrs = this.realAttrs
-    attrs.ref = 'root'
-    attrs.class = attrs.class ? ['echarts'].concat(attrs.class) : 'echarts'
-    return h(TAG_NAME, attrs)
+    return h(TAG_NAME, {
+      ...this.realAttrs,
+      ref: 'root',
+      class: ['echarts', ...(this.realAttrs.class || [])],
+    })
   },
 })

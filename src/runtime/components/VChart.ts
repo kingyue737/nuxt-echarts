@@ -2,7 +2,7 @@ import {
   defineComponent,
   shallowRef,
   toRefs,
-  unref,
+  toValue,
   watch,
   computed,
   inject,
@@ -69,12 +69,12 @@ export default defineComponent({
     const realOption = computed(
       () => manualOption.value || props.option || null,
     )
-    const realTheme = computed(() => props.theme || unref(defaultTheme) || {})
+    const realTheme = computed(() => props.theme || toValue(defaultTheme) || {})
     const realInitOptions = computed(
-      () => props.initOptions || unref(defaultInitOptions) || {},
+      () => props.initOptions || toValue(defaultInitOptions) || {},
     )
     const realUpdateOptions = computed(
-      () => props.updateOptions || unref(defaultUpdateOptions) || {},
+      () => props.updateOptions || toValue(defaultUpdateOptions) || {},
     )
     const nativeListeners = shallowRef<Record<string, unknown>>({})
     const realAttrs = computed(() => ({

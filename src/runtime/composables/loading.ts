@@ -1,5 +1,5 @@
 import {
-  unref,
+  toValue,
   inject,
   computed,
   watchEffect,
@@ -21,7 +21,7 @@ export function useLoading(
 ): void {
   const defaultLoadingOptions = inject(LOADING_OPTIONS_KEY, {})
   const realLoadingOptions = computed(() => ({
-    ...(unref(defaultLoadingOptions) || {}),
+    ...(toValue(defaultLoadingOptions) || {}),
     ...loadingOptions?.value,
   }))
 

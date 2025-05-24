@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, unref, inject, ref } from 'vue'
+import { computed, inject, ref, toValue } from 'vue'
 import type { InitOptions, Option, Theme } from '../types'
 import { THEME_KEY, INIT_OPTIONS_KEY } from '../utils/injection'
 import type { VChartIsland } from '#components'
@@ -14,9 +14,9 @@ const props = defineProps<{
 }>()
 const emits = defineEmits<{ (event: 'error', error: unknown): void }>()
 
-const realTheme = computed(() => props.theme || unref(defaultTheme) || {})
+const realTheme = computed(() => props.theme || toValue(defaultTheme) || {})
 const realInitOptions = computed(
-  () => props.initOptions || unref(defaultInitOptions) || {},
+  () => props.initOptions || toValue(defaultInitOptions) || {},
 )
 function onError(e: unknown) {
   // https://github.com/nuxt/nuxt/issues/27491

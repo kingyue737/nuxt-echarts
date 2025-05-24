@@ -4,9 +4,9 @@ import type {
   ECElementEvent,
   ElementEvent,
 } from 'echarts/core'
-import type { MaybeRef } from 'vue'
+import type { MaybeRefOrGetter } from 'vue'
 
-export type Injection<T> = MaybeRef<T | null>
+export type Injection<T> = MaybeRefOrGetter<T | null>
 
 type InitType = typeof init
 export type InitParameters = Parameters<InitType>

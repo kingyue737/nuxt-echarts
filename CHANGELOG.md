@@ -1,6 +1,30 @@
 # Changelog
 
 
+## v0.3.2
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.3.1...v0.3.2)
+
+### 🚀 Enhancements
+
+- Support getter for provide/inject ([7d3e05f](https://github.com/kingyue737/nuxt-echarts/commit/7d3e05f))
+
+### 🩹 Fixes
+
+- Not auto-resize when container size is 0 ([afe285c](https://github.com/kingyue737/nuxt-echarts/commit/afe285c))
+
+### 💅 Refactors
+
+- Collect events with Map ([e9301f6](https://github.com/kingyue737/nuxt-echarts/commit/e9301f6))
+
+### 🏡 Chore
+
+- Up deps ([bd0fdc8](https://github.com/kingyue737/nuxt-echarts/commit/bd0fdc8))
+
+### ❤️ Contributors
+
+- Yue JIN <yjin@nustarnuclear.com>
+
 ## v0.3.1
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.3.0...v0.3.1)

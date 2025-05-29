@@ -35,20 +35,13 @@ export default defineNuxtConfig({
     prerender: {
       routes: ['/'],
       crawlLinks: true,
+      autoSubfolderIndex: false,
     },
-  },
-  content: {
-    preview: {
-      api: 'https://api.nuxt.studio',
-    },
-    // experimental: {
-    //   nativeSqlite: true,
-    // },
   },
   llms: {
     domain: 'https://echarts.nuxt.dev',
     title: 'Nuxt ECharts',
     description: 'Nuxt module for Apache ECharts™',
   },
-  compatibilityDate: '2024-11-10',
+  compatibilityDate: '2025-05-29',
 })

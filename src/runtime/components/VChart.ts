@@ -21,6 +21,7 @@ import type {
   InitOptions,
   UpdateOptions,
   Emits,
+  SetOptionType,
 } from '../types'
 import {
   usePublicAPI,
@@ -28,6 +29,7 @@ import {
   autoresizeProps,
   useLoading,
   loadingProps,
+  type PublicMethods,
 } from '../composables'
 import { isOn, omitOn } from '../utils/on'
 import { register, TAG_NAME, type EChartsElement } from '../utils/wc'
@@ -56,7 +58,7 @@ export default defineComponent({
   },
   emits: {} as unknown as Emits,
   inheritAttrs: false,
-  setup(props, { attrs }) {
+  setup(props, { attrs, expose }) {
     const root = shallowRef<EChartsElement>()
     const chart = shallowRef<EChartsType>()
     const manualOption = shallowRef<Option>()
@@ -185,7 +187,14 @@ export default defineComponent({
       }
     }
 
-    function setOption(option: Option, updateOptions?: UpdateOptions) {
+    const setOption: SetOptionType = (
+      option,
+      notMerge,
+      lazyUpdate?: boolean,
+    ) => {
+      const updateOptions =
+        typeof notMerge === 'boolean' ? { notMerge, lazyUpdate } : notMerge
+
       if (props.manualUpdate) {
         manualOption.value = option
       }
@@ -282,20 +291,23 @@ export default defineComponent({
       }
     })
 
-    return {
-      chart,
-      root,
+    const exposed = {
       setOption,
-      realAttrs,
-      nativeListeners,
-      ...publicApi,
+      root,
+      chart,
     }
-  },
-  render() {
-    return h(TAG_NAME, {
-      ...this.realAttrs,
-      ref: 'root',
-      class: ['echarts', ...(this.realAttrs.class || [])],
-    })
+
+    expose({ ...exposed, ...publicApi })
+
+    // While `expose()` exposes methods and properties to the parent component
+    // via template refs at runtime, it doesn't contribute to TypeScript types.
+    // This type casting ensures TypeScript correctly types the exposed members
+    // that will be available when using this component.
+    return (() =>
+      h(TAG_NAME, {
+        ...realAttrs.value,
+        ref: root,
+        class: ['echarts', ...(realAttrs.value.class || [])],
+      })) as unknown as typeof exposed & PublicMethods
   },
 })

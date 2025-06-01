@@ -7,12 +7,14 @@ import {
   type InjectionKey,
   type PropType,
 } from 'vue'
-import type { EChartsType, LoadingOptions } from '../types'
+import type {
+  EChartsType,
+  LoadingOptions,
+  LoadingOptionsInjection,
+} from '../types'
 
-export const LOADING_OPTIONS_KEY =
-  'ecLoadingOptions' as unknown as InjectionKey<
-    LoadingOptions | Ref<LoadingOptions>
-  >
+export const LOADING_OPTIONS_KEY: InjectionKey<LoadingOptionsInjection> =
+  Symbol()
 
 export function useLoading(
   chart: Ref<EChartsType | undefined>,

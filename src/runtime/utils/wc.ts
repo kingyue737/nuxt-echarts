@@ -2,9 +2,10 @@ let registered: boolean | null = null
 
 export const TAG_NAME = 'x-vue-echarts'
 
-if (import.meta.server) {
+if (typeof HTMLElement === 'undefined') {
   // @ts-expect-error HTMLElement is undefined on server side
   globalThis.HTMLElement = Object
+  registered = false
 }
 export class EChartsElement extends HTMLElement {
   __dispose: (() => void) | null = null
@@ -20,13 +21,6 @@ export class EChartsElement extends HTMLElement {
 export function register(): boolean {
   if (registered != null) {
     return registered
-  }
-
-  if (
-    typeof HTMLElement === 'undefined' ||
-    typeof customElements === 'undefined'
-  ) {
-    return (registered = false)
   }
 
   try {

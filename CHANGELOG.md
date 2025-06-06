@@ -1,6 +1,32 @@
 # Changelog
 
 
+## v0.3.3
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.3.2...v0.3.3)
+
+### 🚀 Enhancements
+
+- Use symbol as injection key ([2a959e5](https://github.com/kingyue737/nuxt-echarts/commit/2a959e5))
+- Overload setOption and not expose attrs ([2ce0620](https://github.com/kingyue737/nuxt-echarts/commit/2ce0620))
+
+### 🩹 Fixes
+
+- Correctly concat class of VChart, fixes #20 ([#20](https://github.com/kingyue737/nuxt-echarts/issues/20))
+
+### 💅 Refactors
+
+- Check typeof HTMLElement instead of import.meta.server ([962f1b9](https://github.com/kingyue737/nuxt-echarts/commit/962f1b9))
+
+### 📖 Documentation
+
+- Up deps ([712a13a](https://github.com/kingyue737/nuxt-echarts/commit/712a13a))
+- Disable autoSubfolderIndex, fix #19 ([#19](https://github.com/kingyue737/nuxt-echarts/issues/19))
+
+### ❤️ Contributors
+
+- Yue JIN <yjin@nustarnuclear.com>
+
 ## v0.3.2
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.3.1...v0.3.2)

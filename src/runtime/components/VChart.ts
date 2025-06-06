@@ -307,7 +307,7 @@ export default defineComponent({
       h(TAG_NAME, {
         ...realAttrs.value,
         ref: root,
-        class: ['echarts', ...(realAttrs.value.class || [])],
+        class: ['echarts', realAttrs.value.class],
       })) as unknown as typeof exposed & PublicMethods
   },
 })

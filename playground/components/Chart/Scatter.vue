@@ -23,6 +23,8 @@ const container = useTemplateRef('container')
 const { data } = await useFetch('/api/scatter-chart', {
   body,
   method: 'POST',
+  // https://github.com/nuxt/nuxt/issues/31999
+  key: 'scatter-chart',
 })
 watch(data, async () => {
   await nextTick()

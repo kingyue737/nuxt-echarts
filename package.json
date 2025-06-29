@@ -14,7 +14,7 @@
   "repository": "kingyue737/nuxt-echarts",
   "license": "MIT",
   "type": "module",
-  "packageManager": "pnpm@10.12.1",
+  "packageManager": "pnpm@10.12.4",
   "exports": {
     ".": {
       "types": "./dist/types.d.mts",
@@ -50,17 +50,17 @@
     "@nuxt/module-builder": "^1.0.1",
     "@nuxt/schema": "^3.17.5",
     "@nuxt/test-utils": "^3.19.1",
-    "@types/node": "^22.15.31",
+    "@types/node": "^22.15.34",
     "changelogen": "^0.6.1",
     "echarts": "^5.6.0",
     "echarts-gl": "^2.0.9",
-    "eslint": "^9.28.0",
+    "eslint": "^9.30.0",
     "nuxt": "^3.17.5",
-    "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.12",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.13",
     "typescript": "^5.8.3",
-    "vite": "^6.3.5",
-    "vitest": "^3.2.3",
+    "vite": "^7.0.0",
+    "vitest": "^3.2.4",
     "vue-tsc": "^2.2.10"
   },
   "peerDependencies": {

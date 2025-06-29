@@ -3,18 +3,16 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.47",
-    "@iconify-json/simple-icons": "^1.2.38",
-    "@iconify-json/vscode-icons": "^1.2.22",
-    "@nuxt/content": "^3.5.1",
-    "@nuxt/ui-pro": "^3.1.3",
-    "nuxt": "^3.17.5",
+    "@iconify-json/lucide": "^1.2.53",
+    "@iconify-json/simple-icons": "^1.2.40",
+    "@iconify-json/vscode-icons": "^1.2.23",
+    "@nuxt/content": "^3.6.1",
+    "@nuxt/ui-pro": "^3.2.0",
     "nuxt-llms": "^0.1.3",
-    "nuxt-og-image": "^5.1.6"
+    "nuxt-og-image": "^5.1.8"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.4.1",
-    "@nuxt/image": "^1.10.0",
-    "vue-tsc": "^2.2.10"
+    "@nuxt/image": "^1.10.0"
   }
 }

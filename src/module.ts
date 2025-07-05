@@ -70,6 +70,7 @@ export default defineNuxtModule<ModuleOptions>({
       })
     }
 
+    nuxt.options.css.unshift('vue-echarts/csp/style.css')
     nuxt.options.css.unshift(resolve('./runtime/style.css'))
 
     function join(arr?: string[]) {
@@ -163,8 +164,6 @@ export default defineNuxtModule<ModuleOptions>({
       'INIT_OPTIONS_KEY',
       'UPDATE_OPTIONS_KEY',
       'LOADING_OPTIONS_KEY',
-    ].forEach((name) =>
-      addImports({ name, from: resolve('./runtime/utils/injection') }),
-    )
+    ].forEach((name) => addImports({ name, from: 'vue-echarts/csp' }))
   },
 })

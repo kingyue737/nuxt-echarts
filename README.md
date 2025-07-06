@@ -37,34 +37,34 @@ That's it! You can now use Nuxt ECharts in your Nuxt app ✨
 ## Contribution
 
 <details>
-  <summary>Local development</summary>
-  
-  ```bash
-  # Install dependencies
-  pnpm install
-  
-  # Generate type stubs
-  pnpm run dev:prepare
-  
-  # Develop with the playground
-  pnpm run dev
-  
-  # Build the playground
-  pnpm run dev:build
-  
-  # Run ESLint
-  pnpm run lint
-  
-  # Format with Prettier
-  pnpm run format
-  
-  # Run Vitest
-  pnpm run test
-  pnpm run test:watch
-  
-  # Release new version
-  pnpm run release
-  ```
+<summary>Local development</summary>
+
+```bash
+# Install dependencies
+pnpm install
+
+# Generate type stubs
+pnpm run dev:prepare
+
+# Develop with the playground
+pnpm run dev
+
+# Build the playground
+pnpm run dev:build
+
+# Run ESLint
+pnpm run lint
+
+# Format with Prettier
+pnpm run format
+
+# Run Vitest
+pnpm run test
+pnpm run test:watch
+
+# Release new version
+pnpm run release
+```
 
 </details>
 
@@ -76,7 +76,7 @@ The Nuxt ECharts module is heavily inspired by [vue-echarts](https://github.com/
 
 This project is licensed under the [MIT License](./LICENSE).
 
-This project also partially contains code derived or copied from [vue-echarts(MIT)](https://github.com/ecomfe/vue-echarts/blob/main/LICENSE).
+This project depends on [vue-echarts (MIT)](https://github.com/ecomfe/vue-echarts/blob/main/LICENSE).
 
 ## Notice
 

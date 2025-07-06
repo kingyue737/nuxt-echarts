@@ -65,7 +65,8 @@
     "vue-tsc": "^2.2.10"
   },
   "peerDependencies": {
-    "echarts": "^5.5.1"
+    "echarts": "^5.5.1",
+    "vue-echarts": "^7.0.3"
   },
   "stackblitz": {
     "startCommand": "pnpm run dev:prepare && pnpm run dev"

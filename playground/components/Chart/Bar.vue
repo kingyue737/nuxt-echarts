@@ -1,8 +1,6 @@
 <script setup lang="ts">
 const chart = useTemplateRef('chart')
-onMounted(() => {
-  console.log(chart.value?.setOption)
-})
+
 function random() {
   return Math.round(300 + Math.random() * 700) / 10
 }

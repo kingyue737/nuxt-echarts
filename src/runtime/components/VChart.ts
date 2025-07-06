@@ -1,20 +1,46 @@
 import VChart from 'vue-echarts/csp'
 import '#build/echarts.mjs'
-import { defineComponent, h, ref } from 'vue'
+import { defineComponent, h, ref, toRef } from 'vue'
 
 type VChartType = typeof VChart
+
+const METHOD_NAMES = [
+  'setOption',
+  'getWidth',
+  'getHeight',
+  'getDom',
+  'getOption',
+  'resize',
+  'dispatchAction',
+  'convertToPixel',
+  'convertFromPixel',
+  'containPixel',
+  'getDataURL',
+  'getConnectedDataURL',
+  'appendData',
+  'clear',
+  'isDisposed',
+  'dispose',
+] as const
 
 export default defineComponent({
   inheritAttrs: false,
   setup(props, { attrs, slots, expose }) {
-    const vChartRef = ref<InstanceType<typeof VChart> | null>(null)
+    const root = ref<InstanceType<typeof VChart> | null>(null)
 
-    function setOption(option: any) {
-      vChartRef.value?.setOption(option)
-    }
+    const publicMethods = Object.fromEntries(
+      METHOD_NAMES.map((name) => [
+        name,
+        (...args: any[]) => (root.value?.[name] as any)(...args),
+      ]),
+    )
 
-    expose({ setOption })
+    expose({
+      ...publicMethods,
+      root: toRef(() => root.value?.root),
+      chart: toRef(() => root.value?.chart),
+    })
 
-    return () => h(VChart, { ...attrs, ref: vChartRef }, slots)
+    return () => h(VChart, { ...attrs, ref: root }, slots)
   },
 }) as VChartType

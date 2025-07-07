@@ -25,10 +25,7 @@ export default defineNuxtModule<ModuleOptions>({
     renderer: 'canvas',
   },
   setup(options, nuxt) {
-    if (
-      nuxt.options.ssr === false &&
-      nuxt.options.experimental.componentIslands === 'auto'
-    ) {
+    if (nuxt.options.experimental.componentIslands === 'auto') {
       nuxt.options.experimental.componentIslands = true
     }
 
@@ -49,26 +46,17 @@ export default defineNuxtModule<ModuleOptions>({
 
     addComponentsDir({
       path: resolve('./runtime/components'),
-      ignore: ['VChart.*'],
     })
-    if (!options.ssr) {
-      addComponent({
-        name: 'VChart',
-        filePath: resolve('./runtime/components/VChart'),
-        mode: 'all',
-      })
-    } else {
-      addComponent({
-        name: 'VChart',
-        filePath: resolve('./runtime/components/VChart'),
-        mode: 'client',
-      })
-      addComponent({
-        name: 'VChart',
-        filePath: resolve('./runtime/components/VChartServer'),
-        mode: 'server',
-      })
-    }
+    addComponent({
+      name: 'VChartFull',
+      filePath: resolve('./runtime/components/VChartClient'),
+      mode: 'client',
+    })
+    addComponent({
+      name: 'VChartFull',
+      filePath: resolve('./runtime/components/VChartServer'),
+      mode: 'server',
+    })
 
     nuxt.options.css.unshift('vue-echarts/csp/style.css')
     nuxt.options.css.unshift(resolve('./runtime/style.css'))

@@ -31,12 +31,4 @@ export interface ModuleOptions {
    * (imported only if `<VChart>` is used)
    */
   features?: FeaturesName[]
-
-  /**
-   * This option indicates if `<VChart>` should also render on server.
-   * By default, it only render on client.
-   *
-   * @default false
-   */
-  ssr?: boolean
 }

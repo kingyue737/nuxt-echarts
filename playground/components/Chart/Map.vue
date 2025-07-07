@@ -129,6 +129,6 @@ const option: ECOption = {
 
 <template>
   <NExample id="map" title="Map Chart" desc="SSR + client-side lazy loading">
-    <VChart :option="option" />
+    <VChartFull :option="option" />
   </NExample>
 </template>

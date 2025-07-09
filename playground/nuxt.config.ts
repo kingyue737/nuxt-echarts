@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['../src/module', '@unocss/nuxt'],
+  modules: ['../src/module', '@unocss/nuxt', '@nuxthub/core'],
   css: ['~/assets/style.css'],
   unocss: { preflight: true },
   echarts: {

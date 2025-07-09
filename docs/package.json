@@ -2,6 +2,9 @@
   "name": "nuxt-echarts-docs",
   "private": true,
   "type": "module",
+  "scripts": {
+    "build": "nuxi build"
+  },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.53",
     "@iconify-json/simple-icons": "^1.2.40",

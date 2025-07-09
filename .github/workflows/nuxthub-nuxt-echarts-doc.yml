@@ -3,7 +3,7 @@ on: push
 
 jobs:
   deploy:
-    name: "Deploy to NuxtHub"
+    name: 'Deploy to NuxtHub'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -31,3 +31,5 @@ jobs:
         uses: nuxt-hub/action@v2
         with:
           project-key: nuxt-echarts-do-kc8f
+          directory: docs
+          output-directory: dist

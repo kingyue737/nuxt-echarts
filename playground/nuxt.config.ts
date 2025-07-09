@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   css: ['~/assets/style.css'],
   unocss: { preflight: true },
   echarts: {
-    ssr: true,
     renderer: ['canvas', 'svg'],
     charts: ['BarChart', 'MapChart'],
     components: [

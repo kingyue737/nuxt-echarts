@@ -1,3 +1,9 @@
 packages:
-  - 'docs'
-  - 'playground'
+  - docs
+  - playground
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - '@tailwindcss/oxide'
+  - esbuild
+  - sharp

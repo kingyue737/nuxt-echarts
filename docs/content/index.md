@@ -51,7 +51,7 @@ orientation: horizontal
 Client / Server Side Rendering [ECharts in Nuxt]{.text-primary}
 
 #description
-Nuxt Echarts cannot only integrate Apache ECharts™ in the browser but also render on server side via Nuxt Server Component.
+Nuxt ECharts cannot only integrate Apache ECharts™ in the browser but also render on server side via Nuxt Server Component.
 
 #links
   :::u-button

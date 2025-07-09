@@ -5,19 +5,10 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui-pro',
     '@nuxt/content',
+    '@nuxthub/core',
     'nuxt-og-image',
     'nuxt-llms',
   ],
-  hooks: {
-    // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
-    'components:extend': (components) => {
-      const globals = components.filter((c) =>
-        ['UButton', 'UIcon'].includes(c.pascalName),
-      )
-
-      globals.forEach((c) => (c.global = true))
-    },
-  },
   css: ['~/assets/css/main.css'],
   colorMode: {
     disableTransition: true,
@@ -38,10 +29,18 @@ export default defineNuxtConfig({
       autoSubfolderIndex: false,
     },
   },
+  fonts: {
+    provider: 'bunny',
+  },
+  content: {
+    experimental: {
+      sqliteConnector: 'native',
+    },
+  },
   llms: {
     domain: 'https://echarts.nuxt.dev',
     title: 'Nuxt ECharts',
     description: 'Nuxt module for Apache ECharts™',
   },
-  compatibilityDate: '2025-05-29',
+  compatibilityDate: '2025-07-09',
 })

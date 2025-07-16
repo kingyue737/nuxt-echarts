@@ -19,9 +19,6 @@ export default defineNuxtConfig({
   typescript: {
     strict: false,
   },
-  future: {
-    compatibilityVersion: 4,
-  },
   nitro: {
     prerender: {
       routes: ['/'],

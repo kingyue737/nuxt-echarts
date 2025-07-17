@@ -53,6 +53,7 @@
     "@nuxthub/core": "^0.9.0",
     "@types/node": "^22.16.4",
     "changelogen": "^0.6.2",
+    "embla-carousel": "^8.6.0",
     "echarts": "^5.6.0",
     "echarts-gl": "^2.0.9",
     "eslint": "^9.31.0",
@@ -60,10 +61,10 @@
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "typescript": "^5.8.3",
-    "vite": "^7.0.4",
+    "vite": "^7.0.5",
     "vitest": "^3.2.4",
     "vue-tsc": "^3.0.1",
-    "wrangler": "^4.24.3"
+    "wrangler": "^4.24.4"
   },
   "peerDependencies": {
     "echarts": "^5.5.1"

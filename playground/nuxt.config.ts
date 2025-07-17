@@ -1,7 +1,6 @@
 export default defineNuxtConfig({
-  modules: ['../src/module', '@unocss/nuxt', '@nuxthub/core'],
+  modules: ['../src/module', '@nuxt/ui', '@nuxthub/core'],
   css: ['~/assets/style.css'],
-  unocss: { preflight: true },
   echarts: {
     ssr: true,
     renderer: ['canvas', 'svg'],
@@ -14,6 +13,17 @@ export default defineNuxtConfig({
       'GeoComponent',
       'VisualMapComponent',
     ],
+  },
+  colorMode: {
+    preference: 'dark',
+    storage: 'cookie',
+  },
+  ui: {
+    fonts: false,
+    theme: {
+      transitions: false,
+      colors: ['primary'],
+    },
   },
   devtools: { enabled: false },
   // echarts-liquidfill is not ESM friendly

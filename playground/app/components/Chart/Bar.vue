@@ -78,7 +78,7 @@ function showToolbox() {
       @globalout="hideToolbox()"
     />
     <template #extra>
-      <NButton @click="refreshData">Refresh</NButton>
+      <UButton @click="refreshData">Refresh</UButton>
     </template>
   </NExample>
 </template>

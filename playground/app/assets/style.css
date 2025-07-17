@@ -1,10 +1,5 @@
-:root {
-  --nui-c-context: 125, 125, 125;
-}
-
-html {
-  background-color: white;
-}
+@import 'tailwindcss';
+@import '@nuxt/ui';
 
 html.dark {
   color-scheme: dark;
@@ -17,8 +12,4 @@ html.dark {
       color: white !important;
     }
   }
-}
-
-::selection {
-  background: #8884;
 }

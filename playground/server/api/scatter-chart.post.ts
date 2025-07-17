@@ -1,7 +1,7 @@
 import * as echarts from 'echarts'
 import type { ECBasicOption } from 'echarts/types/dist/shared.js'
 import type { InitOptions } from '../../../src/runtime/types'
-import greenTheme from '../../theme.json'
+import greenTheme from '~/assets/theme.json'
 
 echarts.registerTheme('ovilia-green', greenTheme)
 

@@ -8,6 +8,7 @@ for (let i = 0; i <= 360; i++) {
 }
 
 const option = {
+  backgroundColor: 'transparent',
   title: {
     text: 'Dual Numeric Axis',
   },

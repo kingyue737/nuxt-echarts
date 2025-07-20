@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content'
+import { version } from '../../../package.json'
 
 const navigation = inject<ContentNavigationItem[]>('navigation')
 
@@ -24,7 +25,7 @@ const { header } = useAppConfig()
           class="text-primary size-7"
         />
         Nuxt ECharts
-        <UBadge label="Docs" variant="subtle" class="mb-0.5" />
+        <UBadge :label="`v${version}`" variant="subtle" class="mb-0.5" />
       </template>
     </template>
 

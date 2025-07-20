@@ -19,10 +19,10 @@ defineProps<{ id: string; title: string; desc: string }>()
         >Source</UButton
       >
     </h3>
-    <UCard class="my-5 dark:bg-[#100c2a]">
+    <UCard class="mx-auto my-5 contents w-fit sm:block">
       <slot />
     </UCard>
-    <div class="text-muted mx-auto mb-4 w-xl text-sm">
+    <div class="text-muted mx-auto mb-4 max-w-xl text-sm">
       <slot name="extra" />
     </div>
   </section>

@@ -46,16 +46,15 @@
     "@nuxt/kit": "^4.0.0"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^1.5.2",
+    "@nuxt/eslint-config": "^1.6.0",
     "@nuxt/module-builder": "^1.0.1",
     "@nuxt/schema": "^4.0.0",
     "@nuxt/test-utils": "^3.19.2",
     "@nuxthub/core": "^0.9.0",
-    "@types/node": "^22.16.4",
+    "@types/node": "^22.16.5",
     "changelogen": "^0.6.2",
-    "embla-carousel": "^8.6.0",
     "echarts": "^5.6.0",
-    "echarts-gl": "^2.0.9",
+    "embla-carousel": "^8.6.0",
     "eslint": "^9.31.0",
     "nuxt": "^4.0.0",
     "prettier": "^3.6.2",
@@ -63,8 +62,8 @@
     "typescript": "^5.8.3",
     "vite": "^7.0.5",
     "vitest": "^3.2.4",
-    "vue-tsc": "^3.0.1",
-    "wrangler": "^4.24.4"
+    "vue-tsc": "^3.0.3",
+    "wrangler": "^4.25.0"
   },
   "peerDependencies": {
     "echarts": "^5.5.1"

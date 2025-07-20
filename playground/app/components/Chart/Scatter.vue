@@ -5,6 +5,7 @@ const defaultTheme = inject(THEME_KEY, null)
 const defaultInitOptions = inject(INIT_OPTIONS_KEY, null)
 
 const option = ref({
+  backgroundColor: 'transparent',
   legend: {
     selected: {
       '1990': true,
@@ -58,7 +59,7 @@ onMounted(() => {
     <div ref="container" v-html="data" />
     <template #extra>
       Click on a legend to toggle series display.<br />
-      This example shows how to implement a Server-rendered ECharts with
+      This example shows how to implement a server-rendered ECharts with
       lightweight client runtime via server route without the components
       provided by this module.
     </template>

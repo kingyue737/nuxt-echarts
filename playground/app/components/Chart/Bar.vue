@@ -8,6 +8,7 @@ function random() {
 function getData(): ECOption {
   return {
     animation: false,
+    backgroundColor: 'transparent',
     tooltip: {
       className: 'echarts-tooltip',
     },
@@ -71,7 +72,7 @@ function showToolbox() {
 
 <template>
   <NExample id="bar" title="Bar Chart" desc="SSR + client-side lazy loading">
-    <VChart
+    <VChartFull
       ref="chart"
       :option="option"
       @native:mouseenter="showToolbox()"

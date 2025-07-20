@@ -2,14 +2,14 @@ export default defineNuxtConfig({
   modules: ['../src/module', '@nuxt/ui', '@nuxthub/core'],
   css: ['~/assets/style.css'],
   echarts: {
-    ssr: true,
     renderer: ['canvas', 'svg'],
-    charts: ['BarChart', 'MapChart'],
+    charts: ['LineChart', 'BarChart', 'MapChart'],
     components: [
       'DatasetComponent',
       'GridComponent',
       'TooltipComponent',
       'ToolboxComponent',
+      'LegendComponent',
       'GeoComponent',
       'VisualMapComponent',
     ],

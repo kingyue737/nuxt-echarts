@@ -2,6 +2,7 @@
 import type { ECSSRClientEventParams } from 'echarts/ssr/client/index'
 
 const option = ref({
+  backgroundColor: 'transparent',
   legend: {
     top: '5%',
     left: 'center',

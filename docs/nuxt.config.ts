@@ -18,6 +18,9 @@ export default defineNuxtConfig({
   },
   typescript: {
     strict: false,
+    nodeTsConfig: {
+      include: ['../nuxt.schema.ts'],
+    },
   },
   nitro: {
     prerender: {

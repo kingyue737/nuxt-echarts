@@ -11,8 +11,8 @@ import {
   h,
   nextTick,
   watchEffect,
-  type PropType,
 } from 'vue'
+import type { PropType } from 'vue'
 import { init as initChart } from 'echarts/core'
 import type {
   EChartsType,
@@ -29,10 +29,11 @@ import {
   autoresizeProps,
   useLoading,
   loadingProps,
-  type PublicMethods,
 } from '../composables'
+import type { PublicMethods } from '../composables'
 import { isOn, omitOn } from '../utils/on'
-import { register, TAG_NAME, type EChartsElement } from '../utils/wc'
+import { register, TAG_NAME } from '../utils/wc'
+import type { EChartsElement } from '../utils/wc'
 import '#build/echarts.mjs'
 
 import {
@@ -78,52 +79,46 @@ export default defineComponent({
     const realUpdateOptions = computed(
       () => props.updateOptions || toValue(defaultUpdateOptions) || {},
     )
-    const nativeListeners = shallowRef<Record<string, unknown>>({})
-    const realAttrs = computed(() => ({
-      ...omitOn(attrs),
-      ...nativeListeners.value,
-    }))
+    const nonEventAttrs = computed(() => omitOn(attrs))
+    const nativeListeners: Record<string, unknown> = {}
+
     const listeners: Map<{ event: string; once?: boolean; zr?: boolean }, any> =
       new Map()
 
-    function collectListeners() {
-      // We are converting all `on<Event>` props and collect them into `listeners` so that
-      // we can bind them to the chart instance later.
-      // For `onNative:<event>` props, we just strip the `Native:` part and collect them into
-      // `nativeListeners` so that we can bind them to the root element directly.
-      const _nativeListeners: Record<string, unknown> = {}
-      Object.keys(attrs)
-        .filter((key) => isOn(key))
-        .forEach((key) => {
-          // Collect native DOM events
-          if (key.indexOf('Native:') === 2) {
-            // onNative:click -> onClick
-            const nativeKey = `on${key.charAt(9).toUpperCase()}${key.slice(10)}`
+    // We are converting all `on<Event>` props and collect them into `listeners` so that
+    // we can bind them to the chart instance later.
+    // For `onNative:<event>` props, we just strip the `Native:` part and collect them into
+    // `nativeListeners` so that we can bind them to the root element directly.
+    Object.keys(attrs)
+      .filter((key) => isOn(key))
+      .forEach((key) => {
+        // Collect native DOM events
+        if (key.indexOf('Native:') === 2) {
+          // onNative:click -> onClick
+          const nativeKey = `on${key.charAt(9).toUpperCase()}${key.slice(10)}`
 
-            _nativeListeners[nativeKey] = attrs[key]
-            return
-          }
+          nativeListeners[nativeKey] = attrs[key]
+          return
+        }
 
-          // onClick    -> c + lick
-          // onZr:click -> z + r:click
-          let event = key.charAt(2).toLowerCase() + key.slice(3)
+        // onClick    -> c + lick
+        // onZr:click -> z + r:click
+        let event = key.charAt(2).toLowerCase() + key.slice(3)
 
-          let zr: boolean | undefined
-          if (event.indexOf('zr:') === 0) {
-            zr = true
-            event = event.substring(3)
-          }
+        let zr: boolean | undefined
+        if (event.indexOf('zr:') === 0) {
+          zr = true
+          event = event.substring(3)
+        }
 
-          let once: boolean | undefined
-          if (event.substring(event.length - 4) === 'Once') {
-            once = true
-            event = event.substring(0, event.length - 4)
-          }
+        let once: boolean | undefined
+        if (event.substring(event.length - 4) === 'Once') {
+          once = true
+          event = event.substring(0, event.length - 4)
+        }
 
-          listeners.set({ event, zr, once }, attrs[key])
-        })
-      nativeListeners.value = _nativeListeners
-    }
+        listeners.set({ event, zr, once }, attrs[key])
+      })
 
     function init(option?: Option) {
       if (!root.value) {
@@ -272,10 +267,7 @@ export default defineComponent({
 
     useAutoresize(chart, autoresize, root)
 
-    onMounted(async () => {
-      collectListeners()
-      // `.client` components are rendered only after being mounted
-      if (!root.value) await nextTick()
+    onMounted(() => {
       init()
     })
 
@@ -305,9 +297,10 @@ export default defineComponent({
     // that will be available when using this component.
     return (() =>
       h(TAG_NAME, {
-        ...realAttrs.value,
+        ...nonEventAttrs.value,
+        ...nativeListeners,
         ref: root,
-        class: ['echarts', realAttrs.value.class],
+        class: ['echarts', nonEventAttrs.value.class],
       })) as unknown as typeof exposed & PublicMethods
   },
 })

@@ -74,7 +74,7 @@ const links = computed(() => {
     </UPageBody>
 
     <template v-if="page?.body?.toc?.links?.length" #right>
-      <UContentToc :title="toc?.title" :links="page.body?.toc?.links">
+      <UContentToc :title="toc?.title" :links="page.body?.toc?.links" highlight>
         <template v-if="toc?.bottom" #bottom>
           <div
             class="hidden space-y-6 lg:block"

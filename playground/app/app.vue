@@ -57,7 +57,9 @@ const themeOptions = [
       </aside>
     </ClientOnly>
 
-    <div class="grid justify-center gap-y-16 py-15 text-center">
+    <div
+      class="grid justify-center gap-y-16 overflow-x-hidden py-15 text-center"
+    >
       <header>
         <div class="mb-10 inline-block h-fit w-fit">
           <ChartLogo />
@@ -95,6 +97,7 @@ const themeOptions = [
           >
         </p>
       </header>
+      <ChartLine />
       <ChartBar />
       <ChartMap />
       <ChartPolar />

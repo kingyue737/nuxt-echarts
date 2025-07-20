@@ -15,7 +15,7 @@
     "nuxt-og-image": "^5.1.9"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^1.5.2",
+    "@nuxt/eslint": "^1.6.0",
     "@nuxt/image": "^1.10.0"
   }
 }

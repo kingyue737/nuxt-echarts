@@ -2,7 +2,7 @@ import {
   defineNuxtModule,
   addPlugin,
   createResolver,
-  addComponentsDir,
+  // addComponentsDir,
   addImports,
   addTemplate,
   addTypeTemplate,
@@ -44,8 +44,26 @@ export default defineNuxtModule<ModuleOptions>({
       mode: 'server',
     })
 
-    addComponentsDir({
-      path: resolve('./runtime/components'),
+    // Unknown error that addComponentsDir is not working in prod
+    // addComponentsDir({
+    //   path: resolve("./runtime/components"),
+    // });
+    addComponent({
+      name: 'VChart',
+      filePath: resolve('./runtime/components/VChart'),
+    })
+    addComponent({
+      name: 'VChartServer',
+      filePath: resolve('./runtime/components/VChartServer'),
+    })
+    addComponent({
+      name: 'VChartLight',
+      filePath: resolve('./runtime/components/VChartLight'),
+    })
+    addComponent({
+      name: 'VChartIsland',
+      filePath: resolve('./runtime/components/VChartIsland.server'),
+      mode: 'server',
     })
     addComponent({
       name: 'VChartFull',

@@ -1,6 +1,45 @@
 # Changelog
 
 
+## v0.4.0
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.3.3...v0.4.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Transfer SSR functionality from VChart to VChartFull ([433e100](https://github.com/kingyue737/nuxt-echarts/commit/433e100))
+
+### 🩹 Fixes
+
+- AddComponentsDir not work in production ([b316fda](https://github.com/kingyue737/nuxt-echarts/commit/b316fda))
+
+### 📖 Documentation
+
+- Enable nuxt studio ([8ebb08c](https://github.com/kingyue737/nuxt-echarts/commit/8ebb08c))
+- Update downloads href [skip ci] ([f9b4890](https://github.com/kingyue737/nuxt-echarts/commit/f9b4890))
+
+### 🏡 Chore
+
+- Up deps ([49527c4](https://github.com/kingyue737/nuxt-echarts/commit/49527c4))
+- Up deps ([3c1526d](https://github.com/kingyue737/nuxt-echarts/commit/3c1526d))
+- Fix chart flick in demo ([cbf6df8](https://github.com/kingyue737/nuxt-echarts/commit/cbf6df8))
+- Add nuxt-hub ([#23](https://github.com/kingyue737/nuxt-echarts/pull/23))
+- Up to nuxt 4 ([c34cecf](https://github.com/kingyue737/nuxt-echarts/commit/c34cecf))
+- Migrate playground to nuxt ui ([7518e85](https://github.com/kingyue737/nuxt-echarts/commit/7518e85))
+
+### 🤖 CI
+
+- Add nuxthub workflow ([739ba1d](https://github.com/kingyue737/nuxt-echarts/commit/739ba1d))
+- Add nuxthub workflow ([6deeae6](https://github.com/kingyue737/nuxt-echarts/commit/6deeae6))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Transfer SSR functionality from VChart to VChartFull ([433e100](https://github.com/kingyue737/nuxt-echarts/commit/433e100))
+
+### ❤️ Contributors
+
+- Yue JIN ([@kingyue737](https://github.com/kingyue737))
+
 ## v0.3.3
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.3.2...v0.3.3)

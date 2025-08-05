@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Prepare build
+        run: pnpm run dev:prepare
+
       - name: Ensure NuxtHub module is installed
         run: pnpx nuxthub@latest ensure
 

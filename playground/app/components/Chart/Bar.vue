@@ -9,9 +9,6 @@ function getData(): ECOption {
   return {
     animation: false,
     backgroundColor: 'transparent',
-    tooltip: {
-      className: 'echarts-tooltip',
-    },
     toolbox: {
       show: false,
       feature: {

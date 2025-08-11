@@ -26,7 +26,6 @@ const option: ECOption = {
     trigger: 'item',
     showDelay: 0,
     transitionDuration: 0.2,
-    className: 'echarts-tooltip',
   },
   visualMap: {
     left: 'right',

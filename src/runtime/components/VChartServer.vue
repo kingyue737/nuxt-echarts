@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, inject, ref, toValue } from 'vue'
 import type { InitOptions, Option, Theme } from '../types'
-import { THEME_KEY, INIT_OPTIONS_KEY } from '../utils/injection'
+import { THEME_KEY, INIT_OPTIONS_KEY } from 'vue-echarts'
 import type { VChartIsland } from '#components'
 
 const defaultTheme = inject(THEME_KEY, null)

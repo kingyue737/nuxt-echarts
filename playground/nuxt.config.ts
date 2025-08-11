@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   css: ['~/assets/style.css'],
   echarts: {
     renderer: ['canvas', 'svg'],
-    charts: ['LineChart', 'BarChart', 'MapChart'],
+    charts: ['LineChart', 'BarChart', 'MapChart', 'PieChart'],
     components: [
       'DatasetComponent',
       'GridComponent',

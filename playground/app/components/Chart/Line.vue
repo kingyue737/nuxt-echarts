@@ -4,7 +4,6 @@ const option: ECOption = {
   legend: { top: 20 },
   tooltip: {
     trigger: 'axis',
-    className: 'echarts-tooltip',
   },
   dataset: {
     source: [
@@ -51,10 +50,40 @@ const option: ECOption = {
     },
   ],
 }
+function getPieOption(params: any) {
+  const option: ECOption = {
+    backgroundColor: 'transparent',
+    dataset: { source: [params[0].dimensionNames, params[0].data] },
+    series: [
+      {
+        type: 'pie',
+        radius: ['60%', '100%'],
+        seriesLayoutBy: 'row',
+        itemStyle: {
+          borderRadius: 5,
+        },
+        padAngle: 5,
+        label: {
+          position: 'center',
+          formatter: params[0].name,
+        },
+      },
+    ],
+  }
+  return option
+}
+const initOptions = {
+  width: 100,
+  height: 100,
+}
 </script>
 
 <template>
   <NExample id="line" title="Line Chart" desc="no SSR">
-    <VChart :option="option" style="height: 310px; width: 650px" />
+    <VChart :option="option" style="height: 310px; width: 650px">
+      <template #tooltip="params">
+        <VChart :option="getPieOption(params)" :init-options="initOptions" />
+      </template>
+    </VChart>
   </NExample>
 </template>

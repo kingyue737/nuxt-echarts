@@ -1,15 +1,2 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
-
-html.dark {
-  color-scheme: dark;
-  background-color: #151515;
-  color: white;
-  .echarts-tooltip {
-    background-color: #353535 !important;
-    span,
-    div {
-      color: white !important;
-    }
-  }
-}

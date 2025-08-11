@@ -70,13 +70,11 @@ That's it! You can now use Nuxt ECharts in your Nuxt app ✨
 
 ## Credits
 
-The Nuxt ECharts module is heavily inspired by [vue-echarts](https://github.com/ecomfe/vue-echarts), created by [@Justineo](https://github.com/Justineo).
+The Nuxt ECharts module depends on [vue-echarts](https://github.com/ecomfe/vue-echarts), created by [@Justineo](https://github.com/Justineo).
 
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
-
-This project also partially contains code derived or copied from [vue-echarts(MIT)](https://github.com/ecomfe/vue-echarts/blob/main/LICENSE).
 
 ## Notice
 

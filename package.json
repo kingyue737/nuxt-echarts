@@ -43,30 +43,42 @@
     "test:types": "vue-tsc --noEmit && nuxi typecheck playground"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.0.2"
+    "@nuxt/kit": "^4.0.3"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^1.7.1",
+    "@nuxt/eslint-config": "^1.8.0",
     "@nuxt/module-builder": "^1.0.2",
-    "@nuxt/schema": "^4.0.2",
+    "@nuxt/schema": "^4.0.3",
     "@nuxt/test-utils": "^3.19.2",
     "@nuxthub/core": "^0.9.0",
-    "@types/node": "^22.17.0",
+    "@types/node": "^22.17.1",
     "changelogen": "^0.6.2",
-    "echarts": "^5.6.0",
+    "echarts": "^6.0.0",
     "embla-carousel": "^8.6.0",
-    "eslint": "^9.32.0",
-    "nuxt": "^4.0.2",
+    "eslint": "^9.33.0",
+    "nuxt": "^4.0.3",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "typescript": "^5.9.2",
-    "vite": "^7.0.6",
+    "vite": "^7.1.1",
     "vitest": "^3.2.4",
+    "vue-echarts": "^8.0.0-beta.1",
     "vue-tsc": "^3.0.5",
-    "wrangler": "^4.27.0"
+    "wrangler": "^4.28.1"
   },
   "peerDependencies": {
-    "echarts": "^5.5.1"
+    "echarts": "^6.0.0",
+    "vue-echarts": "^8.0.0-beta.1"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "echarts": "6",
+        "@nuxt/kit": "4",
+        "vue-tsc": "3",
+        "vue-component-type-helpers": "3.0.5"
+      }
+    }
   },
   "stackblitz": {
     "startCommand": "pnpm run dev:prepare && pnpm run dev"

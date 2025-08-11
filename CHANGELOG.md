@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v1.0.0
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.4.0...v1.0.0)
+
+### 🚀 Enhancements
+
+- ⚠️  Support ECharts 6 and depends on Vue ECharts ([51dfa16](https://github.com/kingyue737/nuxt-echarts/commit/51dfa16))
+
+### 🏡 Chore
+
+- Update deps and ci ([4c50661](https://github.com/kingyue737/nuxt-echarts/commit/4c50661))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Support ECharts 6 and depends on Vue ECharts ([51dfa16](https://github.com/kingyue737/nuxt-echarts/commit/51dfa16))
+
+### ❤️ Contributors
+
+- Yue JIN <yuejin13@qq.com>
+
 ## v0.4.0
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.3.3...v0.4.0)

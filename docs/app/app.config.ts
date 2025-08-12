@@ -84,7 +84,7 @@ export default defineAppConfig({
         {
           icon: 'i-simple-icons-stackblitz',
           label: 'Online Playground',
-          to: 'https://stackblitz.com/github/kingyue737/nuxt-echarts?file=playground%2Fapp.vue',
+          to: 'https://stackblitz.com/github/kingyue737/nuxt-echarts?file=playground%2Fapp%2Fapp.vue',
           target: '_blank',
         },
       ],

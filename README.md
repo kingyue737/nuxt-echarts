@@ -13,12 +13,13 @@ Nuxt Module for Apache ECharts™
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 - [🎞️ &nbsp;Online Demo](https://nuxt-echarts.nuxt.dev/)
-- [🏀 &nbsp;Online Playground](https://stackblitz.com/github/kingyue737/nuxt-echarts?file=playground%2Fapp.vue)
+- [🏀 &nbsp;Online Playground](https://stackblitz.com/github/kingyue737/nuxt-echarts?file=playground%2Fapp%2Fapp.vue)
 
 ## Features
 
-- ⛰&nbsp;**SSR**: Server-side SVG Rendering with [Nuxt server components](https://nuxt.com/docs/guide/directory-structure/components#server-components)
+- ✌️&nbsp;**[Vue ECharts](https://github.com/ecomfe/vue-echarts)**: effortless integration with the top Vue component for ECharts
 
+- ⛰&nbsp;**SSR**: Server-side SVG Rendering with [Nuxt server components](https://nuxt.com/docs/guide/directory-structure/components#server-components)
 - ♾️&nbsp;**Client Hydration**: lazy-loading full ECharts or [lightweight client runtime](https://echarts.apache.org/handbook/en/how-to/cross-platform/server#using-lightweight-runtime)
 - 🛠️&nbsp;**Configurable**: import only [necessary functionality](https://echarts.apache.org/handbook/en/basics/import#shrinking-bundle-size) for shrinking bundle size
 - 🦾&nbsp;**Type Strong**: auto-import [ECharts option type](https://echarts.apache.org/handbook/en/basics/import#creating-an-option-type-in-typescript) based on your config

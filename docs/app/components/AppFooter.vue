@@ -8,7 +8,7 @@ const items = [
   },
   {
     label: 'Playground',
-    to: 'https://stackblitz.com/github/kingyue737/nuxt-echarts?file=playground%2Fapp.vue',
+    to: 'https://stackblitz.com/github/kingyue737/nuxt-echarts?file=playground%2Fapp%2Fapp.vue',
     target: '_blank',
   },
   {

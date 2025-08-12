@@ -15,6 +15,7 @@
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@10.14.0",
+  "types": "dist/types.d.mts",
   "exports": {
     ".": {
       "types": "./dist/types.d.mts",

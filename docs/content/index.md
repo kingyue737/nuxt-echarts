@@ -1,50 +1,45 @@
 ---
 seo:
   title: Nuxt ECharts - Nuxt Module for Apache ECharts™
-description: Integrate Apache ECharts™ in your Nuxt application with both client-side and server-side Rendering.
+description: Integrate Apache ECharts™ in your Nuxt application with both
+  client-side and server-side Rendering.
 ---
 
 ::u-page-hero
 ---
 orientation: horizontal
 ---
-  ::div
-  ![echarts-liquid](/echarts-liquid-fill.svg){.mx-auto .my-12}
-
-    :::prose-pre{filename="Terminal" code="npx nuxi module add echarts"}
+  :::div
+  ![echarts-liquid](/echarts-liquid-fill.svg){.mx-auto.my-12}
+  
+    ::::prose-pre{code="npx nuxi module add echarts" filename="Terminal"}
     ```bash
     npx nuxi module add echarts
     ```
-    :::
-  ::
+    ::::
+  :::
 
 #headline
   :::u-badge
   ---
-  variant: subtle
-  size: lg
   class: relative rounded-full font-semibold gap-0.5
+  size: lg
+  variant: subtle
   ---
   Online Demo
-
-    :::nuxt-link
+  
+    ::::nuxt-link
     ---
-    to: https://nuxt-echarts.nuxt.dev
-    target: _blank
-    class: 'focus:outline-none'
     tabindex: -1
+    class: focus:outline-none
+    target: _blank
+    to: https://nuxt-echarts.nuxt.dev
     ---
-    []{.absolute .inset-0 aria-hidden="true"}
-
-    :::
-
-    :::u-icon
-    ---
-    name: i-lucide-external-link
-    class: pointer-events-none h-4 w-4
-    ---
-
-    :::
+    []{.absolute.inset-0 ariaHidden="true"}
+    ::::
+  
+    ::::u-icon{.pointer-events-none.h-4.w-4 name="i-lucide-external-link"}
+    ::::
   :::
 
 #title
@@ -77,45 +72,38 @@ Nuxt ECharts cannot only integrate Apache ECharts™ in the browser but also ren
 ::
 
 ::u-page-section
-
   :::u-page-grid
-
-    :::u-page-card
+    ::::u-page-card
     ---
+    spotlight: true
+    description: Server-side SVG Rendering with Nuxt server components.
     icon: i-simple-icons-nuxt
     title: SSR
-    description: Server-side SVG Rendering with Nuxt server components.
     to: /guides/ssr
+    ---
+    ::::
+  
+    ::::u-page-card
+    ---
     spotlight: true
-    ---
-
-    :::
-
-    :::u-page-card
-    ---
+    description: Lazy-loading full ECharts or lightweight client runtime.
     icon: i-lucide-sparkles
     title: Client Hydration
-    description: Lazy-loading full ECharts or lightweight client runtime.
     to: /guides/ssr#client-hydration
+    ---
+    ::::
+  
+    ::::u-page-card
+    ---
     spotlight: true
-    ---
-
-    :::
-
-    :::u-page-card
-    ---
+    description: Auto-import ECharts option type based on your config.
     icon: i-simple-icons-typescript
     title: TypeScript
-    description: Auto-import ECharts option type based on your config.
     to: /guides/usage#typescript
-    spotlight: true
     ---
-
-    :::
-
+    ::::
   :::
 
 #title
 Features
-
 ::

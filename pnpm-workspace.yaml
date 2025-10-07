@@ -2,8 +2,10 @@ packages:
   - docs
   - playground
 
-onlyBuiltDependencies:
+ignoredBuiltDependencies:
   - '@parcel/watcher'
   - '@tailwindcss/oxide'
   - esbuild
+
+onlyBuiltDependencies:
   - sharp

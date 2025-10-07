@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content'
-import { findPageHeadline } from '#ui-pro/utils/content'
+import { findPageHeadline } from '@nuxt/content/utils'
 
 definePageMeta({
   layout: 'docs',
@@ -39,7 +39,7 @@ defineOgImageComponent('Docs', {
   description: page.value.description,
 })
 
-const headline = computed(() => findPageHeadline(navigation?.value, page.value))
+const headline = computed(() => findPageHeadline(navigation?.value, page.value?.path))
 
 const links = computed(() => {
   const links = []

@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Prepare build
+        run: pnpm run dev:prepare
+
       - name: Build
         run: pnpm run prepack
 
@@ -36,6 +39,6 @@ jobs:
         run: npm i -g npm && pnpm publish --access public --no-git-checks
 
       - name: Generate Changelog
-        run: npx changelogithub
+        run: pnpx changelogithub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

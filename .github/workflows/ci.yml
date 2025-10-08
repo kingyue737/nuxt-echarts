@@ -31,7 +31,7 @@ jobs:
       - name: Lint
         run: pnpm run lint
 
-      - name: Prepare
+      - name: Prepare build
         run: pnpm run dev:prepare
 
       - name: Test

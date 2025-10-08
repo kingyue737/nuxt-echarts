@@ -1,6 +1,29 @@
 # Changelog
 
 
+## v1.0.1
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v1.0.0...v1.0.1)
+
+### 📖 Documentation
+
+- Remove internal types ([77fbdb9](https://github.com/kingyue737/nuxt-echarts/commit/77fbdb9))
+- Fix playground url ([34ec67c](https://github.com/kingyue737/nuxt-echarts/commit/34ec67c))
+- Format by nuxt studio ([cdbb074](https://github.com/kingyue737/nuxt-echarts/commit/cdbb074))
+- Format mdc and typo fix ([74ddfb0](https://github.com/kingyue737/nuxt-echarts/commit/74ddfb0))
+
+### 🏡 Chore
+
+- Add types in package.json for TS badge in npmjs.com ([fc98246](https://github.com/kingyue737/nuxt-echarts/commit/fc98246))
+- **docs, playground:** Up to nuxt-ui v4 ([6a3f287](https://github.com/kingyue737/nuxt-echarts/commit/6a3f287))
+- Add more ignored built deps ([ae8a440](https://github.com/kingyue737/nuxt-echarts/commit/ae8a440))
+- Add release CI ([3476bfc](https://github.com/kingyue737/nuxt-echarts/commit/3476bfc))
+- Add CI ([#32](https://github.com/kingyue737/nuxt-echarts/pull/32))
+
+### ❤️ Contributors
+
+- Yue JIN ([@kingyue737](https://github.com/kingyue737))
+
 ## v1.0.0
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v0.4.0...v1.0.0)

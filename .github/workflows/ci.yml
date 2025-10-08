@@ -42,3 +42,6 @@ jobs:
 
       - name: Build
         run: pnpm run prepack
+
+      - name: Continuous Release
+        run: pnpm dlx pkg-pr-new publish --compact

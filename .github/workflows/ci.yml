@@ -1,18 +1,17 @@
-name: Release
-
-on:
-  push:
-    tags:
-      - 'v**'
+name: CI
 
 permissions:
-  id-token: write
-  contents: write
+  contents: read
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
-  release:
+  test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -29,16 +28,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Lint
+        run: pnpm run lint
+
       - name: Prepare build
         run: pnpm run dev:prepare
 
+      - name: Test
+        run: pnpm run test
+
+      - name: Typecheck
+        run: pnpm run test:types
+
       - name: Build
         run: pnpm run prepack
-
-      - name: Publish to npm
-        run: npm i -g npm && pnpm publish --access public --no-git-checks
-
-      - name: Generate Changelog
-        run: pnpx changelogithub
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

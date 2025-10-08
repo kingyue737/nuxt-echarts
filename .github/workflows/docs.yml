@@ -3,7 +3,7 @@ on: push
 
 jobs:
   deploy:
-    name: 'Docs'
+    name: Docs
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -13,13 +13,13 @@ jobs:
         working-directory: docs
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
 
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: 'pnpm'

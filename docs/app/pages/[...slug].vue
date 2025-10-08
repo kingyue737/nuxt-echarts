@@ -39,7 +39,9 @@ defineOgImageComponent('Docs', {
   description: page.value.description,
 })
 
-const headline = computed(() => findPageHeadline(navigation?.value, page.value?.path))
+const headline = computed(() =>
+  findPageHeadline(navigation?.value, page.value?.path),
+)
 
 const links = computed(() => {
   const links = []

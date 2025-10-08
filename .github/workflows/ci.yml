@@ -31,11 +31,14 @@ jobs:
       - name: Lint
         run: pnpm run lint
 
-      - name: Build
-        run: pnpm run prepack
+      - name: Prepare
+        run: pnpm run dev:prepare
 
       - name: Test
         run: pnpm run test
 
       - name: Typecheck
         run: pnpm run test:types
+
+      - name: Build
+        run: pnpm run prepack

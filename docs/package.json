@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.10.0",
-    "@nuxt/image": "^1.11.0"
+    "@nuxt/image": "^2.0.0"
   }
 }

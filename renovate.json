@@ -9,5 +9,6 @@
       "enabled": false
     }
   ],
+  "updatePinnedDependencies": false,
   "postUpdateOptions": ["pnpmDedupe"]
 }

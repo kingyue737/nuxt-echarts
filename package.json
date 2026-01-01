@@ -61,7 +61,8 @@
     "vite": "^7.3.0",
     "vitest": "^4.0.16",
     "vue-echarts": "^8.0.1",
-    "vue-tsc": "^3.2.1"
+    "vue-tsc": "^3.2.1",
+    "wrangler": "^4.54.0"
   },
   "peerDependencies": {
     "echarts": "^6.0.0",

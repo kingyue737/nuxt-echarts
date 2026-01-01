@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['../src/module', '@nuxt/ui', '@nuxthub/core'],
+  modules: ['../src/module', '@nuxt/ui'],
   css: ['~/assets/style.css'],
   echarts: {
     renderer: ['canvas', 'svg'],

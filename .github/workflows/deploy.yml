@@ -1,0 +1,60 @@
+name: Deploy
+on: push
+
+jobs:
+  deploy:
+    name: Playground
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Prepare
+        run: pnpm run dev:prepare
+
+      - name: Build
+        run: pnpm run dev:build
+        env:
+          NITRO_PRESET: cloudflare-pages
+
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy playground/dist --project-name=nuxt-echarts-playground
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Find PR Number
+        id: finder
+        uses: jwalton/gh-find-current-pr@v1
+
+      - name: Comment Preview URL
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          number: ${{ steps.finder.outputs.pr }}
+          message: |
+            ## Deploying Playground Preview ⚡
+
+            | **Latest Commit** | ${{ github.sha }} |
+            | :--- | :--- |
+            | **Status** | ✅ Deploy successful |
+            | **Preview URL** | [${{ steps.deploy.outputs.deployment-url }}](${{ steps.deploy.outputs.deployment-url }}) |
+            | **Branch Preview URL** | [${{ steps.deploy.outputs.pages-deployment-alias-url }}](${{ steps.deploy.outputs.pages-deployment-alias-url }}) |

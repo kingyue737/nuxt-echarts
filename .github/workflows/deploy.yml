@@ -39,7 +39,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy playground/dist --project-name=nuxt-echarts-playground
+          command: pages deploy playground/dist --project-name=nuxt-echarts
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Find PR Number

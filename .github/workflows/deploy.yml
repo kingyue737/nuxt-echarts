@@ -3,7 +3,7 @@ on: push
 
 jobs:
   deploy:
-    name: Playground
+    name: Docs
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -25,11 +25,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Prepare
-        run: pnpm run dev:prepare
-
       - name: Build
-        run: pnpm run dev:build
+        run: pnpm run docs:build
         env:
           NITRO_PRESET: cloudflare-pages
 
@@ -39,7 +36,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy playground/dist --project-name=nuxt-echarts
+          command: pages deploy docs/dist --project-name=nuxt-echarts-docs
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Find PR Number
@@ -51,10 +48,10 @@ jobs:
         with:
           number: ${{ steps.finder.outputs.pr }}
           message: |
-            ## Deploying Playground Preview ⚡
+            ## Deploying Docs Preview ⚡
 
             | **Latest Commit** | ${{ github.sha }} |
             | :--- | :--- |
-            | **Status** | ✅ Deploy successful |
+            | **Status** | ✅ Deployment successful! |
             | **Preview URL** | [${{ steps.deploy.outputs.deployment-url }}](${{ steps.deploy.outputs.deployment-url }}) |
             | **Branch Preview URL** | [${{ steps.deploy.outputs.pages-deployment-alias-url }}](${{ steps.deploy.outputs.pages-deployment-alias-url }}) |

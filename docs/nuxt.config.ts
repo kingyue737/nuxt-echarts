@@ -44,5 +44,5 @@ export default defineNuxtConfig({
     title: 'Nuxt ECharts',
     description: 'Nuxt module for Apache ECharts™',
   },
-  compatibilityDate: '2026-01-02',
+  compatibilityDate: '2025-07-09',
 })

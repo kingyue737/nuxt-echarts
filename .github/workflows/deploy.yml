@@ -9,6 +9,7 @@ jobs:
       contents: read
       id-token: write
       pull-requests: write
+      deployments: write
     defaults:
       run:
         working-directory: docs
@@ -22,7 +23,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -37,7 +38,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy docs/dist --project-name=nuxt-echarts-docs
+          command: pages deploy docs/dist --commit-dirty=true --project-name=nuxt-echarts-docs
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Find PR Number
@@ -51,8 +52,8 @@ jobs:
           message: |
             ## Deploying Docs Preview ⚡
 
-            | **Latest Commit** | ${{ github.sha }} |
+            | **Latest commit:** | ${{ github.sha }} |
             | :--- | :--- |
-            | **Status** | ✅ Deployment successful! |
-            | **Preview URL** | [${{ steps.deploy.outputs.deployment-url }}](${{ steps.deploy.outputs.deployment-url }}) |
-            | **Branch Preview URL** | [${{ steps.deploy.outputs.pages-deployment-alias-url }}](${{ steps.deploy.outputs.pages-deployment-alias-url }}) |
+            | **Status:** | ✅ Deploy successful! |
+            | **Preview URL:** | [${{ steps.deploy.outputs.deployment-url }}](${{ steps.deploy.outputs.deployment-url }}) |
+            | **Branch Preview URL:** | [${{ steps.deploy.outputs.pages-deployment-alias-url }}](${{ steps.deploy.outputs.pages-deployment-alias-url }}) |

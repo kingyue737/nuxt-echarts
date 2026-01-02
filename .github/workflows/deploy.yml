@@ -9,6 +9,7 @@ jobs:
       contents: read
       id-token: write
       pull-requests: write
+      deployments: write
     defaults:
       run:
         working-directory: docs
@@ -37,7 +38,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy docs/dist --project-name=nuxt-echarts-docs
+          command: pages deploy docs/dist --commit-dirty=true --project-name=nuxt-echarts-docs
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Find PR Number

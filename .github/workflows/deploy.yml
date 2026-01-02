@@ -52,8 +52,8 @@ jobs:
           message: |
             ## Deploying Docs Preview ⚡
 
-            | **Latest Commit** | ${{ github.sha }} |
+            | **Latest commit:** | ${{ github.sha }} |
             | :--- | :--- |
-            | **Status** | ✅ Deployment successful! |
-            | **Preview URL** | [${{ steps.deploy.outputs.deployment-url }}](${{ steps.deploy.outputs.deployment-url }}) |
-            | **Branch Preview URL** | [${{ steps.deploy.outputs.pages-deployment-alias-url }}](${{ steps.deploy.outputs.pages-deployment-alias-url }}) |
+            | **Status:** | ✅ Deploy successful! |
+            | **Preview URL:** | [${{ steps.deploy.outputs.deployment-url }}](${{ steps.deploy.outputs.deployment-url }}) |
+            | **Branch Preview URL:** | [${{ steps.deploy.outputs.pages-deployment-alias-url }}](${{ steps.deploy.outputs.pages-deployment-alias-url }}) |

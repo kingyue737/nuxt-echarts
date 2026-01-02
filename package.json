@@ -14,7 +14,7 @@
   "repository": "kingyue737/nuxt-echarts",
   "license": "MIT",
   "type": "module",
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.27.0",
   "types": "dist/types.d.mts",
   "exports": {
     ".": {
@@ -43,28 +43,26 @@
     "test:types": "vue-tsc --noEmit && nuxi typecheck playground"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.2.1"
+    "@nuxt/kit": "^4.2.2"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^1.11.0",
+    "@nuxt/eslint-config": "^1.12.1",
     "@nuxt/module-builder": "^1.0.2",
-    "@nuxt/schema": "^4.2.1",
+    "@nuxt/schema": "^4.2.2",
     "@nuxt/test-utils": "^3.21.0",
-    "@nuxthub/core": "0.9.1",
-    "@types/node": "^24.10.1",
+    "@types/node": "^24.10.4",
     "changelogen": "^0.6.2",
     "echarts": "^6.0.0",
-    "embla-carousel": "^8.6.0",
-    "eslint": "^9.39.1",
-    "nuxt": "^4.2.1",
+    "eslint": "^9.39.2",
+    "nuxt": "^4.2.2",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "typescript": "^5.9.3",
-    "vite": "^7.2.6",
-    "vitest": "^4.0.15",
+    "vite": "^7.3.0",
+    "vitest": "^4.0.16",
     "vue-echarts": "^8.0.1",
-    "vue-tsc": "^3.1.6",
-    "wrangler": "^4.53.0"
+    "vue-tsc": "^3.2.1",
+    "wrangler": "^4.54.0"
   },
   "peerDependencies": {
     "echarts": "^6.0.0",
@@ -73,7 +71,8 @@
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
-        "echarts": "6"
+        "echarts": "6",
+        "vitest": "4"
       }
     }
   },

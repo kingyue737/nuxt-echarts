@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['../src/module', '@nuxt/ui', '@nuxthub/core'],
+  modules: ['../src/module', '@nuxt/ui'],
   css: ['~/assets/style.css'],
   echarts: {
     renderer: ['canvas', 'svg'],
@@ -33,5 +33,5 @@ export default defineNuxtConfig({
       alias: { 'echarts/lib/util/number': 'echarts/lib/util/number.js' },
     },
   },
-  compatibilityDate: '2024-07-09',
+  compatibilityDate: '2026-01-02',
 })

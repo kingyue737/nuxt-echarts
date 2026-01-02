@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxt/content',
-    '@nuxthub/core',
     'nuxt-og-image',
     'nuxt-llms',
   ],
@@ -45,5 +44,5 @@ export default defineNuxtConfig({
     title: 'Nuxt ECharts',
     description: 'Nuxt module for Apache ECharts™',
   },
-  compatibilityDate: '2025-07-09',
+  compatibilityDate: '2026-01-02',
 })

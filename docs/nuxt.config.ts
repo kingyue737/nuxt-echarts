@@ -27,9 +27,6 @@ export default defineNuxtConfig({
       crawlLinks: true,
       autoSubfolderIndex: false,
     },
-    cloudflare: {
-      nodeCompat: true,
-    }
   },
   fonts: {
     provider: 'bunny',

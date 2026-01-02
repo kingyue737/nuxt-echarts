@@ -9,6 +9,9 @@ jobs:
       contents: read
       id-token: write
       pull-requests: write
+    defaults:
+      run:
+        working-directory: docs
 
     steps:
       - uses: actions/checkout@v6
@@ -26,7 +29,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm run docs:build
+        run: pnpm run build
         env:
           NITRO_PRESET: cloudflare-pages
 
@@ -36,7 +39,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy docs/dist --project-name=nuxt-echarts-docs
+          command: pages deploy dist --project-name=nuxt-echarts-docs
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Find PR Number

@@ -8,7 +8,7 @@ import type { InitOptions, Option, Theme } from '../types'
 import {
   useAttrs,
   nextTick,
-  ref,
+  shallowRef,
   onMounted,
   defineComponent,
   type PropType,
@@ -29,7 +29,7 @@ export default defineComponent({
   },
   emits: {} as unknown as Record<ECSSREvent, ECSSRHandler>,
   setup() {
-    const root = ref<InstanceType<typeof VChartServer> | null>(null)
+    const root = shallowRef<InstanceType<typeof VChartServer>>()
     const attrs = useAttrs() as Partial<Record<ECSSREventOn, ECSSRHandler>>
     let container: HTMLDivElement
     function hydrateChart() {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, inject, ref, toValue } from 'vue'
+import { computed, inject, shallowRef, toValue } from 'vue'
 import type { InitOptions, Option, Theme } from '../types'
 import { THEME_KEY, INIT_OPTIONS_KEY } from 'vue-echarts'
 import type { VChartIsland } from '#components'
@@ -28,7 +28,7 @@ function onError(e: unknown) {
   }
   emits('error', e)
 }
-const root = ref<InstanceType<typeof VChartIsland> | null>(null)
+const root = shallowRef<InstanceType<typeof VChartIsland>>()
 </script>
 
 <template>

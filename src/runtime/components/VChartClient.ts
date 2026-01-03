@@ -1,5 +1,5 @@
 import VChart from './VChart'
-import { defineComponent, h, ref, toRef } from 'vue'
+import { defineComponent, h, shallowRef, toRef } from 'vue'
 
 type VChartType = typeof VChart
 
@@ -25,7 +25,7 @@ const METHOD_NAMES = [
 export default defineComponent({
   inheritAttrs: false,
   setup(props, { attrs, slots, expose }) {
-    const root = ref<InstanceType<typeof VChart> | null>(null)
+    const root = shallowRef<InstanceType<typeof VChart>>()
 
     const publicMethods = Object.fromEntries(
       METHOD_NAMES.map((name) => [

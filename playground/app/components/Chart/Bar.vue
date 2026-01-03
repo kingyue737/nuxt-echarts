@@ -56,7 +56,7 @@ function getData(): ECOption {
 
 const option = shallowRef(getData())
 function refreshData() {
-  option.value = getData()
+  chart.value?.setOption(getData())
 }
 
 function hideToolbox() {
@@ -72,6 +72,7 @@ function showToolbox() {
     <VChartFull
       ref="chart"
       :option="option"
+      manual-update
       @native:mouseenter="showToolbox()"
       @globalout="hideToolbox()"
     />

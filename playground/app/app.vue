@@ -27,8 +27,9 @@ const rendererOptions = [
   { value: 'canvas', label: 'Canvas' },
   { value: 'svg', label: 'SVG' },
 ]
-const renderer = ref<'canvas' | 'svg'>('canvas')
-
+const renderer = useCookie<'canvas' | 'svg'>('renderer', {
+  default: () => 'canvas',
+})
 const themeOptions = [
   { value: 'default', label: 'Default' },
   { value: 'ovilia-green', label: 'Ovilia Green' },

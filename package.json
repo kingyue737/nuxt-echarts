@@ -14,7 +14,7 @@
   "repository": "kingyue737/nuxt-echarts",
   "license": "MIT",
   "type": "module",
-  "packageManager": "pnpm@10.27.0",
+  "packageManager": "pnpm@10.30.0",
   "types": "dist/types.d.mts",
   "exports": {
     ".": {
@@ -71,8 +71,7 @@
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
-        "echarts": "6",
-        "vitest": "4"
+        "echarts": "6"
       }
     }
   },

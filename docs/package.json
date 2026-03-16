@@ -12,7 +12,7 @@
     "@nuxt/content": "^3.12.0",
     "@nuxt/ui": "4.2.1",
     "nuxt-llms": "^0.2.0",
-    "nuxt-og-image": "^5.1.13"
+    "nuxt-og-image": "^6.0.1"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.15.2",

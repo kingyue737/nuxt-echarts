@@ -88,8 +88,8 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0(magicast@0.5.2)
       nuxt-og-image:
-        specifier: ^6.3.0
-        version: 6.3.0(6ddb6e5c17b928b681ce7bb231dd9276)
+        specifier: ^6.3.1
+        version: 6.3.1(6ddb6e5c17b928b681ce7bb231dd9276)
     devDependencies:
       '@nuxt/eslint':
         specifier: ^1.15.2
@@ -5373,8 +5373,8 @@ packages:
   nuxt-llms@0.2.0:
     resolution: {integrity: sha512-GoEW00x8zaZ1wS0R0aOYptt3b54JEaRwlyVtuAiQoH51BwYdjN5/3+00/+4wi39M5cT4j5XcnGwOxJ7v4WVb9A==}
 
-  nuxt-og-image@6.3.0:
-    resolution: {integrity: sha512-MaDiUZjn7N/lvxxYl1FzsoucZFCxcG7jA+KEV7uO0AtYa5nymaBP6kWKh1SY/yrK5BVUgrHCvz4iWjRfgU8/8A==}
+  nuxt-og-image@6.3.1:
+    resolution: {integrity: sha512-QRwUaCcluCpJ8k9BVZAaaL9OINL/8WSVXoVzoQNHNqZRN+ajhsRrWkCaiEOoNhlScq7b9mSSqD9cCQeiKica/Q==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -13100,7 +13100,7 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  nuxt-og-image@6.3.0(6ddb6e5c17b928b681ce7bb231dd9276):
+  nuxt-og-image@6.3.1(6ddb6e5c17b928b681ce7bb231dd9276):
     dependencies:
       '@clack/prompts': 1.1.0
       '@nuxt/devtools-kit': 3.2.4(magicast@0.5.2)(vite@7.3.1(@types/node@24.12.0)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.0)(yaml@2.8.2))

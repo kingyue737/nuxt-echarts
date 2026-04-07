@@ -50,19 +50,19 @@
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/schema": "^4.4.2",
     "@nuxt/test-utils": "^4.0.0",
-    "@types/node": "^24.12.0",
+    "@types/node": "^24.12.2",
     "changelogen": "^0.6.2",
     "echarts": "^6.0.0",
-    "eslint": "^10.1.0",
+    "eslint": "^10.2.0",
     "nuxt": "^4.4.2",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "typescript": "^6.0.2",
-    "vite": "^7.3.1",
+    "vite": "^7.3.2",
     "vitest": "^4.1.2",
     "vue-echarts": "^8.0.1",
     "vue-tsc": "^3.2.6",
-    "wrangler": "^4.78.0"
+    "wrangler": "^4.80.0"
   },
   "peerDependencies": {
     "echarts": "^6.0.0",

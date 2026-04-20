@@ -53,16 +53,16 @@
     "@types/node": "^24.12.2",
     "changelogen": "^0.6.2",
     "echarts": "^6.0.0",
-    "eslint": "^10.2.0",
+    "eslint": "^10.2.1",
     "nuxt": "^4.4.2",
-    "prettier": "^3.8.2",
+    "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "typescript": "^6.0.2",
+    "typescript": "^6.0.3",
     "vite": "^7.3.2",
     "vitest": "^4.1.4",
     "vue-echarts": "^8.0.1",
-    "vue-tsc": "^3.2.6",
-    "wrangler": "^4.82.2"
+    "vue-tsc": "^3.2.7",
+    "wrangler": "^4.84.0"
   },
   "peerDependencies": {
     "echarts": "^6.0.0",

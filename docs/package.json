@@ -11,7 +11,7 @@
     "@iconify-json/vscode-icons": "^1.2.45",
     "@nuxt/content": "^3.13.0",
     "@nuxt/ui": "4.2.1",
-    "@takumi-rs/core": "^0.73.1",
+    "@takumi-rs/core": "^1.0.15",
     "nuxt-llms": "^0.2.0",
     "nuxt-og-image": "^6.4.1"
   },

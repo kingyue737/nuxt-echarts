@@ -46,7 +46,7 @@ jobs:
         uses: jwalton/gh-find-current-pr@v1
 
       - name: Comment Preview URL
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: marocchino/sticky-pull-request-comment@v3.0.4
         with:
           number: ${{ steps.finder.outputs.pr }}
           message: |

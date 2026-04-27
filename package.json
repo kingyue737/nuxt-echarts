@@ -49,7 +49,7 @@
     "@nuxt/eslint-config": "^1.15.2",
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/schema": "^4.4.2",
-    "@nuxt/test-utils": "^4.0.2",
+    "@nuxt/test-utils": "^4.0.3",
     "@types/node": "^24.12.2",
     "changelogen": "^0.6.2",
     "echarts": "^6.0.0",

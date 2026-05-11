@@ -13,7 +13,7 @@
     "@nuxt/ui": "4.2.1",
     "@takumi-rs/core": "^1.1.2",
     "nuxt-llms": "^0.2.0",
-    "nuxt-og-image": "^6.4.8"
+    "nuxt-og-image": "^6.5.0"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.15.2",

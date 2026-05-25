@@ -82,7 +82,7 @@ importers:
         specifier: 4.2.1
         version: 4.2.1(@babel/parser@7.29.3)(@nuxt/content@3.14.0(magicast@0.5.3))(change-case@5.4.4)(db0@0.3.4)(embla-carousel@8.6.0)(ioredis@5.10.1)(magicast@0.5.3)(typescript@6.0.3)(vite@8.0.14(@types/node@24.12.4)(esbuild@0.27.7)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))(zod@4.4.3)
       '@takumi-rs/core':
-        specifier: ^1.4.1
+        specifier: ^1.5.0
         version: 1.5.0
       nuxt-llms:
         specifier: ^0.2.0

@@ -43,12 +43,12 @@
     "test:types": "vue-tsc --noEmit && nuxi typecheck playground"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.4.5"
+    "@nuxt/kit": "^4.4.6"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^1.15.2",
     "@nuxt/module-builder": "^1.0.2",
-    "@nuxt/schema": "^4.4.5",
+    "@nuxt/schema": "^4.4.6",
     "@nuxt/test-utils": "^4.0.3",
     "@types/node": "^24.12.4",
     "changelogen": "^0.6.2",

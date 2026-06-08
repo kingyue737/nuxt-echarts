@@ -7,13 +7,13 @@
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.111",
-    "@iconify-json/simple-icons": "^1.2.84",
-    "@iconify-json/vscode-icons": "^1.2.53",
+    "@iconify-json/simple-icons": "^1.2.85",
+    "@iconify-json/vscode-icons": "^1.2.55",
     "@nuxt/content": "^3.14.0",
     "@nuxt/ui": "4.2.1",
-    "@takumi-rs/core": "^1.6.0",
+    "@takumi-rs/core": "^1.7.0",
     "nuxt-llms": "^0.2.0",
-    "nuxt-og-image": "^6.5.1"
+    "nuxt-og-image": "^6.5.2"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.15.2",

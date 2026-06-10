@@ -43,18 +43,18 @@
     "test:types": "vue-tsc --noEmit && nuxi typecheck playground"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.4.7"
+    "@nuxt/kit": "^4.4.8"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^1.15.2",
     "@nuxt/module-builder": "^1.0.2",
-    "@nuxt/schema": "^4.4.7",
+    "@nuxt/schema": "^4.4.8",
     "@nuxt/test-utils": "^4.0.3",
     "@types/node": "^24.13.1",
     "changelogen": "^0.6.2",
     "echarts": "^6.1.0",
     "eslint": "^10.4.1",
-    "nuxt": "^4.4.7",
+    "nuxt": "^4.4.8",
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "typescript": "^6.0.3",

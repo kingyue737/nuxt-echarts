@@ -14,7 +14,7 @@
   "repository": "kingyue737/nuxt-echarts",
   "license": "MIT",
   "type": "module",
-  "packageManager": "pnpm@10.32.1",
+  "packageManager": "pnpm@11.5.2",
   "types": "dist/types.d.mts",
   "exports": {
     ".": {
@@ -67,13 +67,6 @@
   "peerDependencies": {
     "echarts": "^6.1.0",
     "vue-echarts": "^8.0.1"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "echarts": "6"
-      }
-    }
   },
   "stackblitz": {
     "startCommand": "pnpm run dev:prepare && pnpm run dev"

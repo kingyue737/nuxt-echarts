@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import 'echarts-liquidfill'
+import * as echarts from 'echarts';
+import liquidFillCustomSeriesInstaller from '@echarts-x/custom-liquid-fill';
+
+echarts.use(liquidFillCustomSeriesInstaller);
 
 const option = {
   backgroundColor: 'transparent',
   series: [
     {
-      type: 'liquidFill',
+      type: 'custom',
+      renderItem: 'liquidFill',
+      coordinateSystem: 'none',
       data: [0.75, 0.6, 0.55, 0.45],
       amplitude: 10,
       outline: {

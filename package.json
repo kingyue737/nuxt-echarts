@@ -56,13 +56,13 @@
     "eslint": "^10.7.0",
     "nuxt": "^4.4.8",
     "prettier": "^3.9.5",
-    "prettier-plugin-tailwindcss": "^0.8.0",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "^6.0.3",
-    "vite": "^8.1.4",
+    "vite": "^8.1.5",
     "vitest": "^4.1.10",
     "vue-echarts": "^8.0.1",
     "vue-tsc": "^3.3.7",
-    "wrangler": "^4.110.0"
+    "wrangler": "^4.112.0"
   },
   "peerDependencies": {
     "echarts": "^6.1.0",

@@ -1,5 +1,6 @@
 {
   "extends": ["github>nuxt/renovate-config-nuxt"],
+  "minimumReleaseAge": "1 day",
   "lockFileMaintenance": {
     "enabled": true
   },

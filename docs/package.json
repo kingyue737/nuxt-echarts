@@ -6,12 +6,12 @@
     "build": "nuxi build"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.123",
+    "@iconify-json/lucide": "^1.2.125",
     "@iconify-json/simple-icons": "^1.2.93",
-    "@iconify-json/vscode-icons": "^1.2.73",
+    "@iconify-json/vscode-icons": "^1.2.74",
     "@nuxt/content": "^3.15.2",
     "@nuxt/ui": "4.2.1",
-    "@takumi-rs/core": "^2.9.2",
+    "@takumi-rs/core": "^2.10.0",
     "nuxt-llms": "^0.2.0",
     "nuxt-og-image": "^6.7.8"
   },

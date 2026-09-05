@@ -53,20 +53,20 @@
     "@types/node": "^24.13.3",
     "changelogen": "^0.6.2",
     "echarts": "^6.1.0",
-    "eslint": "^10.9.1",
+    "eslint": "^10.10.0",
     "nuxt": "^4.4.8",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "^6.0.3",
     "vite": "^8.2.2",
     "vitest": "^4.1.11",
-    "vue-echarts": "^8.1.0",
+    "vue-echarts": "^8.2.0",
     "vue-tsc": "^3.3.11",
-    "wrangler": "^4.127.1"
+    "wrangler": "^4.129.0"
   },
   "peerDependencies": {
     "echarts": "^6.1.0",
-    "vue-echarts": "^8.1.0"
+    "vue-echarts": "^8.2.0"
   },
   "stackblitz": {
     "startCommand": "pnpm run dev:prepare && pnpm run dev"

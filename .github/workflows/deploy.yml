@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Prepare build
+        run: pnpm -w run dev:prepare
+
       - name: Build
         run: pnpm nuxi generate --preset=cloudflare_pages
 

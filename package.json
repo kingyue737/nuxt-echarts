@@ -49,24 +49,24 @@
     "@nuxt/eslint-config": "^1.17.0",
     "@nuxt/module-builder": "^1.0.3",
     "@nuxt/schema": "^4.5.2",
-    "@nuxt/test-utils": "^4.2.0",
-    "@types/node": "^24.13.3",
+    "@nuxt/test-utils": "^4.3.2",
+    "@types/node": "^24.13.4",
     "changelogen": "^0.6.2",
     "echarts": "^6.1.0",
-    "eslint": "^10.9.1",
+    "eslint": "^10.10.0",
     "nuxt": "^4.4.8",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "^6.0.3",
-    "vite": "^8.2.2",
+    "vite": "^8.3.0",
     "vitest": "^5.0.0",
-    "vue-echarts": "^8.1.0",
+    "vue-echarts": "^8.3.0",
     "vue-tsc": "^3.3.11",
-    "wrangler": "^4.127.1"
+    "wrangler": "^4.131.1"
   },
   "peerDependencies": {
     "echarts": "^6.1.0",
-    "vue-echarts": "^8.1.0"
+    "vue-echarts": "^8.3.0"
   },
   "stackblitz": {
     "startCommand": "pnpm run dev:prepare && pnpm run dev"

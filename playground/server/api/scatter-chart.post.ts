@@ -1,17 +1,22 @@
 import * as echarts from 'echarts'
 import type { ECBasicOption } from 'echarts/types/dist/shared.js'
-import type { InitOptions } from '../../../src/runtime/types'
+import type { InitOptions, Theme } from '../../../src/runtime/types'
 import greenTheme from '~/assets/theme.json'
 
 echarts.registerTheme('ovilia-green', greenTheme)
 
 export default defineEventHandler(async (event) => {
-  const { theme, initOptions, option } = await readBody(event)
+  const { theme, initOptions, option } = (await readBody<{
+    theme?: Theme
+    initOptions?: InitOptions
+    option?: ECBasicOption
+  }>(event)) ?? {}
 
-  const realInitOptions: InitOptions = echarts.util.merge(
-    { ssr: true, renderer: 'svg' },
-    initOptions,
-  )
+  const realInitOptions: InitOptions = {
+    ssr: true,
+    renderer: 'svg',
+    ...initOptions,
+  }
   type MyData = [number, number, number, string, number]
 
   const data: MyData[][] = [
@@ -102,7 +107,7 @@ export default defineEventHandler(async (event) => {
       },
     ],
   }
-  const realOption = echarts.util.merge(option, defaultOption)
+  const realOption = echarts.util.merge(option ?? defaultOption, defaultOption)
 
   const chart = echarts.init(null, theme, realInitOptions)
   chart.setOption(realOption)

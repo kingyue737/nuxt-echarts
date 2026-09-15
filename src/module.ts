@@ -171,7 +171,9 @@ export default defineNuxtModule<ModuleOptions>({
       'LOADING_OPTIONS_KEY',
     ].forEach((name) => addImports({ name, from: 'vue-echarts' }))
 
-    // Graphic components used in the `#graphic` slot
+    // Graphic components used in the `#graphic` slot.
+    // They must go through `addComponent` (not `addImports`): template component
+    // resolution only consults Nuxt's component registry.
     ;[
       'GArc',
       'GBezierCurve',
@@ -186,6 +188,8 @@ export default defineNuxtModule<ModuleOptions>({
       'GRing',
       'GSector',
       'GText',
-    ].forEach((name) => addImports({ name, from: 'vue-echarts/graphic' }))
+    ].forEach((name) =>
+      addComponent({ name, export: name, filePath: 'vue-echarts/graphic' }),
+    )
   },
 })

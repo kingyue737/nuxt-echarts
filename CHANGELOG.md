@@ -1,6 +1,47 @@
 # Changelog
 
 
+## v1.1.0
+
+[compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v1.0.1...v1.1.0)
+
+### 🚀 Enhancements
+
+- Support features of vue-echarts 8.3 ([#144](https://github.com/kingyue737/nuxt-echarts/pull/144))
+
+### 🩹 Fixes
+
+- **playground:** Bar chart manual update ([ecc26c7](https://github.com/kingyue737/nuxt-echarts/commit/ecc26c7))
+- **playground:** Cache renderer in cookie ([8b072ec](https://github.com/kingyue737/nuxt-echarts/commit/8b072ec))
+
+### 💅 Refactors
+
+- Use shallowRef for template ref ([60cfe6e](https://github.com/kingyue737/nuxt-echarts/commit/60cfe6e))
+
+### 📖 Documentation
+
+- Fix code indentation ([7909955](https://github.com/kingyue737/nuxt-echarts/commit/7909955))
+- Update description of smart update ([daada78](https://github.com/kingyue737/nuxt-echarts/commit/daada78))
+
+### 🏡 Chore
+
+- Leverage changelogen to generate github release ([6a1c1a1](https://github.com/kingyue737/nuxt-echarts/commit/6a1c1a1))
+- Add continuous release with pkg.pr.new ([9ac70c9](https://github.com/kingyue737/nuxt-echarts/commit/9ac70c9))
+- Add renovate config ([3526a30](https://github.com/kingyue737/nuxt-echarts/commit/3526a30))
+- Not renovate pinned deps ([0da57df](https://github.com/kingyue737/nuxt-echarts/commit/0da57df))
+- Migrate to cloudflare wrangler action ([#54](https://github.com/kingyue737/nuxt-echarts/pull/54))
+- Add github deploy permission ([#55](https://github.com/kingyue737/nuxt-echarts/pull/55))
+- Remove nuxt studio ([cee37ba](https://github.com/kingyue737/nuxt-echarts/commit/cee37ba))
+- Up pnpm ([6e02803](https://github.com/kingyue737/nuxt-echarts/commit/6e02803))
+- Update pnpm from v10 to v11.5.2 ([#114](https://github.com/kingyue737/nuxt-echarts/pull/114))
+- Set minimum release age of renovate ([baa5710](https://github.com/kingyue737/nuxt-echarts/commit/baa5710))
+- Remove minimum realease age in renovate since fixed in upstream nuxt config ([7228536](https://github.com/kingyue737/nuxt-echarts/commit/7228536))
+
+### ❤️ Contributors
+
+- Yue JIN ([@kingyue737](https://github.com/kingyue737))
+- Copilot ([@MicrosoftCopilot](https://github.com/MicrosoftCopilot))
+
 ## v1.0.1
 
 [compare changes](https://github.com/kingyue737/nuxt-echarts/compare/v1.0.0...v1.0.1)

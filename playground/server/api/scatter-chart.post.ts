@@ -1,17 +1,46 @@
-import * as echarts from 'echarts'
+import { init, registerTheme, use, util } from 'echarts/core'
+import { ScatterChart } from 'echarts/charts'
+import {
+  GridComponent,
+  LegendComponent,
+  TitleComponent,
+  TooltipComponent,
+} from 'echarts/components'
+import { LabelLayout, UniversalTransition } from 'echarts/features'
+import { SVGRenderer } from 'echarts/renderers'
 import type { ECBasicOption } from 'echarts/types/dist/shared.js'
-import type { InitOptions } from '../../../src/runtime/types'
+import type { InitOptions, Theme } from '../../../src/runtime/types'
 import greenTheme from '~/assets/theme.json'
 
-echarts.registerTheme('ovilia-green', greenTheme)
+// Only the modules this route renders with: importing the root `echarts` entry
+// would pull all 24 charts / 28 components into the Nitro server bundle.
+use([
+  ScatterChart,
+  GridComponent,
+  LegendComponent,
+  TitleComponent,
+  TooltipComponent,
+  LabelLayout,
+  UniversalTransition,
+  SVGRenderer,
+])
+
+registerTheme('ovilia-green', greenTheme)
 
 export default defineEventHandler(async (event) => {
-  const { theme, initOptions, option } = await readBody(event)
+  const { theme, initOptions, option } = (await readBody<{
+    theme?: Theme
+    initOptions?: InitOptions
+    option?: ECBasicOption
+  }>(event)) ?? {}
 
-  const realInitOptions: InitOptions = echarts.util.merge(
-    { ssr: true, renderer: 'svg' },
-    initOptions,
-  )
+  // The chart is rendered on the server, which can only use the SVG renderer, so
+  // the forced options have to win over whatever the client sent.
+  const realInitOptions: InitOptions = {
+    ...initOptions,
+    ssr: true,
+    renderer: 'svg',
+  }
   type MyData = [number, number, number, string, number]
 
   const data: MyData[][] = [
@@ -102,9 +131,9 @@ export default defineEventHandler(async (event) => {
       },
     ],
   }
-  const realOption = echarts.util.merge(option, defaultOption)
+  const realOption = util.merge(option ?? defaultOption, defaultOption)
 
-  const chart = echarts.init(null, theme, realInitOptions)
+  const chart = init(null, theme, realInitOptions)
   chart.setOption(realOption)
   const svgStr = chart.renderToSVGString()
   chart.dispose()

@@ -10,6 +10,30 @@ import {
 } from '@nuxt/kit'
 
 import type { ModuleOptions } from './types'
+import type * as VueEchartsGraphic from 'vue-echarts/graphic'
+
+// Names of the graphic components vue-echarts exports from `vue-echarts/graphic`,
+// used in the `#graphic` slot. Mirrors `src/graphic/components.ts` in vue-echarts.
+const GRAPHIC_COMPONENT_NAMES = [
+  'GArc',
+  'GBezierCurve',
+  'GCircle',
+  'GEllipse',
+  'GGroup',
+  'GImage',
+  'GLine',
+  'GPolygon',
+  'GPolyline',
+  'GRect',
+  'GRing',
+  'GSector',
+  'GText',
+] as const
+
+// If vue-echarts renames or drops one of these, this fails to typecheck
+// instead of silently registering a component that resolves to nothing.
+const _assertGraphicNamesExist: readonly (keyof typeof VueEchartsGraphic)[] =
+  GRAPHIC_COMPONENT_NAMES
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -170,5 +194,12 @@ export default defineNuxtModule<ModuleOptions>({
       'UPDATE_OPTIONS_KEY',
       'LOADING_OPTIONS_KEY',
     ].forEach((name) => addImports({ name, from: 'vue-echarts' }))
+
+    // Graphic components used in the `#graphic` slot.
+    // They must go through `addComponent` (not `addImports`): template component
+    // resolution only consults Nuxt's component registry.
+    GRAPHIC_COMPONENT_NAMES.forEach((name) =>
+      addComponent({ name, export: name, filePath: 'vue-echarts/graphic' }),
+    )
   },
 })

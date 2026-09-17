@@ -14,7 +14,7 @@
   "repository": "kingyue737/nuxt-echarts",
   "license": "MIT",
   "type": "module",
-  "packageManager": "pnpm@11.5.2",
+  "packageManager": "pnpm@12.4.2",
   "types": "dist/types.d.mts",
   "exports": {
     ".": {

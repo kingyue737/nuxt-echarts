@@ -9,6 +9,6 @@
   },
   "dependencies": {
     "@nuxt/ui": "4.2.1",
-    "echarts-liquidfill": "^3.1.0"
+    "h3": "^1.15.11"
   }
 }

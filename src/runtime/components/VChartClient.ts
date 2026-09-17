@@ -1,26 +1,8 @@
 import VChart from './VChart'
 import { defineComponent, h, shallowRef, toRef } from 'vue'
+import { METHOD_NAMES } from './method-names'
 
 type VChartType = typeof VChart
-
-const METHOD_NAMES = [
-  'setOption',
-  'getWidth',
-  'getHeight',
-  'getDom',
-  'getOption',
-  'resize',
-  'dispatchAction',
-  'convertToPixel',
-  'convertFromPixel',
-  'containPixel',
-  'getDataURL',
-  'getConnectedDataURL',
-  'appendData',
-  'clear',
-  'isDisposed',
-  'dispose',
-] as const
 
 export default defineComponent({
   inheritAttrs: false,

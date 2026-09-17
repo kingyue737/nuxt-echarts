@@ -5,10 +5,6 @@ packages:
 shamefullyHoist: true
 strictPeerDependencies: false
 
-peerDependencyRules:
-  allowedVersions:
-    echarts: '6'
-
 allowBuilds:
   '@parcel/watcher': false
   esbuild: false

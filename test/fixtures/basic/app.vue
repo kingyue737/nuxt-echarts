@@ -19,6 +19,13 @@ const clicked = ref(false)
 <template>
   <div>
     <VChartLight :init-options="{ height: 300, width: 300 }" :option="option" />
+    <VChartFull :init-options="{ height: 300, width: 300 }" :option="option">
+      <template #graphic>
+        <GGroup>
+          <GRect :x="10" :y="10" :width="50" :height="20" fill="#f00" />
+        </GGroup>
+      </template>
+    </VChartFull>
     <div>{{ clicked }}</div>
   </div>
 </template>

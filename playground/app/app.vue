@@ -104,6 +104,7 @@ const themeOptions = [
       <ChartPolar />
       <ChartPie />
       <ChartScatter />
+      <ChartGraphic />
     </div>
 
     <footer class="flex items-center justify-center gap-2 py-5">

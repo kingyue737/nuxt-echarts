@@ -25,13 +25,12 @@ export default defineNuxtConfig({
       colors: ['primary'],
     },
   },
-  devtools: { enabled: false },
-  // echarts-liquidfill is not ESM friendly
-  build: { transpile: ['echarts-liquidfill'] },
-  vite: {
-    resolve: {
-      alias: { 'echarts/lib/util/number': 'echarts/lib/util/number.js' },
-    },
+  // `simple-icons`/`vscode-icons` are installed for the docs app; pnpm hoists them
+  // to the workspace root, where `@nuxt/icon` discovers and inlines every installed
+  // collection (~9 MB of JSON) into this app's server bundle.
+  icon: {
+    serverBundle: { collections: ['lucide'] },
   },
-  compatibilityDate: '2026-01-02',
+  devtools: { enabled: false },
+  compatibilityDate: '2026-09-02',
 })

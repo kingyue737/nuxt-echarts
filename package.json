@@ -11,7 +11,11 @@
     "ssr"
   ],
   "author": "Yue JIN <yuejin13@fudan.edu.cn>",
-  "repository": "kingyue737/nuxt-echarts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingyue737/nuxt-echarts.git"
+  },
+  "homepage": "https://echarts.nuxt.dev",
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@12.4.2",

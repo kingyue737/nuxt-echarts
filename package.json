@@ -61,7 +61,7 @@
     "nuxt": "^4.6.0",
     "prettier": "^3.9.9",
     "prettier-plugin-tailwindcss": "^0.8.1",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vite": "^8.3.2",
     "vitest": "^5.0.3",
     "vue-echarts": "^8.3.1",

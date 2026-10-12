@@ -6,9 +6,9 @@
     "build": "nuxi build"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.140",
+    "@iconify-json/lucide": "^1.2.142",
     "@iconify-json/simple-icons": "^1.2.99",
-    "@iconify-json/vscode-icons": "^1.2.85",
+    "@iconify-json/vscode-icons": "^1.2.87",
     "@nuxt/content": "^3.16.1",
     "@nuxt/ui": "4.2.1",
     "@takumi-rs/core": "^2.14.0",

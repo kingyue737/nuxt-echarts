@@ -62,11 +62,11 @@
     "prettier": "^3.9.10",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "^6.0.3",
-    "vite": "^8.3.5",
-    "vitest": "^5.0.5",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0",
     "vue-echarts": "^8.3.2",
     "vue-tsc": "^3.3.14",
-    "wrangler": "^4.156.0"
+    "wrangler": "^4.158.0"
   },
   "peerDependencies": {
     "echarts": "^6.1.0",

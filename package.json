@@ -51,22 +51,22 @@
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^1.17.0",
-    "@nuxt/module-builder": "^1.0.3",
+    "@nuxt/module-builder": "^1.0.4",
     "@nuxt/schema": "^4.6.4",
-    "@nuxt/test-utils": "^4.3.4",
+    "@nuxt/test-utils": "^4.4.0",
     "@types/node": "^26.6.6",
     "changelogen": "^0.6.2",
     "echarts": "^6.1.0",
-    "eslint": "^10.14.0",
+    "eslint": "^10.15.0",
     "nuxt": "^4.6.4",
-    "prettier": "^3.9.10",
+    "prettier": "^3.10.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "^6.0.3",
-    "vite": "^8.3.6",
+    "vite": "^8.3.8",
     "vitest": "^5.1.0",
     "vue-echarts": "^8.3.2",
     "vue-tsc": "^3.3.14",
-    "wrangler": "^4.158.0"
+    "wrangler": "^4.162.0"
   },
   "peerDependencies": {
     "echarts": "^6.1.0",

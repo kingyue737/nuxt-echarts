@@ -4,6 +4,9 @@ import type { InitOptions, Option, Theme } from '../types'
 import { THEME_KEY, INIT_OPTIONS_KEY } from 'vue-echarts'
 import type { VChartIsland } from '#components'
 
+// Nuxt serializes the option to JSON when requesting the island.
+type IslandOption = InstanceType<typeof VChartIsland>['$props']['option']
+
 const defaultTheme = inject(THEME_KEY, null)
 const defaultInitOptions = inject(INIT_OPTIONS_KEY, null)
 
@@ -36,7 +39,7 @@ const root = shallowRef<InstanceType<typeof VChartIsland>>()
     <VChartIsland
       ref="root"
       :theme="realTheme"
-      :option="option"
+      :option="option as IslandOption"
       :init-options="realInitOptions"
       @error="onError"
     >
